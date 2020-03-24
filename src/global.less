@@ -1,0 +1,83 @@
+html, body, #root {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior-y: none;
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: URWDIN;
+  src:
+    url("assets/font/URWDIN-Medium.woff"),
+    url("assets/font/URWDIN-Medium.woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: URWDIN;
+  src:
+    url("assets/font/URWDIN-Regular.woff"),
+    url("assets/font/URWDIN-Regular.woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-family: URWDIN, 'Titillium Web', Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, '微软雅黑', Aril, sans-serif;
+
+
+body {
+  margin: 0;
+  font-family: @font-family;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:global {
+  .loopingClass (@index) when (@index > 0) {
+    @indexDouble: (@index * 2);
+    .mr-@{indexDouble} {
+      margin-right: (@indexDouble) * 1px;
+    }
+    .ml-@{indexDouble} {
+      margin-left: (@indexDouble) * 1px;
+    }
+    .mt-@{indexDouble} {
+      margin-top: (@indexDouble) * 1px;
+    }
+    .mb-@{indexDouble} {
+      margin-bottom: (@indexDouble) * 1px;
+    }
+    .pr-@{indexDouble} {
+      padding-right: (@indexDouble) * 1px;
+    }
+    .pl-@{indexDouble} {
+      padding-left: (@indexDouble) * 1px;
+    }
+    .pt-@{indexDouble} {
+      padding-top: (@indexDouble) * 1px;
+    }
+    .pb-@{indexDouble} {
+      padding-bottom: (@indexDouble) * 1px;
+    }
+    .font-size-@{indexDouble} {
+      font-size: (@indexDouble) * 1px;
+    }
+    .loopingClass(@index - 1);
+    .horizontal-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+    }
+    .horizontal-center {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  .loopingClass(16);
+}
