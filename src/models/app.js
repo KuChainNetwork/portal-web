@@ -1,11 +1,57 @@
-
+import _ from 'lodash';
+import extend from 'dva-model-extend';
+import base from 'utils/common_models/base';
 import { getVersion } from 'services/app';
+import { setLang } from 'utils/lang';
+import { searchToJson, getFirstBrowserLanguage } from 'helper';
+import storage from 'utils/storage';
 
-export default {
+/**
+ * Init lang code
+ */
+const DEFAULT_LANG = 'en_US';
+const _langs = [
+  {
+    key: 'en_US',
+    label: 'EN',
+  },
+  {
+    key: 'zh_CN',
+    label: '中文',
+  },
+];
+
+const validLangs = _.map(_langs, ({ key }) => key);
+const $initLang = (() => {
+  const langInQuery = searchToJson().lang;
+  const langInStore = storage.getItem('lang');
+
+  let _lang = langInQuery || langInStore;
+  if (!_lang) {
+    let browserLang = getFirstBrowserLanguage();
+    if (browserLang) {
+      browserLang = browserLang.replace('-', '_');
+    }
+    _lang = browserLang;
+  }
+
+  if (_lang && _.indexOf(validLangs, _lang) > -1) {
+    return _lang;
+  }
+
+  return DEFAULT_LANG;
+})();
+
+/**
+ * Base app model
+ */
+export default extend(base, {
   namespace: 'app',
   state: {
-    nav: '',
     currentHash: '',
+    langs: _langs,
+    currentLang: null,
+    appReady: false,
   },
   reducers: {
     updateHash(state, { payload: { currentHash } }) {
@@ -16,6 +62,16 @@ export default {
     }
   },
   effects: {
+    *init(_, { put, take }) {
+      yield put({ type: 'selectLang' });
+      yield take('selectLang/@@end');
+      yield put({
+        type: 'update',
+        payload: {
+          appReady: true,
+        },
+      });
+    },
     *checkVersion(_, { call }) {
       const {
         release,
@@ -27,6 +83,24 @@ export default {
         window.location.reload(true);
       }
     },
+    *selectLang({ payload: { lang } = {} }, { put, select, call }) {
+      lang = lang || $initLang;
+      if (_.indexOf(validLangs, lang) === -1) {
+        lang = DEFAULT_LANG;
+      }
+
+      // realLoad false
+      setLang(lang, false);
+      storage.setItem('lang', lang);
+
+      yield put({
+        type: 'update',
+        payload: {
+          currentLang: lang,
+        },
+      });
+    },
+
   },
   subscriptions: {
     /**
@@ -76,6 +150,8 @@ export default {
           payload: { currentHash: hash },
         });
       });
+
+      dispatch({ type: 'init' });
     },
     checkVersion({ dispatch }) {
       if (!_DEV_) {
@@ -85,4 +161,4 @@ export default {
       }
     },
   },
-}
+});

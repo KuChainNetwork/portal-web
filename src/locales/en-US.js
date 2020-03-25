@@ -1,3 +1,5 @@
 export default {
-  'index.start': 'Getting Started',
+  'head.menu.tech': 'Technology',
+  'head.menu.news': 'News',
+  'head.menu.about': 'About',
 }

@@ -1,5 +1,10 @@
 import { message } from 'antd';
 
+
+if (typeof window.Intl === 'undefined') {
+  window.Intl = require('intl');
+}
+
 export const dva = {
   config: {
     onError(err) {

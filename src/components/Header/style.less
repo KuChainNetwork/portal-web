@@ -1,0 +1,73 @@
+
+.affix {
+  /*top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;*/
+  z-index: 9999;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+.head {
+  width: 1200px;
+  height: 100px;
+  background: #fff;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+
+  // &[data-theme="transparent"] {
+  //   background: transparent;
+  // }
+
+  .menu {
+    font-size: 16px;
+    color: #01081E;
+    text-align: center;
+    line-height: 32px;
+
+    &:hover,
+    &.active {
+      color: #0FCD8C;
+    }
+  }
+  .headRight,
+  .headLeft {
+    display: flex;
+    align-items: center;
+  }
+  // .headLeft {
+  //   .menu {
+  //     margin-right: 32px;
+  //   }
+  // }
+  .headRight {
+    .menu {
+      margin-left: 136px;
+    }
+  }
+}
+
+.logo {
+  margin-right: 40px;
+}
+
+.langSelect {
+  margin-left: 136px;
+  min-width: 60px;
+}
+
+@media (max-width: 1360px) {
+  .head {
+    .menu {
+      font-size: 12px;
+    }
+    .headRight {
+      .menu {
+        font-size: 12px;
+      }
+    }
+  }
+}
