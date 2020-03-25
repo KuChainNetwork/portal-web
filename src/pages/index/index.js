@@ -4,6 +4,7 @@ import 'animate.css';
 import { WOW } from 'wowjs';
 import Welcome from 'components/_pages/IndexPage/Welcome';
 import Possible from 'components/_pages/IndexPage/Possible';
+import Decentralized from 'components/_pages/IndexPage/Decentralized';
 import style from './style.less';
 
 export default class IndexPage extends React.Component {
@@ -20,6 +21,7 @@ export default class IndexPage extends React.Component {
       <div className={style.indexPage}>
         <Welcome />
         <Possible />
+        <Decentralized />
       </div>
     );
   }
