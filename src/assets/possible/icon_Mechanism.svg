@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>icon_Mechanism</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1440&quot;-Web-" transform="translate(-1150.000000, -1141.000000)">
+            <g id="Screen_2" transform="translate(0.000000, 797.000000)">
+                <g id="icon_Mechanism" transform="translate(1150.000000, 344.000000)">
+                    <rect id="矩形" fill="#FFFFFF" x="0" y="0" width="120" height="120"></rect>
+                    <g id="编组-3" transform="translate(16.000000, 24.000000)">
+                        <ellipse id="椭圆形" fill="#01081E" opacity="0.0799999982" cx="44" cy="63" rx="44" ry="11"></ellipse>
+                        <g id="编组-12" transform="translate(6.000000, -0.000000)">
+                            <rect id="矩形" stroke="#01081E" stroke-width="2" fill="#FFFFFF" x="10.369863" y="21.8219178" width="55.260274" height="37.5616438" rx="4"></rect>
+                            <rect id="矩形" fill="#01081E" x="0" y="58.3013699" width="76" height="2.08219178"></rect>
+                            <path d="M38,1.21207721 L3.22963273,25.0273973 L72.7703673,25.0273973 L38,1.21207721 Z" id="三角形" stroke="#01081E" stroke-width="2" fill="#FFFFFF"></path>
+                            <polygon id="三角形" fill="#0FCD8C" points="38 5.20547945 62.4657534 21.8630137 13.5342466 21.8630137"></polygon>
+                            <rect id="矩形备份-3" fill="#FFFFFF" x="36.4383562" y="14.5753425" width="2.08219178" height="5.20547945"></rect>
+                            <rect id="矩形备份-4" fill="#FFFFFF" x="31.2328767" y="14.5753425" width="2.08219178" height="5.20547945"></rect>
+                            <rect id="矩形备份-5" fill="#FFFFFF" x="41.6438356" y="14.5753425" width="2.08219178" height="5.20547945"></rect>
+                            <path d="M65.630137,28.0684932 L10.369863,28.0684932 L10.369863,59.3835616 L65.630137,59.3835616 L65.630137,28.0684932 Z" id="形状结合" stroke="#01081E" stroke-width="2" fill="#FFFFFF"></path>
+                            <rect id="矩形" fill="#01081E" x="29.1506849" y="31.2328767" width="18.739726" height="24.9863014"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

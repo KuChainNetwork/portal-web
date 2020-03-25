@@ -149,7 +149,9 @@ export const scrollToAnchor = (anchorName) => {
 };
 
 
-
+/**
+ * Events
+ */
 export const Event = {};
 
 Event.addHandler = window.addEventListener ?
@@ -266,4 +268,13 @@ export const getFirstBrowserLanguage = () => {
   }
 
   return null;
+};
+
+/**
+ * get Window rect height
+ */
+export const getWindowRectHeight = () => {
+  return window.innerHeight
+    || document.documentElement.clientHeight
+    || document.body.clientHeight;
 };

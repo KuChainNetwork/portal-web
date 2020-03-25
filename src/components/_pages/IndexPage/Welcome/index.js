@@ -1,5 +1,6 @@
 import React from 'react';
 // import { connect } from 'dva';
+import { _t } from 'utils/lang';
 import styles from './style.less';
 
 // TODO animate bg
@@ -8,9 +9,9 @@ const Welcome = () => {
     <div className={styles.welcome}>
       <div className={styles.limit}>
         <div className={styles.left}>
-          <h1>KuChain</h1>
-          <h3>Trust transfer operating system</h3>
-          <p>Provide efficient and low-cost trust value exchange and connection services for decentralized applications</p>
+          <h1>{_t('welcome.title')}</h1>
+          <h3>{_t('welcome.sub.title')}</h3>
+          <p>{_t('welcome.des')}</p>
         </div>
         <div className={styles.right}>
 
