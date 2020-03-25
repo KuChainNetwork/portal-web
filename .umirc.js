@@ -32,6 +32,7 @@ export default {
         exclude: [
           /models\//,
           /services\//,
+          /themes\//,
           /model\.(t|j)sx?$/,
           /service\.(t|j)sx?$/,
           /components\//,
@@ -41,6 +42,12 @@ export default {
       links: [{ rel: 'shortcut icon', href: '<%= PUBLIC_PATH %>favicon.png' }],
     }]
   ],
+  theme: {
+    'kc-limit-width': '1200px',
+    'primary-color': '#0FCD8C',
+    'tooltip-color': 'rgba(0,0,0,0.65)',
+    'tooltip-bg': '#FFF',
+  },
   alias: {
     src: `${__dirname}/src/`,
     helper: `${__dirname}/src/helper.js`,

@@ -26,26 +26,29 @@ const Header = ({ pathname }) => {
   return (
     <div className={styles.affix}>
       <div className={styles.head}>
-        <div className={styles.headLeft}>
-          <Link to="/" className={styles.logo}>
-            <img src={logo} alt="KuChain" />
-          </Link>
-        </div>
-        <div className={styles.headRight}>
-          <React.Fragment>
-            {_.map(rightMenus, ({ path, title }) => {
-              const cls = classname({
-                [styles.menu]: true,
-                [styles.active]: pathname.indexOf(path) === 0,
-              });
-              return (
-                <Link key={path} to={path} className={cls}>{ title }</Link>
-              );
-            })}
-          </React.Fragment>
+        <div className={styles.limit}>
 
-          <div className={styles.langSelect}>
-            <LangSelector />
+          <div className={styles.headLeft}>
+            <Link to="/" className={styles.logo}>
+              <img src={logo} alt="KuChain" />
+            </Link>
+          </div>
+          <div className={styles.headRight}>
+            <React.Fragment>
+              {_.map(rightMenus, ({ path, title }) => {
+                const cls = classname({
+                  [styles.menu]: true,
+                  [styles.active]: pathname.indexOf(path) === 0,
+                });
+                return (
+                  <Link key={path} to={path} className={cls}>{ title }</Link>
+                );
+              })}
+            </React.Fragment>
+
+            <div className={styles.langSelect}>
+              <LangSelector />
+            </div>
           </div>
         </div>
       </div>
