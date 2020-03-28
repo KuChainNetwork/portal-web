@@ -4,8 +4,8 @@ import Text from './Text';
 import { Event, getWindowRectHeight } from 'helper';
 import styles from './style.less';
 
-const AnimateRectOnScroll = ({ limitWidth = 400, offset = 100, style = {}, onScroll }) => {
-  const [changeWidth, setWidth] = useState(0);
+const AnimateRectOnScroll = ({ disableChange, limitWidth = 400, offset = 100, style = {}, onScroll }) => {
+  const [changeWidth, setWidth] = useState(disableChange ? limitWidth : 0);
 
   const animateRef = useRef(null);
   const handleScroll = useCallback(() => {
@@ -29,15 +29,18 @@ const AnimateRectOnScroll = ({ limitWidth = 400, offset = 100, style = {}, onScr
         width = per * limitWidth;
       }
 
-      setWidth(width);
+      if (!disableChange) {
+        setWidth(width);
+      }
       if (typeof onScroll === 'function') {
-        onScroll(width);
+        onScroll(disableChange ? limitWidth : width);
       }
     }
-  }, [offset, onScroll, limitWidth]);
+  }, [offset, onScroll, limitWidth, disableChange]);
 
   useEffect(() => {
     Event.addHandler(window, 'scroll', handleScroll);
+    handleScroll();
 
     return () => {
       Event.removeHandler(window, 'scroll', handleScroll);

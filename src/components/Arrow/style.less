@@ -31,3 +31,14 @@
     transform: translateY(-50%) rotate(-45deg);
   }
 }
+
+:global(.hairlines) {
+  .arrow {
+    &::after {
+      border-top: .5px solid transparent;
+      border-left: .5px solid transparent;
+      border-right: .5px solid #0FCD8C;
+      border-bottom: .5px solid #0FCD8C;
+    }
+  }
+}

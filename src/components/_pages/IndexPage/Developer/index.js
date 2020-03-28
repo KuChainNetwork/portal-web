@@ -17,7 +17,7 @@ const Developer = () => {
             {_tHTML('dev.des', { discord })}
           </div>
         </div>
-        <img src={rightBg} alt={_t('dev.title')} />
+        <img data-role="right-img" src={rightBg} alt={_t('dev.title')} />
       </div>
     </div>
   );

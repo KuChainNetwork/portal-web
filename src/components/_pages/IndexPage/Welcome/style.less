@@ -37,3 +37,43 @@
 .right {
   height: 577px;
 }
+
+@media (max-width: @kc-mb-width) {
+  .welcome {
+    min-height: auto;
+    padding-bottom: 190px;
+  }
+
+  .limit {
+    width: 100%;
+    margin: 0;
+    padding: 0 24px;
+    position: relative;
+
+    .left {
+      position: relative;
+      z-index: 2;
+      h1 {
+        font-size: 64px;
+      }
+      h3 {
+        font-size: 40px;
+        line-height: 40px;
+        margin-bottom: 48px;
+      }
+      p {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+
+    .right {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      z-index: 1;
+    }
+  }
+}

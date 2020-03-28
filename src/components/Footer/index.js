@@ -1,4 +1,5 @@
 import React from 'react';
+import { useIsMobile } from 'components/Responsive';
 import SubscribeInput from './SubscribeInput';
 import styles from './style.less';
 import f_discord from 'assets/foot/f_discord.svg';
@@ -10,6 +11,29 @@ import logo from 'assets/logo.svg';
 
 // TODO footer locale
 export default () => {
+  const isMobile = useIsMobile();
+
+  if (isMobile) {
+    return (
+      <div className={styles.mbFoot}>
+        <img src={logo} alt="KuChain" />
+
+        <div className={styles.links}>
+          <a>Usage policy</a>
+          <div className={styles.sep} />
+          <a>Disclaimer</a>
+          <div className={styles.sep} />
+          <a>Privacy Agreement</a>
+        </div>
+        <div>
+          CopyRight ©2017-{new Date().getFullYear()} KuChain.io
+          <br />
+          All Rights Reserved
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.foot}>
       <div className={styles.limit}>

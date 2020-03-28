@@ -1,5 +1,5 @@
 import { message } from 'antd';
-
+import 'utils/lib-flexible';
 
 if (typeof window.Intl === 'undefined') {
   window.Intl = require('intl');

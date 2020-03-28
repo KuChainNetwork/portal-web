@@ -4,6 +4,7 @@ import _ from 'lodash';
 // import { connect } from 'dva';
 import AnimateRectOnScroll from 'components/AnimateRectOnScroll';
 import Arrow from 'components/Arrow';
+import { useIsMobile } from 'components/Responsive';
 import { _t } from 'utils/lang';
 import styles from './style.less';
 import icon_KuChain from 'assets/possible/icon_KuChain.svg';
@@ -12,6 +13,8 @@ import icon_Community from 'assets/possible/icon_Community.svg';
 import icon_Problem from 'assets/possible/icon_Problem.svg';
 
 const ForUser = () => {
+  const isMobile = useIsMobile();
+
   const animateTextRef = useRef(null);
   const handleAnimateScroll = useCallback((w) => {
     if (animateTextRef.current &&
@@ -43,7 +46,8 @@ const ForUser = () => {
   return (
     <div className={styles.foruser}>
       <AnimateRectOnScroll
-        limitWidth={400}
+        disableChange={isMobile}
+        limitWidth={isMobile ? 145 : 400}
         onScroll={handleAnimateScroll}
       />
 

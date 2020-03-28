@@ -38,7 +38,6 @@
     width: 280px;
     word-wrap: break-word;
     word-break: break-word;
-
   }
 
   .title {
@@ -68,5 +67,40 @@
     font-size: 16px;
     color: #01081E;
     line-height: 24px;
+  }
+}
+
+@media (max-width: @kc-mb-width) {
+  .joinus {
+    margin-bottom: 32px;
+  }
+
+  .limit {
+    width: 100%;
+    margin: 0;
+    padding: 0 24px;
+
+    h2 {
+      margin-bottom: 30px;
+      text-align: left;
+      font-size: 40px;
+    }
+  }
+
+  .contacts {
+    .contact {
+      width: 100%;
+      margin-bottom: 36px;
+    }
+
+    .info {
+      width: calc(100% - 72px);
+    }
+    .title {
+      h5 {
+        font-size: 20px;
+        line-height: 28px;
+      }
+    }
   }
 }
