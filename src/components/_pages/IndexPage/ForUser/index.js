@@ -3,14 +3,15 @@ import _ from 'lodash';
 // import classname from 'classname';
 // import { connect } from 'dva';
 import AnimateRectOnScroll from 'components/AnimateRectOnScroll';
+import Arrow from 'components/Arrow';
 import { _t } from 'utils/lang';
 import styles from './style.less';
-import icon_Broker from 'assets/possible/icon_Broker.svg';
-import icon_Developer from 'assets/possible/icon_Developer.svg';
-import icon_Mechanism from 'assets/possible/icon_Mechanism.svg';
-import icon_wallet from 'assets/possible/icon_wallet.svg';
+import icon_KuChain from 'assets/possible/icon_KuChain.svg';
+import icon_Product from 'assets/possible/icon_Product.svg';
+import icon_Community from 'assets/possible/icon_Community.svg';
+import icon_Problem from 'assets/possible/icon_Problem.svg';
 
-const Possible = () => {
+const ForUser = () => {
   const animateTextRef = useRef(null);
   const handleAnimateScroll = useCallback((w) => {
     if (animateTextRef.current &&
@@ -22,25 +23,25 @@ const Possible = () => {
 
   const roles = [
     {
-      icon: icon_wallet,
-      title: _t('possible.wallet'),
+      icon: icon_KuChain,
+      title: _t('user.kuchain'),
     },
     {
-      icon: icon_Broker,
-      title: _t('possible.broker'),
+      icon: icon_Product,
+      title: _t('user.product'),
     },
     {
-      icon: icon_Developer,
-      title: _t('possible.developer'),
+      icon: icon_Community,
+      title: _t('user.community'),
     },
     {
-      icon: icon_Mechanism,
-      title: _t('possible.mechanism'),
+      icon: icon_Problem,
+      title: _t('user.problem'),
     },
   ];
 
   return (
-    <div className={styles.possible}>
+    <div className={styles.foruser}>
       <AnimateRectOnScroll
         limitWidth={400}
         onScroll={handleAnimateScroll}
@@ -49,11 +50,8 @@ const Possible = () => {
       <div className={styles.limit}>
         <div className={styles.title}>
           <AnimateRectOnScroll.Text ref={animateTextRef}>
-            <h2>{_t('possible.title')}</h2>
+            <h2>{_t('user.title')}</h2>
           </AnimateRectOnScroll.Text>
-        </div>
-        <div className={styles.des}>
-          {_t('possible.des')}
         </div>
         <div className={styles.roles}>
           {_.map(roles, ({ icon, title }, idx) => {
@@ -61,6 +59,9 @@ const Possible = () => {
               <div key={idx} className={styles.role}>
                 <img src={icon} alt={title} />
                 <p>{ title }</p>
+                <div className={styles.arrow}>
+                  <Arrow />
+                </div>
               </div>
             );
           })}
@@ -70,4 +71,4 @@ const Possible = () => {
   );
 };
 
-export default Possible;
+export default ForUser;

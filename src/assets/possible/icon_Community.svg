@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
-    <title>icon_Broker</title>
+    <title>icon_Community</title>
     <desc>Created with Sketch.</desc>
     <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="1440&quot;-Web-" transform="translate(-483.000000, -1141.000000)">
+        <g id="1440&quot;-Web-" transform="translate(-828.000000, -1061.000000)">
             <g id="Screen_2" transform="translate(0.000000, 797.000000)">
-                <g id="icon_Broker" transform="translate(483.000000, 344.000000)">
+                <g id="icon_Community" transform="translate(828.000000, 264.000000)">
                     <rect id="矩形" fill="#FFFFFF" x="0" y="0" width="120" height="120"></rect>
-                    <g id="编组-3" transform="translate(16.000000, 20.000000)">
-                        <ellipse id="椭圆形" fill="#01081E" opacity="0.0799999982" cx="44" cy="69" rx="44" ry="11"></ellipse>
+                    <g id="编组-3" transform="translate(16.000000, 18.000000)">
+                        <ellipse id="椭圆形" fill="#01081E" opacity="0.0799999982" cx="44" cy="71" rx="44" ry="11"></ellipse>
                         <g id="人" transform="translate(8.000000, 0.000000)">
                             <g id="编组-11" transform="translate(46.628458, 0.115289)" fill="#01081E" fill-rule="nonzero">
                                 <path d="M9.44055509,30.955023 C12.6706674,27.8959538 14.6855516,23.5666269 14.6855516,18.7666986 C14.6855516,10.2076664 8.27891754,3.14498374 -0.000438702415,2.11256263 L-0.000438702415,-4.85012685e-05 C9.44045115,1.04358893 16.7835503,9.04760741 16.7835503,18.7666986 C16.7835503,24.8494842 13.9072574,30.2604757 9.44055509,33.7137895 L9.44055509,30.955023 Z" id="形状结合"></path>

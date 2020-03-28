@@ -1,0 +1,33 @@
+.arrow {
+  width: 64px;
+  height: 25px;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+
+  .line {
+    width: 100%;
+    height: 1px;
+    background: #0FCD8C;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 10.6px;
+    height: 10.6px;
+    border-top: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid #0FCD8C;
+    border-bottom: 1px solid #0FCD8C;
+
+    position: absolute;
+    right: 2px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+}
