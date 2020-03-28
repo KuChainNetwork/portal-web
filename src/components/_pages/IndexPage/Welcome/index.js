@@ -1,9 +1,9 @@
 import React from 'react';
 // import { connect } from 'dva';
 import { _t } from 'utils/lang';
+import AnimateBg from './AnimateBg';
 import styles from './style.less';
 
-// TODO animate bg
 const Welcome = () => {
   return (
     <div className={styles.welcome}>
@@ -14,7 +14,7 @@ const Welcome = () => {
           <p>{_t('welcome.des')}</p>
         </div>
         <div className={styles.right}>
-
+          <AnimateBg />
         </div>
       </div>
     </div>

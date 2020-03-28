@@ -1,0 +1,29 @@
+.bg {
+  width: 300px;
+  height: 600px;
+  position: relative;
+
+
+
+  @videoSize: 760px;
+  video {
+    position: absolute;
+    top: 0;
+    right: -50px;
+    width: @videoSize;
+    height: @videoSize;
+    z-index: 1;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    right: -50px;
+    width: @videoSize;
+    height: @videoSize;
+    z-index: 2;
+  }
+}
