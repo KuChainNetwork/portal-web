@@ -4,6 +4,7 @@ import { connect } from 'dva';
 import { Helmet } from 'react-helmet';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
+import Policy from './Policy';
 import { seoInfo } from 'config';
 import styles from './style.less';
 
@@ -30,6 +31,7 @@ function BasicLayout(props) {
         {children}
       </div>
       <Footer />
+      <Policy />
     </div>
   );
 }

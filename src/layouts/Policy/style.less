@@ -1,0 +1,47 @@
+.policy {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #01081E;
+  z-index: 10000;
+
+  .close {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background-image: url(assets/close.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+    cursor: pointer;
+  }
+}
+
+.limit {
+  width: @kc-limit-width;
+  margin: 0 auto;
+  padding: 32px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  button {
+    font-size: 16px;
+    color: #01081E;
+    line-height: 24px;
+  }
+}
+
+.left {
+  font-size: 20px;
+  color: #FFFFFF;
+  line-height: 28px;
+  a {
+    font-size: 20px;
+    color: #0FCD8C;
+    line-height: 28px;
+  }
+}

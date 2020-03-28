@@ -24,4 +24,7 @@ export default {
   "join.telegram.des": "Join the KuChain Telegram community.",
   "join.twitter": "Twitter",
   "join.twitter.des": "Follow Twitter @KuChain.",
+  "policy.fine": "Fine",
+  "policy.cookie": "This site uses cookies. <a>Cookies Policy</a>.",
+  "policy.privacy": "By using this site you are agreeing to our <a>Privacy Policy</a>.",
 }
