@@ -8,6 +8,7 @@ export const v2ApiHosts = {
   WEB: 'https://blog.kuchain.io',
 };
 
+// TODO SEO info
 export const seoInfo = {
   '/': {
     title: 'KuChain',

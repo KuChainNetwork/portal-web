@@ -21,7 +21,7 @@
 }
 
 .limit {
-  width: @kc-limit-width;
+  max-width: @kc-limit-width;
   margin: 0 auto;
   padding: 32px 0;
   display: flex;
@@ -43,5 +43,16 @@
     font-size: 20px;
     color: #0FCD8C;
     line-height: 28px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .limit {
+    button {
+      margin-right: 60px;
+    }
+  }
+  .left {
+    margin-left: 20px;
   }
 }

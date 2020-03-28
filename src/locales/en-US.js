@@ -27,4 +27,6 @@ export default {
   "policy.fine": "Fine",
   "policy.cookie": "This site uses cookies. <a>Cookies Policy</a>.",
   "policy.privacy": "By using this site you are agreeing to our <a>Privacy Policy</a>.",
+  "news.title": "Latest News",
+  "news.more": "View More",
 }

@@ -44,6 +44,7 @@ export default {
   ],
   theme: {
     'kc-limit-width': '1200px',
+    'kc-mb-width': '600px',
     'primary-color': '#0FCD8C',
     'tooltip-color': 'rgba(0,0,0,0.65)',
     'tooltip-bg': '#FFF',
