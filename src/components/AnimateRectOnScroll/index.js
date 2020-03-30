@@ -10,30 +10,31 @@ const AnimateRectOnScroll = ({ disableChange, limitWidth = 400, offset = 100, st
   const animateRef = useRef(null);
   const handleScroll = useCallback(() => {
     if (animateRef.current) {
-      const winRectHeight = getWindowRectHeight();
-      const { top, bottom } = animateRef.current.getBoundingClientRect();
-      const per1 = (winRectHeight - offset - bottom) / (winRectHeight - offset * 2);
-      const per2 = (winRectHeight - offset - top) / (winRectHeight - offset * 2);
-      const min = Math.min(per1, per2);
-      const max = Math.max(per1, per2);
-
-      const per = min < 0 ? min : max;
-
-      let width;
-      if (per > 1) {
-        width = limitWidth;
-      } else
-      if (per < 0) {
-        width = 0;
-      } else {
-        width = per * limitWidth;
-      }
+      let width = limitWidth;
 
       if (!disableChange) {
-        setWidth(width);
+        const winRectHeight = getWindowRectHeight();
+        const { top, bottom } = animateRef.current.getBoundingClientRect();
+        const per1 = (winRectHeight - offset - bottom) / (winRectHeight - offset * 2);
+        const per2 = (winRectHeight - offset - top) / (winRectHeight - offset * 2);
+        const min = Math.min(per1, per2);
+        const max = Math.max(per1, per2);
+
+        const per = min < 0 ? min : max;
+
+        if (per > 1) {
+          width = limitWidth;
+        } else
+        if (per < 0) {
+          width = 0;
+        } else {
+          width = per * limitWidth;
+        }
       }
+
+      setWidth(width);
       if (typeof onScroll === 'function') {
-        onScroll(disableChange ? limitWidth : width);
+        onScroll(width);
       }
     }
   }, [offset, onScroll, limitWidth, disableChange]);
