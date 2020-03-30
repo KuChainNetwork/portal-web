@@ -1,14 +1,13 @@
 
-// localStorage 前缀
+// LocalStorage Prefix
 export const storagePrefix = 'kuchain';
 
 export const v2ApiHosts = {
-  // rm proxy
-  // WEB: 'http://localhost:2999/api',
-  WEB: 'https://blog.kuchain.io',
+  // Wordpress Address
+  WORDPRESS: 'https://blog.kuchain.io',
 };
 
-// TODO SEO info
+// TODO SEO Info
 export const seoInfo = {
   '/': {
     title: 'KuChain',

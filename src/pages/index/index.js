@@ -18,6 +18,7 @@ export default class IndexPage extends React.Component {
     }).init();
   }
 
+  // TODO rm News
   render() {
     return (
       <div className={style.indexPage}>

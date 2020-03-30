@@ -1,6 +1,5 @@
 /**
- * request库
- * runtime: next/browser
+ * requests
  */
 import qs from 'qs';
 import fetch from 'isomorphic-fetch';
@@ -9,10 +8,10 @@ import * as config from 'config';
 import { formlize } from 'helper';
 import memStorage from './memStorage';
 
-let xVersion = null; // 调试 x-version
+let xVersion = null; // debug x-version
 
 const { v2ApiHosts } = config;
-const host = v2ApiHosts.WEB;
+const host = v2ApiHosts.WORDPRESS;
 
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
@@ -32,17 +31,17 @@ function parseJSON(response) {
   return response.json();
 }
 
-function checkError(json) {
-  if (typeof json.code === 'number') {
-    json.code = `${json.code}`;
-  }
+// function checkError(json) {
+//   if (typeof json.code === 'number') {
+//     json.code = `${json.code}`;
+//   }
 
-  if (typeof json.success === 'undefined' || json.success === false) {
-    throw json;
-  }
+//   if (typeof json.success === 'undefined' || json.success === false) {
+//     throw json;
+//   }
 
-  return json;
-}
+//   return json;
+// }
 
 function isDefaultHost(url) {
   return url.indexOf('/') === 0 && url.indexOf('//') !== 0;
@@ -76,7 +75,6 @@ export function setXVersion(value = '') {
   storage.setItem('_x_version', value);
 }
 
-// runtime: browser
 window.setXVersion = setXVersion;
 
 export function requestFetch(url, options = {
@@ -162,7 +160,7 @@ export function pull(url, query = {}) {
   if (isAPI(url)) {
     query.c = getCsrf(url) || undefined;
     query.lang = query.lang || storage.getItem('lang');
-    query._t = Date.now(); // 防止缓存机制
+    query._t = Date.now(); // Prevent caching mechanism
   }
   let queryStr = qs.stringify(query) || '';
   if (queryStr) {

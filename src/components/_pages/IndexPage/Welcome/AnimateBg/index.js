@@ -41,7 +41,7 @@ const AnimateBg = () => {
         playsInline={false}
         autoPlay={false}
         loop={false}
-        alt="KuChain.io"
+        alt="kuchain.network"
         src={bg}
         ref={videoRef}
         onCanPlay={handleCanPlay}

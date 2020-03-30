@@ -5,7 +5,7 @@ import filter from './filter';
 import sort from './sort';
 
 /**
- * 分页模型
+ * Paging model
  */
 export default extend(base, filter, sort, {
   state: {
@@ -16,9 +16,9 @@ export default extend(base, filter, sort, {
     savePage(state, { payload: { items, totalNum, currentPage, page, pageSize }, listName = '' }) {
       const current = currentPage ? toNumber(currentPage) : toNumber(page);
       const pagination = {
-        current, // 当前页数
-        total: toNumber(totalNum), // 数据总数
-        pageSize: toNumber(pageSize), // 每页条数
+        current, // current page number
+        total: toNumber(totalNum), // total data size
+        pageSize: toNumber(pageSize), // size per page
       };
       let newState = null;
       if (listName) {

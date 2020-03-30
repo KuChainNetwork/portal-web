@@ -3,7 +3,7 @@ import FormData from 'form-data';
 import moment from 'moment';
 
 /**
- * 字符串转时间戳
+ * Date string to timestamp
  * @param timestamp
  * @param format
  * @returns {string}
@@ -16,8 +16,8 @@ export const timestamp = (date) => {
 };
 
 /**
- * 时间戳格式化
- * 按本地时区格式化
+ * Timestamp formatting
+ * Format by local time zone
  * @param timestamp ms
  * @param format
  * @returns {string}
@@ -27,7 +27,7 @@ export const showDatetime = (timestamp, format = 'YYYY/MM/DD HH:mm:ss') => {
 };
 
 /**
- * 按固定时区格式化
+ * Format by fixed time zone
  * @param {*} ts
  * @param {*} zone
  */
@@ -36,7 +36,7 @@ export const showDateTimeByZone = (ts, format = 'YYYY/MM/DD HH:mm:ss', zone = 8)
 };
 
 /**
- * 对象转表单数据
+ * Object to form data
  * @param obj
  * @returns {*}
  */
@@ -54,7 +54,7 @@ export const formlize = (obj) => {
 };
 
 /**
- * 增加千分位分隔符
+ * Thousands separator
  * @param n
  * @returns {string}
  */
@@ -68,7 +68,7 @@ const SeparateNumberPool = {
     return this.pool[k];
   },
   set(k, v) {
-    if (this.poolCount > 100000) { // 清理缓存
+    if (this.poolCount > 100000) { // Clear cache
       this.poolCount = 0;
       this.pool = Object.create(null);
     }
@@ -123,7 +123,7 @@ export const separateNumber = (n) => {
 
 
 /**
- * 是否在微信浏览器打开
+ * Whether open in WeChat browser
  *
  * @returns {boolean}
  */
@@ -135,9 +135,8 @@ export const isOpenInWechat = (pUA) => {
 };
 
 /**
- * 滚动到锚点
+ * Scroll to anchor
  * @param anchorName
- * runtime: browser
  */
 export const scrollToAnchor = (anchorName) => {
   if (anchorName) {
@@ -204,8 +203,8 @@ Event.triggerEvent = (target, type) => {
 
 /**
  *
- * @description 获取queryString字符串转换为JSON对象
- * @param {String} search 可选参数 无是自动获取浏览器后面的queryString
+ * @description Get queryString string into JSON object
+ * @param {String} search Optional parameter None is to automatically obtain the queryString behind the location
  * @returns {Object}
  */
 export function searchToJson(search) {
@@ -234,7 +233,7 @@ export function searchToJson(search) {
 }
 
 /**
- * 获取浏览器语言
+ * Get browser language
  *
  * @returns {String|null}
  */

@@ -54,9 +54,9 @@ const Header = ({ pathname }) => {
               </div>
             </Responsive>
 
-            <Responsive.Mobile>
+            {/* <Responsive.Mobile>
               side
-            </Responsive.Mobile>
+            </Responsive.Mobile> */}
           </div>
         </div>
       </div>

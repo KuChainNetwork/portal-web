@@ -4,7 +4,7 @@ import { genCompare } from './modelHelper';
 
 
 /**
- * 轮询模型
+ * Polling model
  * @type {boolean}
  */
 

@@ -1,5 +1,5 @@
 /**
- * 筛选器模型
+ * Filter model
  */
 export default {
   state: {

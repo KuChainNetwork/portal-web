@@ -6,7 +6,7 @@ import style from './style.less';
 
 class NewsPagination extends React.Component {
   /**
-   * 处理分页参数
+   * Handling pagination parameters
    * @param {*} page
    * @param {*} type 'page' | 'prev' | 'next'
    * @param {*} originalElement

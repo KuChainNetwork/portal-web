@@ -40,10 +40,12 @@ const AnimateRectOnScroll = ({ disableChange, limitWidth = 400, offset = 100, st
 
   useEffect(() => {
     Event.addHandler(window, 'scroll', handleScroll);
+    Event.addHandler(window, 'resize', handleScroll);
     handleScroll();
 
     return () => {
       Event.removeHandler(window, 'scroll', handleScroll);
+      Event.removeHandler(window, 'resize', handleScroll);
     };
   }, [handleScroll]);
 

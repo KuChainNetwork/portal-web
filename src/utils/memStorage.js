@@ -1,9 +1,8 @@
 /**
  * memStorage
- * runtime: next/browser
  */
 /**
- * memStorage 内存中临时存储，结构和接口和 util/storage 保持相同
+ * memStorage Temporary storage in memory, Interface is same as util/storage
  * @type {{}}
  */
 

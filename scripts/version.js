@@ -1,5 +1,5 @@
 /**
- * 生产version文件到dist
+ * Produce version file to dist
  */
 const fs = require('fs');
 const path = require('path');

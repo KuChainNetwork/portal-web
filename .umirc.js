@@ -13,7 +13,7 @@ export default {
   ignoreMomentLocale: true,
   plugins: [
     ['@umijs/plugin-prerender', {
-      exclude: ['/', '/index', '/brande'],
+      exclude: ['/', '/index'],
     }],
     // ref: https://umijs.org/plugin/umi-plugin-react.html
     ['umi-plugin-react', {
@@ -46,6 +46,7 @@ export default {
     'kc-limit-width': '1200px',
     'kc-mb-width': '600px',
     'primary-color': '#0FCD8C',
+    'btn-primary-color': '#01081E',
     'tooltip-color': 'rgba(0,0,0,0.65)',
     'tooltip-bg': '#FFF',
   },
@@ -71,7 +72,7 @@ export default {
       .tap(options => {
         return {
           ...options,
-          limit: 10, // 设为极低值，不进行处理
+          limit: 10, // Set to extremely low values, stop processing
         };
       });
   },

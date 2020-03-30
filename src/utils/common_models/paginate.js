@@ -1,5 +1,5 @@
 /**
- * 分页模型
+ * Paging model
  */
 export default {
   state: {
@@ -15,9 +15,9 @@ export default {
     ) {
       const current = typeof currentPage === 'number' ? currentPage : page;
       const pagination = {
-        total: totalNum, // 数据总数
-        current, // 当前页数
-        pageSize, // 每页条数
+        total: totalNum, // total data size
+        current, // current page number
+        pageSize, // size per page
       };
       return {
         ...state,

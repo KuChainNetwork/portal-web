@@ -31,6 +31,7 @@ function BasicLayout(props) {
         {children}
       </div>
       <Footer />
+      {/* // TODO 第一期移除协议 */}
       <Policy />
     </div>
   );

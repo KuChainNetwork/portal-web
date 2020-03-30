@@ -4,7 +4,7 @@ import base from './base';
 import { genCompare } from './modelHelper';
 
 /**
- * 倒计数模型
+ * Countdown model
  */
 const countingPool = {};
 
