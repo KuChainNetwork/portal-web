@@ -9,7 +9,7 @@ import styles from './style.less';
 // import f_twitter from 'assets/foot/f_twitter.svg';
 import logo from 'assets/logo.svg';
 
-// TODO V0.2 footer locale & policy
+// TODO V0.2 footer locale & policy && links
 export default () => {
   const isMobile = useIsMobile();
 

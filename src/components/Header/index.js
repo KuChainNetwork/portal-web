@@ -58,9 +58,11 @@ const Header = ({ pathname }) => {
               </div>
             </Responsive>
 
-            {/* <Responsive.Mobile>
-              side
-            </Responsive.Mobile> */}
+            <Responsive.Mobile>
+              <div className={styles.langSelectMb}>
+                <LangSelector />
+              </div>
+            </Responsive.Mobile>
           </div>
         </div>
       </div>
