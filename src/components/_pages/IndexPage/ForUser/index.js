@@ -3,7 +3,7 @@ import _ from 'lodash';
 // import classname from 'classname';
 // import { connect } from 'dva';
 import AnimateRectOnScroll from 'components/AnimateRectOnScroll';
-import Arrow from 'components/Arrow';
+// import Arrow from 'components/Arrow';
 import { useIsMobile } from 'components/Responsive';
 import { _t } from 'utils/lang';
 import styles from './style.less';

@@ -30,4 +30,6 @@ export default {
   "policy.privacy": "By using this site you are agreeing to our <a>Privacy Policy</a>.",
   "news.title": "KuChain News",
   "news.more": "View More",
+  "comming.title": "Coming soon, <br/>stay tuned",
+  "comming.back": "Back to Home",
 }

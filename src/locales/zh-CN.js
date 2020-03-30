@@ -30,4 +30,6 @@ export default {
   "policy.privacy": "By using this site you are agreeing to our <a>Privacy Policy</a>.",
   "news.title": "最新消息",
   "news.more": "View More",
+  "comming.title": "即将上线 敬请期待",
+  "comming.back": "返回首页",
 }
