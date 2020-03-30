@@ -6,7 +6,7 @@ import Arrow from 'components/Arrow';
 import { useIsMobile } from 'components/Responsive';
 import styles from './style.less';
 
-// TODO data
+// TODO V0.2 data
 const LatestNews = () => {
   const isMobile = useIsMobile();
 

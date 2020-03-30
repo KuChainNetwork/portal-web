@@ -8,20 +8,24 @@ import { _t } from 'utils/lang';
 import styles from './style.less';
 import logo from 'assets/logo.svg';
 
-// TODO sidebar
+// TODO V0.2 sidebar
 const Header = ({ pathname }) => {
   const rightMenus = [
     {
-      title: _t('head.menu.tech'),
-      path: '/technology',
+      title: _t('head.menu.whykuchain'),
+      path: '/comming/why-kuchain',
     },
     {
       title: _t('head.menu.news'),
-      path: '/news',
+      path: '/comming/news',
     },
     {
-      title: _t('head.menu.about'),
-      path: '/about',
+      title: _t('head.menu.community'),
+      path: '/comming/community',
+    },
+    {
+      title: _t('head.menu.blog'),
+      path: '/comming/blog',
     },
   ];
 

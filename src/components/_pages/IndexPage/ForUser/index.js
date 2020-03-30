@@ -43,6 +43,7 @@ const ForUser = () => {
     },
   ];
 
+  // TODO V0.2 arrow
   return (
     <div className={styles.foruser}>
       <AnimateRectOnScroll
@@ -63,9 +64,9 @@ const ForUser = () => {
               <div key={idx} className={styles.role}>
                 <img src={icon} alt={title} />
                 <p>{ title }</p>
-                <div className={styles.arrow}>
+                {/* <div className={styles.arrow}>
                   <Arrow />
-                </div>
+                </div> */}
               </div>
             );
           })}

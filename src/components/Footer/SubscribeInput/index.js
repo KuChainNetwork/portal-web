@@ -5,7 +5,6 @@ import styles from './style.less';
 
 const { formAction, hiddenName } = mailchimpSubscribe;
 
-// TODO config
 const SubscribeInput = () => {
   const [value, setValue] = useState(undefined);
 

@@ -5,7 +5,7 @@ import { WOW } from 'wowjs';
 import Welcome from 'components/_pages/IndexPage/Welcome';
 import ForUser from 'components/_pages/IndexPage/ForUser';
 import Developer from 'components/_pages/IndexPage/Developer';
-import LatestNews from 'components/_pages/IndexPage/LatestNews';
+// import LatestNews from 'components/_pages/IndexPage/LatestNews';
 import JoinUs from 'components/_pages/IndexPage/JoinUs';
 import style from './style.less';
 
@@ -18,14 +18,14 @@ export default class IndexPage extends React.Component {
     }).init();
   }
 
-  // TODO rm News
+  // TODO V0.2 News
   render() {
     return (
       <div className={style.indexPage}>
         <Welcome />
         <ForUser />
         <Developer />
-        <LatestNews />
+        {/* <LatestNews /> */}
         <JoinUs />
       </div>
     );

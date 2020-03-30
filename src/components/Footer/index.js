@@ -1,15 +1,15 @@
 import React from 'react';
 import { useIsMobile } from 'components/Responsive';
-import SubscribeInput from './SubscribeInput';
+// import SubscribeInput from './SubscribeInput';
 import styles from './style.less';
-import f_discord from 'assets/foot/f_discord.svg';
-import f_github from 'assets/foot/f_github.svg';
-import f_reddit from 'assets/foot/f_reddit.svg';
-import f_telegram from 'assets/foot/f_telegram.svg';
-import f_twitter from 'assets/foot/f_twitter.svg';
+// import f_discord from 'assets/foot/f_discord.svg';
+// import f_github from 'assets/foot/f_github.svg';
+// import f_reddit from 'assets/foot/f_reddit.svg';
+// import f_telegram from 'assets/foot/f_telegram.svg';
+// import f_twitter from 'assets/foot/f_twitter.svg';
 import logo from 'assets/logo.svg';
 
-// TODO footer locale
+// TODO V0.2 footer locale & policy
 export default () => {
   const isMobile = useIsMobile();
 
@@ -18,13 +18,13 @@ export default () => {
       <div className={styles.mbFoot}>
         <img src={logo} alt="KuChain" />
 
-        <div className={styles.links}>
+        {/* <div className={styles.links}>
           <a>Usage policy</a>
           <div className={styles.sep} />
           <a>Disclaimer</a>
           <div className={styles.sep} />
           <a>Privacy Agreement</a>
-        </div>
+        </div> */}
         <div>
           CopyRight ©2017-{new Date().getFullYear()} KuChain.io
           <br />
@@ -37,7 +37,7 @@ export default () => {
   return (
     <div className={styles.foot}>
       <div className={styles.limit}>
-        <div className={styles.row}>
+        {/* <div className={styles.row}>
           <div className={styles.col}>
             <h5>For Users</h5>
             <a>Get to know KuCoin</a>
@@ -62,12 +62,12 @@ export default () => {
             <h5>Get KuChain Latest News</h5>
             <SubscribeInput />
           </div>
-        </div>
+        </div> */}
 
         <div className={styles.copyright}>
           <img src={logo} alt="KuChain" />
           <div className={styles.right}>
-            <div className={styles.links}>
+            {/* <div className={styles.links}>
               <a>Usage policy</a>
               <div className={styles.sep} />
               <a>Disclaimer</a>
@@ -75,7 +75,7 @@ export default () => {
               <a>Cookie policy</a>
               <div className={styles.sep} />
               <a>Privacy Agreement</a>
-            </div>
+            </div> */}
             <span>CopyRight ©2017-{new Date().getFullYear()} KuChain.io All Rights Reserved</span>
           </div>
         </div>

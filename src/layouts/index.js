@@ -31,8 +31,8 @@ function BasicLayout(props) {
         {children}
       </div>
       <Footer />
-      {/* // TODO 第一期移除协议 */}
-      <Policy />
+      {/* // TODO V0.2 Policy */}
+      {/* <Policy /> */}
     </div>
   );
 }
