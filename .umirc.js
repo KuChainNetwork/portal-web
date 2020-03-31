@@ -7,14 +7,10 @@ const publicPath = _DEV_ ? '/' : `/${version}/`;
 
 // ref: https://umijs.org/config/
 export default {
-  ssr: true,
   treeShaking: true,
   publicPath,
   ignoreMomentLocale: true,
   plugins: [
-    ['@umijs/plugin-prerender', {
-      exclude: ['/', '/index'],
-    }],
     // ref: https://umijs.org/plugin/umi-plugin-react.html
     ['umi-plugin-react', {
       antd: true,
