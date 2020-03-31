@@ -2,17 +2,20 @@ import React from 'react';
 // import { connect } from 'dva';
 import { Link } from 'components/Router';
 import Arrow from 'components/Arrow';
+import { useIsMobile } from 'components/Responsive';
 import { _t, _tHTML } from 'utils/lang';
 import styles from './style.less';
 import tag from 'assets/comming/kuchain-tag.svg';
 import bg from 'assets/comming/comming-global.svg';
 
 const Comming = () => {
+  const isMobile = useIsMobile();
+
   return (
     <div className={styles.comming}>
       <div className={styles.limit}>
         <div className={styles.left}>
-          <h2>{_tHTML('comming.title')}</h2>
+          <h2>{_tHTML(isMobile ? 'comming.title.mb' : 'comming.title')}</h2>
           <img src={tag} alt="KuChain" />
 
           <div>

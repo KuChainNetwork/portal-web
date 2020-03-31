@@ -31,5 +31,6 @@ export default {
   "news.title": "KuChain News",
   "news.more": "View More",
   "comming.title": "Coming soon, <br/>stay tuned",
+  "comming.title.mb": "Coming soon, <br/>stay tuned",
   "comming.back": "Back to Home",
 }

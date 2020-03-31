@@ -31,5 +31,6 @@ export default {
   "news.title": "最新消息",
   "news.more": "View More",
   "comming.title": "即将上线 敬请期待",
+  "comming.title.mb": "即将上线<br/>敬请期待",
   "comming.back": "返回首页",
 }
