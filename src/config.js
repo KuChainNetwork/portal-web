@@ -14,12 +14,3 @@ export const mailchimpSubscribe = {
   // Mailchimp form hidden name
   hiddenName: 'b_62053eb433ce5c9c4f226590f_1bd3042b54',
 };
-
-// TODO SEO Info
-export const seoInfo = {
-  '/': {
-    title: 'KuChain',
-    description: '',
-    keywords: 'Blockchain,KuChain',
-  },
-}

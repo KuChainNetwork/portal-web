@@ -1,4 +1,7 @@
 export default {
+  "seo.common.title": "KuChain|Operating System of Trust Circulation",
+  "seo.common.des": "KuChain serves DApps with exchange and connection of trust value at high efficiency and low cost.",
+  "seo.common.keywords": "KuChain,Blockchain,Trust Circulation,KuChain Community",
   "head.menu.whykuchain": "Why KuChain?",
   "head.menu.news": "News",
   "head.menu.community": "Community",

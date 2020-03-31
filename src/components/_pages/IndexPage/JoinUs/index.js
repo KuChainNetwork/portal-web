@@ -51,14 +51,13 @@ const TitleNode = ({ title, link }) => {
   return titleNode;
 };
 
-// TODO links
 const JoinUs = () => {
   const contacts = [
     {
       icon: join_discord,
       title: _t('join.discord'),
       des: _t('join.discord.des'),
-      link: 'https://discord.gg/KKxbPf',
+      link: 'https://discord.gg/2tWtHDm',
       recommend: true,
     },
     // {
@@ -71,7 +70,7 @@ const JoinUs = () => {
       icon: join_gitHub,
       title: _t('join.github'),
       des: _t('join.github.des'),
-      link: '',
+      link: 'https://github.com/KuChainNetwork',
     },
     {
       icon: join_telegram,
@@ -86,7 +85,7 @@ const JoinUs = () => {
       icon: join_twitter,
       title: _t('join.twitter'),
       des: _t('join.twitter.des'),
-      link: '',
+      link: 'https://twitter.com/KuChainOfficia',
     },
   ];
 
