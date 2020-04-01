@@ -66,8 +66,8 @@ export function setCsrf(value = '') {
   memStorage.setItem('csrf', value);
 }
 
-export function setKuCoinCsrf(value = '') {
-  memStorage.setItem('kucoinCsrf', value);
+export function setKuChainCsrf(value = '') {
+  memStorage.setItem('kuchainCsrf', value);
 }
 
 export function setXVersion(value = '') {

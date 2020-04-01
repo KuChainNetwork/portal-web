@@ -40,7 +40,7 @@ export default () => {
         {/* <div className={styles.row}>
           <div className={styles.col}>
             <h5>For Users</h5>
-            <a>Get to know KuCoin</a>
+            <a>Get to know KuChain</a>
             <a>Product architecture</a>
             <a>Community governance</a>
             <a>Common problem</a>
