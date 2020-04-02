@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="361px" height="172px" viewBox="0 0 361 172" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <!-- Generator: Sketch 61 (89581) - https://sketch.com -->
     <title>编组 26</title>
     <desc>Created with Sketch.</desc>
     <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -11,8 +11,8 @@
                     <g id="编组-23" transform="translate(102.000000, 9.000000)">
                         <rect id="矩形" stroke="#01081E" stroke-width="2" fill="#FFFFFF" x="9" y="9" width="223" height="129"></rect>
                         <rect id="矩形" fill="#EBECED" x="79" y="51.5" width="83" height="34"></rect>
-                        <text id="&lt;-/-…-&gt;" font-family="Helvetica" font-size="24" font-weight="normal" fill="#01081E">
-                            <tspan x="85" y="84">&lt; / … &gt;</tspan>
+                        <text id="&lt;-/-…-&gt;" font-family="URWDIN-Regular, URW DIN" font-size="24" font-weight="normal" fill="#01081E">
+                            <tspan x="85" y="78">&lt; / … &gt;</tspan>
                         </text>
                         <circle id="椭圆形" stroke="#01081E" stroke-width="2" fill="#FFFFFF" cx="8" cy="8" r="7"></circle>
                         <circle id="椭圆形备份-3" stroke="#01081E" stroke-width="2" fill="#FFFFFF" cx="9" cy="137" r="7"></circle>
@@ -25,7 +25,7 @@
                     <g id="编组-24">
                         <polygon id="路径-4" stroke="#01081E" stroke-width="2" fill="#FFFFFF" points="11.0066745 48.5543608 1.52535882 58.0356765 0 70.5325281 15.6282947 64.7469747"></polygon>
                         <polygon id="路径-4备份" stroke="#01081E" stroke-width="2" fill="#FFFFFF" transform="translate(58.581873, 59.543444) scale(-1, 1) translate(-58.581873, -59.543444) " points="61.7744004 48.5543608 52.2930847 58.0356765 50.7677259 70.5325281 66.3960205 64.7469747"></polygon>
-                        <path d="M12.9891036,65.1409797 L53.3731104,65.1409797 C54.2716889,59.8803598 54.7378573,54.2876334 54.7378573,48.5543608 C54.7378573,22.2252105 44.8773264,1 33.181107,1 C21.4848876,1 11.6243567,22.2252105 11.6243567,48.5543608 C11.6243567,54.2876334 12.0905251,59.8803598 12.9891048,65.1409799 Z" id="形状结合" stroke="#01081E" stroke-width="2" fill="#FFFFFF"></path>
+                        <path d="M12.9891101,65.141011 L53.373105,65.141011 C54.271687,59.880382 54.7378573,54.2876448 54.7378573,48.5543608 C54.7378573,22.2252105 44.8773264,1 33.181107,1 C21.4848876,1 11.6243567,22.2252105 11.6243567,48.5543608 C11.6243567,54.2876448 12.090527,59.8803819 12.9891101,65.141011 Z" id="形状结合" stroke="#01081E" stroke-width="2" fill="#FFFFFF"></path>
                         <rect id="矩形" fill="#01081E" x="25" y="15" width="17" height="20"></rect>
                         <rect id="矩形" fill="#01081E" x="32.4164714" y="70.6332139" width="2" height="8.60215054"></rect>
                         <rect id="矩形备份-32" fill="#01081E" x="23.2408441" y="70.6332139" width="2" height="6.11708483"></rect>

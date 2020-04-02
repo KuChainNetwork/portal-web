@@ -6,7 +6,7 @@ import { useIsMobile } from 'components/Responsive';
 import { _t, _tHTML } from 'utils/lang';
 import styles from './style.less';
 import tag from 'assets/comming/kuchain-tag.svg';
-import bg from 'assets/comming/comming-global.svg';
+import bg from 'assets/comming/comming_earth.svg';
 
 const Comming = () => {
   const isMobile = useIsMobile();
