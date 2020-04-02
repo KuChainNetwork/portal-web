@@ -16,7 +16,7 @@ export default {
   "user.problem": "FAQ",
   "dev.title": "For Developers",
   "dev.des": "Join discussion with <img src={discord} alt=\"Discord\" /> Discord community developers. KuChain is a free open source blockchain service that can provide developers and entrepreneurs with a platform for deploying and running high-performance blockchain applications. The Beginner's Guide, API and SDK integration documents of KuChain will soon be launched on the developer's column.",
-  "join.title": "Join KuChain Community",
+  "join.title": "Join Us",
   "join.recommend": "Recommend",
   "join.discord": "Discord",
   "join.discord.des": "Talk with KuChain developers",

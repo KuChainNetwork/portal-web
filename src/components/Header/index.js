@@ -19,10 +19,10 @@ const Header = ({ pathname }) => {
       title: _t('head.menu.news'),
       path: '/news',
     },
-    {
-      title: _t('head.menu.community'),
-      path: '/community',
-    },
+    // {
+    //   title: _t('head.menu.community'),
+    //   path: '/community',
+    // },
     {
       title: _t('head.menu.blog'),
       path: '/blog',
