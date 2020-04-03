@@ -1,0 +1,33 @@
+.AllNews {
+  &-pc {
+    display: block;
+    width: 743px;
+  }
+  &-mobile {
+    display: none;
+  }
+  :global .ant-tabs-bar {
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: @kc-mb-width) {
+  .AllNews {
+    &-pc {
+      display: none;
+    }
+    &-mobile {
+      display: block;
+      &-title {
+        font-family: PingFangSC-Medium;
+        font-size: 20px;
+        color: #01081e;
+        letter-spacing: 0;
+        line-height: 24px;
+        margin-bottom: 24px;
+        box-sizing: border-box;
+        padding-left: 24px;
+      }
+    }
+  }
+}

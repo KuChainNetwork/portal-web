@@ -1,0 +1,22 @@
+.newsPage {
+  box-sizing: border-box;
+  width: @kc-limit-width;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 120px;
+}
+
+@media (max-width: @kc-mb-width) {
+  .newsPage {
+    justify-content: center;
+    width: 100%;
+    &-left{
+      width: 100%;
+    }
+    &-right {
+      display: none;
+    }
+  }
+}
