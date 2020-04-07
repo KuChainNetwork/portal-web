@@ -1,0 +1,55 @@
+.menuDrawer {
+  :global(.ant-drawer-content-wrapper) {
+    width: auto !important;
+  }
+  :global(.ant-drawer-body) {
+    padding: 0;
+  }
+  .menuContent {
+    box-sizing: border-box;
+    padding: 72px 24px 0;
+    width: 300px;
+    .menu {
+      cursor: pointer;
+      font-size: 16px;
+      color: #01081e;
+      display: block;
+      height: 56px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      &:hover,
+      &.active {
+        color: #0fcd8c;
+      }
+      img {
+        height: 16px;
+        margin-right: 8px;
+      }
+    }
+  }
+}
+.langDrawer {
+  :global .ant-drawer-header {
+    text-align: center;
+  }
+  .slectLang {
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 56px;
+      &-left {
+        font-family: URWDIN-Regular;
+        font-size: 16px;
+        color: rgba(1, 8, 30, 0.87);
+        line-height: 24px;
+      }
+      &-right {
+        img{
+          width: 20px;
+        }
+      }
+    }
+  }
+}
