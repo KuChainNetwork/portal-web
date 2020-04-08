@@ -25,10 +25,10 @@ export default props => {
         <div className={styles['desc']}>{_t('why.intro.desc')}</div>
         {introData.map((item, index) => (
           <div className={styles['introItem']} key={index}>
-            {/* <div className={styles['introItem-top']}>
+            <div className={styles['introItem-top']}>
               <div className={styles['introItem-top-mark']}></div>
               <div className={styles['introItem-top-title']}>{item.title}</div>
-            </div> */}
+            </div>
             <div className={styles['introItem-main']}>{item.desc}</div>
           </div>
         ))}

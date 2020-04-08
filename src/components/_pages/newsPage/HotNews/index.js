@@ -3,12 +3,20 @@ import styles from './style.less';
 import { _t } from 'utils/lang';
 
 export default props => {
+  const { _setDetailShowCallback } = props;
+
   return (
     <div className={styles['HotNews']}>
       <div className={styles['HotNews-title']}>{_t('news.hot')}</div>
       <div className={styles['HotNews-list']}>
         {[1, 2, 3].map(item => (
-          <div key={item} className={styles['listItem']}>
+          <div
+            onClick={() => {
+              _setDetailShowCallback(true);
+            }}
+            key={item}
+            className={styles['listItem']}
+          >
             <div className={styles['listItem-left']}>
               <div className={styles['circle']}></div>
             </div>

@@ -5,6 +5,7 @@ import NewsListCard from 'components/_pages/newsPage/NewsListCard';
 
 export default props => {
   const _setDetailShowCallback = props._setDetailShowCallback;
+
   return (
     <div className={styles['NewsList']}>
       <div className={styles['NewsList-main']}>

@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './style.less';
 import newsImg from 'assets/news/news.jpg';
 import Arrow from 'components/Arrow';
+import { _t } from 'utils/lang';
 
 export default props => {
   const _setDetailShowCallback = props._setDetailShowCallback;
@@ -14,7 +15,7 @@ export default props => {
         className={styles['detail-return']}
       >
         <Arrow left={true} />
-        <span>返回上级</span>
+        <span>{_t('news.return')}</span>
       </div>
       <div className={styles['detail-title']}>库币新起航，惊喜福利月</div>
       <div className={styles['detail-dateType']}>2020.3.26 23:11:49 周报</div>

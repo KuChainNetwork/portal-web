@@ -7,6 +7,7 @@ const { TabPane } = Tabs;
 
 export default props => {
   const _setDetailShowCallback = props._setDetailShowCallback;
+
   const paneData = [
     {
       tab: _t('news.all'),
@@ -29,9 +30,11 @@ export default props => {
       key: '4',
     },
   ];
+
   function callback(key) {
     console.log(key);
   }
+  
   return (
     <div className={styles['AllNews']}>
       <div className={styles['AllNews-pc']}>
