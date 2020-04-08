@@ -4,6 +4,7 @@ import { Drawer } from 'antd';
 import classname from 'classname';
 import { Link } from 'components/Router';
 import { connect } from 'dva';
+import { _t } from 'utils/lang';
 
 const MobileMenu = props => {
   const { rightMenus, pathname, cRef, langs, currentLang, dispatch } = props;
@@ -69,7 +70,7 @@ const MobileMenu = props => {
         <Drawer
           className={styles['langDrawer']}
           width="100%"
-          title="选择语言"
+          title={_t('head.mobile.title')}
           placement="right"
           onClose={_langclose}
           visible={langShow}

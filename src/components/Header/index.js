@@ -15,7 +15,7 @@ const Header = ({ pathname }) => {
   const mobileMenuRef = useRef(null);
   const rightMenus = [
     {
-      title: '首页',
+      title: _t('head.mobile.home'),
       path: '/',
       icon: 'icon_index',
       mobile: true,

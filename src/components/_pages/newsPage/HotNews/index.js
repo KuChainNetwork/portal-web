@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './style.less';
+import { _t } from 'utils/lang';
 
 export default props => {
   return (
     <div className={styles['HotNews']}>
-      <div className={styles['HotNews-title']}>热门新闻</div>
+      <div className={styles['HotNews-title']}>{_t('news.hot')}</div>
       <div className={styles['HotNews-list']}>
         {[1, 2, 3].map(item => (
           <div key={item} className={styles['listItem']}>

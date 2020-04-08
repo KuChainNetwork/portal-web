@@ -1,11 +1,26 @@
 import React from 'react';
-// import { connect } from 'dva';
-import Comming from '../comming';
-// import styles from './style.less';
+import styles from './style.less';
+import Introduction from 'components/_pages/whyPage/Introduction';
+import Architecture from 'components/_pages/whyPage/Architecture';
+import Governance from 'components/_pages/whyPage/Governance';
+import BetterService from 'components/_pages/whyPage/BetterService';
 
 const WhyKuchain = () => {
   return (
-    <Comming />
+    <div className={styles['why']}>
+      <div className={styles['why-introduction']}>
+        <Introduction />
+      </div>
+      <div className={styles['why-architecture']}>
+        <Architecture />
+      </div>
+      <div className={styles['why-governance']}>
+        <Governance />
+      </div>
+      <div className={styles['why-betterService']}>
+        <BetterService />
+      </div>
+    </div>
   );
 };
 

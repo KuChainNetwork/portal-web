@@ -13,7 +13,7 @@ export default props => {
         }}
         className={styles['detail-return']}
       >
-        <Arrow directionCls="ArrowLeft" />
+        <Arrow left={true} />
         <span>返回上级</span>
       </div>
       <div className={styles['detail-title']}>库币新起航，惊喜福利月</div>

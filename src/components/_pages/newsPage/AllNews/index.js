@@ -2,28 +2,29 @@ import React from 'react';
 import styles from './style.less';
 import { Tabs } from 'antd';
 import NewsList from 'components/_pages/newsPage/NewsList';
+import { _t } from 'utils/lang';
 const { TabPane } = Tabs;
 
 export default props => {
   const _setDetailShowCallback = props._setDetailShowCallback;
   const paneData = [
     {
-      tab: '全部',
+      tab: _t('news.all'),
       component: <NewsList _setDetailShowCallback={_setDetailShowCallback} />,
       key: '1',
     },
     {
-      tab: '周报',
+      tab: _t('news.week'),
       component: <NewsList _setDetailShowCallback={_setDetailShowCallback} />,
       key: '2',
     },
     {
-      tab: '活动',
+      tab: _t('news.promotion'),
       component: <NewsList _setDetailShowCallback={_setDetailShowCallback} />,
       key: '3',
     },
     {
-      tab: '博客',
+      tab: _t('news.blog'),
       component: <NewsList _setDetailShowCallback={_setDetailShowCallback} />,
       key: '4',
     },
@@ -43,7 +44,7 @@ export default props => {
         </Tabs>
       </div>
       <div className={styles['AllNews-mobile']}>
-        <div className={styles['AllNews-mobile-title']}>最新新闻</div>
+        <div className={styles['AllNews-mobile-title']}>{_t('news.latest')}</div>
         <div className={styles['AllNews-mobile-main']}>
           <NewsList _setDetailShowCallback={_setDetailShowCallback} />
         </div>
