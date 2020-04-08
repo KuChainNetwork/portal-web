@@ -10,7 +10,6 @@ import styles from './style.less';
 import logo from 'assets/logo.svg';
 import mMenuIcon from 'assets/header/icon_menu.svg';
 
-// TODO V0.2 sidebar
 const Header = ({ pathname }) => {
   const mobileMenuRef = useRef(null);
   const rightMenus = [

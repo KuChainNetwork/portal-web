@@ -7,7 +7,6 @@ import AllNews from 'components/_pages/newsPage/AllNews';
 import NewsDetail from 'components/_pages/newsPage/NewsDetail';
 
 const News = () => {
-  // TODO
   const [isDetailShow, _setDetailShow] = useState(false);
 
   const _setDetailShowCallback = useCallback(val => {
@@ -17,6 +16,8 @@ const News = () => {
       behavior: 'smooth',
     });
   }, []);
+
+  // TODO ajax
 
   return (
     <div className={styles['newsPage']}>

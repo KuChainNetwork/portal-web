@@ -6,6 +6,7 @@ import { _t } from 'utils/lang';
 
 export default props => {
   const _setDetailShowCallback = props._setDetailShowCallback;
+  // TODO data
   return (
     <div className={styles['detail']}>
       <div
