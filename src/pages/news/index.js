@@ -69,11 +69,11 @@ const News = props => {
     dispatch({
       type: 'news/pullHot',
       payload: {
-        page,
+        page: 1,
         newsCatId,
       },
     });
-  }, [currentLang, dispatch, page]);
+  }, [currentLang, dispatch]);
 
   return (
     <NewsContext.Provider
