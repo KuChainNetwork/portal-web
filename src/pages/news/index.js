@@ -49,7 +49,7 @@ const News = props => {
     _setPage(val);
   }, []);
 
-  const _getNewsData = () => {
+  const _getNewsData = useCallback(() => {
     const newsCatId = catIds[currentLang][typeKey];
     dispatch({
       type: 'news/pull',
@@ -58,11 +58,11 @@ const News = props => {
         newsCatId,
       },
     });
-  };
-  /* eslint-disable */
+  }, [currentLang, typeKey, dispatch, page]);
+
   useEffect(() => {
     _getNewsData();
-  }, [page, typeKey, currentLang]);
+  }, [_getNewsData]);
 
   useEffect(() => {
     const newsCatId = catIds[currentLang]['HOT'];
@@ -73,8 +73,7 @@ const News = props => {
         newsCatId,
       },
     });
-  }, [currentLang]);
-  /* eslint-enable */
+  }, [currentLang, dispatch, page]);
 
   return (
     <NewsContext.Provider
