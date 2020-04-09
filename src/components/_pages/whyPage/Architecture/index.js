@@ -3,6 +3,7 @@ import styles from './style.less';
 import { connect } from 'dva';
 import architeImgCN from 'assets/why/Architecture_zh_CN.svg';
 import architeImgUS from 'assets/why/Architecture_en_US.svg';
+import testPng from 'assets/why/test_arch2.png';
 import 'react-photoswipe/lib/photoswipe.css';
 import { PhotoSwipe } from 'react-photoswipe';
 import Responsive from 'components/Responsive';
@@ -10,7 +11,8 @@ import { _t } from 'utils/lang';
 
 const Architecture = props => {
   const { currentLang } = props;
-  const imgSrc = currentLang === 'zh_CN' ? architeImgCN : architeImgUS;
+  // const imgSrc = currentLang === 'zh_CN' ? architeImgCN : architeImgUS;
+  const imgSrc = testPng
 
   const [isPhotoSwipeShow, setPhotoSwipeShow] = useState(false);
   const photo = [
@@ -22,7 +24,6 @@ const Architecture = props => {
     },
   ];
   const options = {};
-  console.log('isPhotoSwipeShow === ', isPhotoSwipeShow);
 
   return (
     <div className={styles['arch']}>

@@ -32,18 +32,20 @@
       display: flex;
       width: fit-content;
       transition: all 300ms;
-      // margin: 10px;
+      margin: 20px 0 60px;
       .bannerItem {
         cursor: pointer;
         box-sizing: border-box;
         width: 440px;
         height: 470px;
         border: 1px solid rgba(1, 8, 30, 0.08);
+        transition: all 300ms;
         &:not(:last-child) {
           margin-right: 48px;
         }
         &:hover {
-          box-shadow: -24px 40px 48px 0 rgba(1, 8, 30, 0.06);
+          box-shadow: 0 40px 48px 0 rgba(1,8,30,0.06);
+          transform: translateY(-16px);
         }
         &-top {
           border-bottom: 1px solid rgba(1, 8, 30, 0.08);

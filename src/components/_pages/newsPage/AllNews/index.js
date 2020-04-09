@@ -1,39 +1,45 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from './style.less';
 import { Tabs } from 'antd';
 import NewsList from 'components/_pages/newsPage/NewsList';
 import { _t } from 'utils/lang';
+import { NewsContext } from 'src/pages/news';
 const { TabPane } = Tabs;
 
 export default props => {
-
+  const { _setKeyCallback } = useContext(NewsContext);
   const paneData = [
     {
       tab: _t('news.all'),
       component: <NewsList />,
-      key: '1',
+      key: 'ALL',
     },
     {
       tab: _t('news.week'),
       component: <NewsList />,
-      key: '2',
+      key: 'WEEK',
     },
     {
       tab: _t('news.promotion'),
       component: <NewsList />,
-      key: '3',
+      key: 'NOTICE',
     },
     {
       tab: _t('news.blog'),
       component: <NewsList />,
-      key: '4',
+      key: 'BLOG',
+    },
+    {
+      tab: _t('news.news'),
+      component: <NewsList />,
+      key: 'NEWS',
     },
   ];
 
-  function callback(key) {
-    console.log(key);
-  }
-  
+  const callback = key => {
+    _setKeyCallback(key);
+  };
+
   return (
     <div className={styles['AllNews']}>
       <div className={styles['AllNews-pc']}>

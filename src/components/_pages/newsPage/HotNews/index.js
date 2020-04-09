@@ -1,18 +1,29 @@
 import React from 'react';
 import styles from './style.less';
+import { connect } from 'dva';
 import { _t } from 'utils/lang';
 
-export default props => {
-  const { _setDetailShowCallback } = props;
+const HotNews = props => {
+  const { hotRecords, _setDetailShowCallback, dispatch } = props;
+
+  const _clkCallback = data => {
+    _setDetailShowCallback(true);
+    dispatch({
+      type: 'news/update',
+      payload: {
+        detailData: data,
+      },
+    });
+  };
 
   return (
     <div className={styles['HotNews']}>
       <div className={styles['HotNews-title']}>{_t('news.hot')}</div>
       <div className={styles['HotNews-list']}>
-        {[1, 2, 3].map(item => (
+        {hotRecords.map(item => (
           <div
             onClick={() => {
-              _setDetailShowCallback(true);
+              _clkCallback(item);
             }}
             key={item}
             className={styles['listItem']}
@@ -20,12 +31,15 @@ export default props => {
             <div className={styles['listItem-left']}>
               <div className={styles['circle']}></div>
             </div>
-            <div className={styles['listItem-right']}>
-              库币将推出Kusama (KSM) Soft Staking-持币返利服务
-            </div>
+            <div className={styles['listItem-right']}>{item.title.rendered}</div>
           </div>
         ))}
       </div>
     </div>
   );
 };
+export default connect(state => {
+  return {
+    hotRecords: state.news.hotRecords,
+  };
+})(HotNews);
