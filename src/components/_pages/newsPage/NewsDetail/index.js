@@ -7,12 +7,12 @@ import { connect } from 'dva';
 import Html from 'components/Html';
 
 const NewsDetail = props => {
-  const { detailData, _setDetailShowCallback } = props;
+  const { detailData, setDetailShowCallback } = props;
   return (
     <div className={styles['detail']}>
       <div
         onClick={() => {
-          _setDetailShowCallback(false);
+          setDetailShowCallback(false);
         }}
         className={styles['detail-return']}
       >

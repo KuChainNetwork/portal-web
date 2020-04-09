@@ -30,26 +30,26 @@ export const NewsContext = React.createContext();
 
 const News = props => {
   const { dispatch, currentLang } = props;
-  const [isDetailShow, _setDetailShow] = useState(false);
-  const [page, _setPage] = useState(1);
-  const [typeKey, _setTypeKey] = useState('ALL');
+  const [isDetailShow, setDetailShow] = useState(false);
+  const [page, setPage] = useState(1);
+  const [typeKey, setTypeKey] = useState('ALL');
 
-  const _setDetailShowCallback = useCallback(val => {
-    _setDetailShow(val);
+  const setDetailShowCallback = useCallback(val => {
+    setDetailShow(val);
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
     });
   }, []);
-  const _setKeyCallback = useCallback(val => {
-    _setTypeKey(val);
-    _setPage(1);
+  const setKeyCallback = useCallback(val => {
+    setTypeKey(val);
+    setPage(1);
   }, []);
-  const _setPageCallback = useCallback(val => {
-    _setPage(val);
+  const setPageCallback = useCallback(val => {
+    setPage(val);
   }, []);
 
-  const _getNewsData = useCallback(() => {
+  const getNewsData = useCallback(() => {
     const newsCatId = catIds[currentLang][typeKey];
     dispatch({
       type: 'news/pull',
@@ -61,8 +61,8 @@ const News = props => {
   }, [currentLang, typeKey, dispatch, page]);
 
   useEffect(() => {
-    _getNewsData();
-  }, [_getNewsData]);
+    getNewsData();
+  }, [getNewsData]);
 
   useEffect(() => {
     const newsCatId = catIds[currentLang]['HOT'];
@@ -79,20 +79,20 @@ const News = props => {
     <NewsContext.Provider
       value={{
         isDetailShow,
-        _setDetailShowCallback,
+        setDetailShowCallback,
         page,
-        _setPageCallback,
+        setPageCallback,
         typeKey,
-        _setKeyCallback,
+        setKeyCallback,
       }}
     >
       <div className={styles['newsPage']}>
         <div className={styles['newsPage-left']}>
-          {!isDetailShow && <AllNews />}
-          {isDetailShow && <NewsDetail _setDetailShowCallback={_setDetailShowCallback} />}
+          <AllNews hide={isDetailShow} />
+          {isDetailShow && <NewsDetail setDetailShowCallback={setDetailShowCallback} />}
         </div>
         <div className={styles['newsPage-right']}>
-          <HotNews _setDetailShowCallback={_setDetailShowCallback} />
+          <HotNews setDetailShowCallback={setDetailShowCallback} />
         </div>
       </div>
     </NewsContext.Provider>

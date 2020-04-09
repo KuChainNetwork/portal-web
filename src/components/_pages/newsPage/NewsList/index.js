@@ -6,7 +6,7 @@ import { connect } from 'dva';
 import { NewsContext } from 'src/pages/news';
 
 const NewsList = props => {
-  const { page, _setPageCallback } = useContext(NewsContext);
+  const { page, setPageCallback } = useContext(NewsContext);
   const { records, pagination } = props;
 
   return (
@@ -22,7 +22,7 @@ const NewsList = props => {
       <div className={styles['NewsList-pageBox']}>
         <Pagination
           onChange={page => {
-            _setPageCallback(page);
+            setPageCallback(page);
           }}
           current={page}
           defaultCurrent={1}

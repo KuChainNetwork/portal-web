@@ -6,11 +6,11 @@ import Html from 'components/Html';
 import { connect } from 'dva';
 
 const NewsListCard = props => {
-  const { _setDetailShowCallback } = useContext(NewsContext);
+  const { setDetailShowCallback } = useContext(NewsContext);
   const { data, dispatch } = props;
 
   const _clk = () => {
-    _setDetailShowCallback(true);
+    setDetailShowCallback(true);
     dispatch({
       type: 'news/update',
       payload: {

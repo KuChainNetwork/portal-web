@@ -1,13 +1,15 @@
 import React, { useContext } from 'react';
 import styles from './style.less';
 import { Tabs } from 'antd';
+import classname from 'classname';
 import NewsList from 'components/_pages/newsPage/NewsList';
 import { _t } from 'utils/lang';
 import { NewsContext } from 'src/pages/news';
 const { TabPane } = Tabs;
 
 export default props => {
-  const { _setKeyCallback, typeKey } = useContext(NewsContext);
+  const { setKeyCallback, typeKey } = useContext(NewsContext);
+  const { hide } = props;
   const paneData = [
     {
       tab: _t('news.all'),
@@ -37,11 +39,16 @@ export default props => {
   ];
 
   const callback = key => {
-    _setKeyCallback(key);
+    setKeyCallback(key);
   };
 
   return (
-    <div className={styles['AllNews']}>
+    <div
+      className={classname({
+        [styles.AllNews]: true,
+        [styles.AllNewsHide]: hide,
+      })}
+    >
       <div className={styles['AllNews-pc']}>
         <Tabs defaultActiveKey="1" onChange={callback}>
           {paneData.map(item => (

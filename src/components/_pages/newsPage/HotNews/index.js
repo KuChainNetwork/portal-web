@@ -4,10 +4,10 @@ import { _t } from 'utils/lang';
 import { connect } from 'dva';
 
 const HotNews = props => {
-  const { hotRecords, _setDetailShowCallback, dispatch } = props;
+  const { hotRecords, setDetailShowCallback, dispatch } = props;
 
   const _clkCallback = data => {
-    _setDetailShowCallback(true);
+    setDetailShowCallback(true);
     dispatch({
       type: 'news/update',
       payload: {
