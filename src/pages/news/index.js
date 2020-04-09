@@ -6,6 +6,8 @@ import HotNews from 'components/_pages/newsPage/HotNews';
 import AllNews from 'components/_pages/newsPage/AllNews';
 import NewsDetail from 'components/_pages/newsPage/NewsDetail';
 
+export const NewsContext = React.createContext();
+
 const News = () => {
   const [isDetailShow, _setDetailShow] = useState(false);
 
@@ -20,15 +22,17 @@ const News = () => {
   // TODO ajax
 
   return (
-    <div className={styles['newsPage']}>
-      <div className={styles['newsPage-left']}>
-        {!isDetailShow && <AllNews _setDetailShowCallback={_setDetailShowCallback} />}
-        {isDetailShow && <NewsDetail _setDetailShowCallback={_setDetailShowCallback} />}
+    <NewsContext.Provider value={{ isDetailShow, _setDetailShowCallback }}>
+      <div className={styles['newsPage']}>
+        <div className={styles['newsPage-left']}>
+          {!isDetailShow && <AllNews />}
+          {isDetailShow && <NewsDetail _setDetailShowCallback={_setDetailShowCallback} />}
+        </div>
+        <div className={styles['newsPage-right']}>
+          <HotNews _setDetailShowCallback={_setDetailShowCallback} />
+        </div>
       </div>
-      <div className={styles['newsPage-right']}>
-        <HotNews _setDetailShowCallback={_setDetailShowCallback} />
-      </div>
-    </div>
+    </NewsContext.Provider>
   );
 };
 

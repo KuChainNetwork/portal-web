@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from './style.less';
 import newsImg from 'assets/news/news.jpg';
+import { NewsContext } from 'src/pages/news';
 
 export default props => {
-  const _setDetailShowCallback = props._setDetailShowCallback;
+  const { _setDetailShowCallback } = useContext(NewsContext);
+
   return (
     <div
       onClick={() => {

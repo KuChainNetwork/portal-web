@@ -6,27 +6,26 @@ import { _t } from 'utils/lang';
 const { TabPane } = Tabs;
 
 export default props => {
-  const _setDetailShowCallback = props._setDetailShowCallback;
 
   const paneData = [
     {
       tab: _t('news.all'),
-      component: <NewsList _setDetailShowCallback={_setDetailShowCallback} />,
+      component: <NewsList />,
       key: '1',
     },
     {
       tab: _t('news.week'),
-      component: <NewsList _setDetailShowCallback={_setDetailShowCallback} />,
+      component: <NewsList />,
       key: '2',
     },
     {
       tab: _t('news.promotion'),
-      component: <NewsList _setDetailShowCallback={_setDetailShowCallback} />,
+      component: <NewsList />,
       key: '3',
     },
     {
       tab: _t('news.blog'),
-      component: <NewsList _setDetailShowCallback={_setDetailShowCallback} />,
+      component: <NewsList />,
       key: '4',
     },
   ];
@@ -49,7 +48,7 @@ export default props => {
       <div className={styles['AllNews-mobile']}>
         <div className={styles['AllNews-mobile-title']}>{_t('news.latest')}</div>
         <div className={styles['AllNews-mobile-main']}>
-          <NewsList _setDetailShowCallback={_setDetailShowCallback} />
+          <NewsList />
         </div>
       </div>
     </div>
