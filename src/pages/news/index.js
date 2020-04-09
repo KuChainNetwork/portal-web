@@ -59,10 +59,10 @@ const News = props => {
       },
     });
   };
-
+  /* eslint-disable */
   useEffect(() => {
     _getNewsData();
-  }, [page, typeKey, currentLang, _getNewsData]);
+  }, [page, typeKey, currentLang]);
 
   useEffect(() => {
     const newsCatId = catIds[currentLang]['HOT'];
@@ -73,7 +73,8 @@ const News = props => {
         newsCatId,
       },
     });
-  }, [currentLang, dispatch, page]);
+  }, [currentLang]);
+  /* eslint-enable */
 
   return (
     <NewsContext.Provider
