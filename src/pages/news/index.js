@@ -29,10 +29,10 @@ const catIds = {
 export const NewsContext = React.createContext();
 
 const News = props => {
-  const { dispatch, hotRecords, currentLang } = props;
+  const { dispatch, currentLang } = props;
   const [isDetailShow, _setDetailShow] = useState(false);
   const [page, _setPage] = useState(1);
-  const [key, _setKey] = useState('All');
+  const [typeKey, _setTypeKey] = useState('ALL');
 
   const _setDetailShowCallback = useCallback(val => {
     _setDetailShow(val);
@@ -42,7 +42,7 @@ const News = props => {
     });
   }, []);
   const _setKeyCallback = useCallback(val => {
-    _setKey(val);
+    _setTypeKey(val);
     _setPage(1);
   }, []);
   const _setPageCallback = useCallback(val => {
@@ -50,7 +50,7 @@ const News = props => {
   }, []);
 
   const _getNewsData = () => {
-    const newsCatId = catIds[currentLang][key];
+    const newsCatId = catIds[currentLang][typeKey];
     dispatch({
       type: 'news/pull',
       payload: {
@@ -62,7 +62,7 @@ const News = props => {
 
   useEffect(() => {
     _getNewsData();
-  }, [page, key, currentLang, _getNewsData]);
+  }, [page, typeKey, currentLang, _getNewsData]);
 
   useEffect(() => {
     const newsCatId = catIds[currentLang]['HOT'];
@@ -77,7 +77,14 @@ const News = props => {
 
   return (
     <NewsContext.Provider
-      value={{ isDetailShow, _setDetailShowCallback, page, _setPageCallback, _setKeyCallback }}
+      value={{
+        isDetailShow,
+        _setDetailShowCallback,
+        page,
+        _setPageCallback,
+        typeKey,
+        _setKeyCallback,
+      }}
     >
       <div className={styles['newsPage']}>
         <div className={styles['newsPage-left']}>
@@ -85,7 +92,7 @@ const News = props => {
           {isDetailShow && <NewsDetail _setDetailShowCallback={_setDetailShowCallback} />}
         </div>
         <div className={styles['newsPage-right']}>
-          <HotNews hotRecords={hotRecords} _setDetailShowCallback={_setDetailShowCallback} />
+          <HotNews _setDetailShowCallback={_setDetailShowCallback} />
         </div>
       </div>
     </NewsContext.Provider>

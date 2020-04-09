@@ -7,7 +7,7 @@ import { NewsContext } from 'src/pages/news';
 const { TabPane } = Tabs;
 
 export default props => {
-  const { _setKeyCallback } = useContext(NewsContext);
+  const { _setKeyCallback, typeKey } = useContext(NewsContext);
   const paneData = [
     {
       tab: _t('news.all'),
@@ -46,7 +46,7 @@ export default props => {
         <Tabs defaultActiveKey="1" onChange={callback}>
           {paneData.map(item => (
             <TabPane tab={item.tab} key={item.key}>
-              {item.component}
+              {typeKey === item.key ? item.component : null}
             </TabPane>
           ))}
         </Tabs>

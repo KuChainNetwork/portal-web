@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './style.less';
-import { connect } from 'dva';
 import { _t } from 'utils/lang';
+import { connect } from 'dva';
 
 const HotNews = props => {
   const { hotRecords, _setDetailShowCallback, dispatch } = props;
