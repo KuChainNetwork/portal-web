@@ -80,7 +80,7 @@ const Header = ({ pathname }) => {
                 >
                   <img src={mMenuIcon} alt="" />
                 </div>
-                <MobileMenu rightMenus={rightMenus} pathname={pathname} cRef={mobileMenuRef} />
+                <MobileMenu rightMenus={rightMenus} pathname={pathname} ref={mobileMenuRef} />
               </div>
             </Responsive.Mobile>
           </div>

@@ -1,4 +1,4 @@
-import React, { useState, useImperativeHandle } from 'react';
+import React, { useState, useImperativeHandle, useRef } from 'react';
 import styles from './style.less';
 import { Drawer } from 'antd';
 import classname from 'classname';
@@ -6,8 +6,8 @@ import { Link } from 'components/Router';
 import { connect } from 'dva';
 import { _t } from 'utils/lang';
 
-const MobileMenu = props => {
-  const { rightMenus, pathname, cRef, langs, currentLang, dispatch } = props;
+const MobileMenu = React.forwardRef((props, ref) => {
+  const { rightMenus, pathname, langs, currentLang, dispatch } = props;
   const [show, setShow] = useState(false);
   const [langShow, setLangShow] = useState(false);
 
@@ -19,7 +19,7 @@ const MobileMenu = props => {
     setShow(false);
   };
 
-  useImperativeHandle(cRef, () => ({
+  useImperativeHandle(ref, () => ({
     _show,
   }));
 
@@ -30,7 +30,7 @@ const MobileMenu = props => {
   const _langclose = () => {
     setLangShow(false);
   };
-  
+
   const _selectLang = val => {
     dispatch({
       type: 'app/selectLang',
@@ -97,11 +97,16 @@ const MobileMenu = props => {
       </div>
     </Drawer>
   );
-};
+});
 
-export default connect(state => {
-  return {
-    langs: state.app.langs,
-    currentLang: state.app.currentLang,
-  };
-})(MobileMenu);
+export default connect(
+  state => {
+    return {
+      langs: state.app.langs,
+      currentLang: state.app.currentLang,
+    };
+  },
+  null,
+  null,
+  { forwardRef: true },
+)(MobileMenu);

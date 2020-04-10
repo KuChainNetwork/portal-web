@@ -14,20 +14,16 @@ const HotNews = props => {
         detailData: data,
       },
     });
+    const routerParams = {
+      pathname: '/news/detail',
+      query: {
+        id: data.id,
+      },
+    };
     if (pathname && pathname.includes('detail')) {
-      router.replace({
-        pathname: '/news/detail',
-        query: {
-          id: data.id,
-        },
-      });
+      router.replace(routerParams);
     } else {
-      router.push({
-        pathname: '/news/detail',
-        query: {
-          id: data.id,
-        },
-      });
+      router.push(routerParams);
     }
   };
 
