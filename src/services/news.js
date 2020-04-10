@@ -7,8 +7,8 @@ export const getNewsList = async (page = 1, newsCatId) => {
   let pagination = null;
   try {
     const res = await requestFetch(
-      `/wp-json/wp/v2/posts?filter${
-        newsCatId ? `[cat]=${newsCatId}&` : ''
+      `/wp-json/wp/v2/posts?${
+        newsCatId ? `categories=${newsCatId}&` : ''
       }page=${page}&per_page=${pageSize}`,
     );
     const count = res.headers.get('X-WP-Total');
