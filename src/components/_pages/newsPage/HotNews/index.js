@@ -2,16 +2,22 @@ import React from 'react';
 import styles from './style.less';
 import { _t } from 'utils/lang';
 import { connect } from 'dva';
+import router from 'umi/router';
 
 const HotNews = props => {
-  const { hotRecords, setDetailShowCallback, dispatch } = props;
+  const { hotRecords, dispatch } = props;
 
-  const _clkCallback = data => {
-    setDetailShowCallback(true);
+  const hotItemClick = data => {
     dispatch({
       type: 'news/update',
       payload: {
         detailData: data,
+      },
+    });
+    router.push({
+      pathname: '/news/detail',
+      query: {
+        id: data.id,
       },
     });
   };
@@ -23,7 +29,7 @@ const HotNews = props => {
         {hotRecords.map(item => (
           <div
             onClick={() => {
-              _clkCallback(item);
+              hotItemClick(item);
             }}
             key={item}
             className={styles['listItem']}

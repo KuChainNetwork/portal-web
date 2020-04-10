@@ -6,21 +6,21 @@ import Html from 'components/Html';
 import { connect } from 'dva';
 
 const NewsListCard = props => {
-  const { setDetailShowCallback } = useContext(NewsContext);
+  const { pageToDetail } = useContext(NewsContext);
   const { data, dispatch } = props;
 
-  const _clk = () => {
-    setDetailShowCallback(true);
+  const cardClick = () => {
     dispatch({
       type: 'news/update',
       payload: {
         detailData: data,
       },
     });
+    pageToDetail(data.id);
   };
 
   return (
-    <div onClick={_clk} className={styles['listCard']}>
+    <div onClick={cardClick} className={styles['listCard']}>
       <div className={styles['listCard-left']}>
         <img src={newsImg} alt="" />
       </div>

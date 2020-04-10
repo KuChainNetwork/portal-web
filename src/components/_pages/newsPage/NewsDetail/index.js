@@ -5,14 +5,17 @@ import Arrow from 'components/Arrow';
 import { _t } from 'utils/lang';
 import { connect } from 'dva';
 import Html from 'components/Html';
+import { isEmpty } from 'lodash';
+import router from 'umi/router';
 
 const NewsDetail = props => {
-  const { detailData, setDetailShowCallback } = props;
-  return (
+  const { detailData } = props;
+  
+  return !isEmpty(detailData) ? (
     <div className={styles['detail']}>
       <div
         onClick={() => {
-          setDetailShowCallback(false);
+          router.goBack();
         }}
         className={styles['detail-return']}
       >
@@ -28,7 +31,7 @@ const NewsDetail = props => {
         <Html>{detailData.content.rendered}</Html>
       </div>
     </div>
-  );
+  ) : null;
 };
 
 export default connect(state => {

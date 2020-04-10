@@ -65,11 +65,16 @@ export default extend(base, paginate, {
         payload: paginationSave,
       });
     },
-    *detail({ payload }, { put, call }) {
-      const detail = yield call(getDetail, payload);
+    *detail(
+      {
+        payload: { id },
+      },
+      { put, call },
+    ) {
+      const detailData = yield call(getDetail, id);
       yield put({
         type: 'update',
-        payload: { detail },
+        payload: { detailData },
       });
     },
   },

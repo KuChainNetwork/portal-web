@@ -38,7 +38,7 @@ export default props => {
     },
   ];
 
-  const callback = key => {
+  const tabCallback = key => {
     setKeyCallback(key);
   };
 
@@ -50,7 +50,7 @@ export default props => {
       })}
     >
       <div className={styles['AllNews-pc']}>
-        <Tabs defaultActiveKey="1" onChange={callback}>
+        <Tabs defaultActiveKey="1" onChange={tabCallback}>
           {paneData.map(item => (
             <TabPane tab={item.tab} key={item.key}>
               {typeKey === item.key ? item.component : null}
