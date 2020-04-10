@@ -39,7 +39,7 @@ const Detail = props => {
         <NewsDetail />
       </div>
       <div className={styles['detail-right']}>
-        <HotNews />
+        <HotNews pathname={location.pathname} />
       </div>
     </div>
   );

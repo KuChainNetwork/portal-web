@@ -5,7 +5,7 @@ import { connect } from 'dva';
 import router from 'umi/router';
 
 const HotNews = props => {
-  const { hotRecords, dispatch } = props;
+  const { hotRecords, dispatch, pathname } = props;
 
   const hotItemClick = data => {
     dispatch({
@@ -14,12 +14,21 @@ const HotNews = props => {
         detailData: data,
       },
     });
-    router.push({
-      pathname: '/news/detail',
-      query: {
-        id: data.id,
-      },
-    });
+    if (pathname && pathname.includes('detail')) {
+      router.replace({
+        pathname: '/news/detail',
+        query: {
+          id: data.id,
+        },
+      });
+    } else {
+      router.push({
+        pathname: '/news/detail',
+        query: {
+          id: data.id,
+        },
+      });
+    }
   };
 
   return (

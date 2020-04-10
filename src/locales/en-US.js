@@ -43,7 +43,7 @@ export default {
   "news.promotion": 'Notice',
   "news.blog": 'Blog',
   "news.news": 'News',
-  "news.latest": '最新新闻',
+  "news.latest": 'Latest news',
   "news.hot": 'Top News',
   "news.return": 'Return',
   "why.intro.title": 'KuChain Introduction',

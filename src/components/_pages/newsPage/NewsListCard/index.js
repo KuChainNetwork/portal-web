@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import styles from './style.less';
-import newsImg from 'assets/news/news.jpg';
 import { NewsContext } from 'src/pages/news';
 import Html from 'components/Html';
+import ImgSrc from 'components/ImgSrc';
 import { connect } from 'dva';
 
 const NewsListCard = props => {
@@ -22,7 +22,7 @@ const NewsListCard = props => {
   return (
     <div onClick={cardClick} className={styles['listCard']}>
       <div className={styles['listCard-left']}>
-        <img src={newsImg} alt="" />
+        <ImgSrc featured_media={data.featured_media} />
       </div>
       <div className={styles['listCard-right']}>
         <div className={styles['title']}>{data.title.rendered}</div>
