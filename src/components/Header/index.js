@@ -33,8 +33,9 @@ const Header = ({ pathname }) => {
     // },
     {
       title: _t('head.menu.blog'),
-      path: '/blog',
+      path: 'https://blog.kuchain.io/',
       pc: true,
+      href: true,
     },
   ];
 
@@ -50,12 +51,16 @@ const Header = ({ pathname }) => {
           <div className={styles.headRight}>
             <Responsive>
               <React.Fragment>
-                {_.map(rightMenus, ({ path, title, mobile }) => {
+                {_.map(rightMenus, ({ path, title, mobile, href }) => {
                   const cls = classname({
                     [styles.menu]: true,
                     [styles.active]: pathname.indexOf(path) === 0,
                   });
-                  return mobile ? null : (
+                  return mobile ? null : href ? (
+                    <a className={cls} href={path}  key={path} target="_blank" rel="noopener noreferrer">
+                      {title}
+                    </a>
+                  ) : (
                     <Link key={path} to={path} className={cls}>
                       {title}
                     </Link>

@@ -1,11 +1,11 @@
 import React, { useContext, useCallback } from 'react';
 import _ from 'lodash';
-import styles from './style.less';
 import { Menu } from 'antd';
 import classname from 'classname';
-import NewsList from 'components/_pages/newsPage/NewsList';
 import { _t } from 'utils/lang';
+import NewsList from 'components/_pages/newsPage/NewsList';
 import { NewsContext } from 'src/pages/news';
+import styles from './style.less';
 
 export default props => {
   const { setKeyCallback, typeKey } = useContext(NewsContext);

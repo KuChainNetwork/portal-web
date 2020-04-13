@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
-import styles from './style.less';
 import { _t } from 'utils/lang';
+import styles from './style.less';
 import why_safe from 'assets/why/why_safe.png';
 import why_governance from 'assets/why/why_governance.png';
 import why_high from 'assets/why/why_high.png';

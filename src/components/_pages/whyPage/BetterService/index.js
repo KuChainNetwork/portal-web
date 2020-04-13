@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import _ from 'lodash';
-import styles from './style.less';
-import Arrow from 'components/Arrow';
 import classname from 'classname';
+import Arrow from 'components/Arrow';
 import { _t } from 'utils/lang';
+import styles from './style.less';
 import betterImg1 from 'assets/why/better_1.svg';
 import betterImg2 from 'assets/why/better_2.svg';
 import betterImg3 from 'assets/why/better_3.svg';

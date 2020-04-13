@@ -10,6 +10,7 @@ const Arrow = ({ className, disabled, left, ...otherProps }) => {
         [styles.arrow]: true,
         [className]: true,
         [styles.ArrowLeft]: left,
+        [styles.ArrowRight]: !left,
         [styles.disabledArrow]: disabled,
       })}
       {...otherProps}

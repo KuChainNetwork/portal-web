@@ -1,22 +1,22 @@
 import React, { useEffect, useCallback } from 'react';
-import styles from './style.less';
 import { connect } from 'dva';
 import HotNews from 'components/_pages/newsPage/HotNews';
 import NewsDetail from 'components/_pages/newsPage/NewsDetail';
 import { catIds } from 'config';
+import styles from './style.less';
 
 const Detail = props => {
   const { location, dispatch, currentLang } = props;
 
   const getData = useCallback(() => {
-    const id = location.query.id;
+    const id = location.pathname.replace('/news/detail/', '');
     dispatch({
       type: 'news/detail',
       payload: {
         id,
       },
     });
-  }, [location.query.id, dispatch]);
+  }, [location, dispatch]);
 
   useEffect(() => {
     getData();

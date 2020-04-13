@@ -1,32 +1,32 @@
 import React, { useCallback } from 'react';
 import _ from 'lodash';
-import styles from './style.less';
-import { _t } from 'utils/lang';
-import { connect } from 'dva';
 import router from 'umi/router';
+import { connect } from 'dva';
+import { _t } from 'utils/lang';
+import styles from './style.less';
 
 const HotNews = props => {
   const { hotRecords, dispatch, pathname } = props;
 
-  const hotItemClick = useCallback(data => {
-    dispatch({
-      type: 'news/update',
-      payload: {
-        detailData: data,
-      },
-    });
-    const routerParams = {
-      pathname: '/news/detail',
-      query: {
-        id: data.id,
-      },
-    };
-    if (pathname && pathname.includes('detail')) {
-      router.replace(routerParams);
-    } else {
-      router.push(routerParams);
-    }
-  }, [dispatch, pathname]);
+  const hotItemClick = useCallback(
+    data => {
+      dispatch({
+        type: 'news/update',
+        payload: {
+          detailData: data,
+        },
+      });
+      const routerParams = {
+        pathname: `/news/detail/${data.id}`,
+      };
+      if (pathname && pathname.includes('detail')) {
+        router.replace(routerParams);
+      } else {
+        router.push(routerParams);
+      }
+    },
+    [dispatch, pathname],
+  );
 
   return (
     <div className={styles.HotNews}>

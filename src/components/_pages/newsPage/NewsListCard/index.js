@@ -1,10 +1,10 @@
 import React, { useContext, useCallback } from 'react';
-import styles from './style.less';
-import { NewsContext } from 'src/pages/news';
+import { connect } from 'dva';
 import Html from 'components/Html';
 import ImgSrc from 'components/ImgSrc';
-import { connect } from 'dva';
+import { NewsContext } from 'src/pages/news';
 import { showDatetime, timestamp } from 'helper';
+import styles from './style.less';
 
 const NewsListCard = props => {
   const { pageToDetail } = useContext(NewsContext);

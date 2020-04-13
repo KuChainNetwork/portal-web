@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import styles from './style.less';
 import { connect } from 'dva';
+import Responsive from 'components/Responsive';
+import { PhotoSwipe } from 'react-photoswipe';
+import { _t } from 'utils/lang';
+import 'react-photoswipe/lib/photoswipe.css';
+import styles from './style.less';
 import architeImgCN from 'assets/why/Architecture_zh_CN.png';
 import architeImgUS from 'assets/why/Architecture_en_US.png';
-import 'react-photoswipe/lib/photoswipe.css';
-import { PhotoSwipe } from 'react-photoswipe';
-import Responsive from 'components/Responsive';
-import { _t } from 'utils/lang';
 
 const Architecture = props => {
   const { currentLang } = props;

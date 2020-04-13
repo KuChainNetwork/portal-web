@@ -1,11 +1,11 @@
 import React, { useState, useCallback } from 'react';
 import _ from 'lodash';
-import styles from './style.less';
 import { Drawer } from 'antd';
 import classname from 'classname';
 import { Link } from 'components/Router';
 import { connect } from 'dva';
 import { _t } from 'utils/lang';
+import styles from './style.less';
 import mMenuIcon from 'assets/header/icon_menu.svg';
 import selectIcon from 'assets/header/icon_select.svg';
 

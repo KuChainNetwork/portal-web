@@ -11,10 +11,29 @@
     background: #0fcd8c;
     position: absolute;
     right: 0;
-    top: 49%;
+    top: 50%;
     transform: translateY(-50%);
   }
 
+  
+}
+.ArrowLeft {
+  &::before {
+    content: '';
+    display: block;
+    width: 10.6px;
+    height: 10.6px;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid #0fcd8c;
+    border-left: 1px solid #0fcd8c;
+    position: absolute;
+    left: 2px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+}
+.ArrowRight{
   &::after {
     content: '';
     display: block;
@@ -24,19 +43,23 @@
     border-left: 1px solid transparent;
     border-right: 1px solid #0fcd8c;
     border-bottom: 1px solid #0fcd8c;
-
     position: absolute;
     right: 2px;
-    top: 49%;
+    top: 50%;
     transform: translateY(-50%) rotate(-45deg);
   }
 }
-.ArrowLeft {
-  transform: rotate(180deg);
-}
 
 :global(.hairlines) {
-  .arrow {
+  .ArrowLeft {
+    &::before {
+      border-right: 0.5px solid transparent;
+      border-bottom: 0.5px solid transparent;
+      border-top: 0.5px solid #0fcd8c;
+      border-left: 0.5px solid #0fcd8c;
+    }
+  }
+  .ArrowRight {
     &::after {
       border-top: 0.5px solid transparent;
       border-left: 0.5px solid transparent;
@@ -54,5 +77,9 @@
   &::after {
     border-right: 0.5px solid rgba(1, 8, 30, 0.24) !important;
     border-bottom: 0.5px solid rgba(1, 8, 30, 0.24) !important;
+  }
+  &::before {
+    border-top: 0.5px solid rgba(1, 8, 30, 0.24) !important;
+    border-left: 0.5px solid rgba(1, 8, 30, 0.24) !important;
   }
 }

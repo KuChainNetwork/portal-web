@@ -1,11 +1,10 @@
 import React, { useContext } from 'react';
 import _ from 'lodash';
-import styles from './style.less';
-import { Pagination } from 'antd';
-import NewsListCard from 'components/_pages/newsPage/NewsListCard';
 import { connect } from 'dva';
+import NewsListCard from 'components/_pages/newsPage/NewsListCard';
+import Pagination from 'components/SSRPagination';
 import { NewsContext } from 'src/pages/news';
-// import Pagination from 'components/SSRPagination';
+import styles from './style.less';
 
 const NewsList = props => {
   const { page, setPageCallback } = useContext(NewsContext);
@@ -31,6 +30,7 @@ const NewsList = props => {
           current={page}
           defaultCurrent={1}
           total={pagination ? pagination.total : 0}
+          pathTpl="/news/detail/:page"
         />
       </div>
     </div>

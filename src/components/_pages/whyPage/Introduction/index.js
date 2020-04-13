@@ -1,8 +1,8 @@
 import React from 'react';
 import _ from 'lodash';
-import styles from './style.less';
 import introImg from 'assets/why/Introruction.svg';
 import { _t } from 'utils/lang';
+import styles from './style.less';
 
 export default props => {
   const introData = [

@@ -1,10 +1,10 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import styles from './style.less';
 import HotNews from 'components/_pages/newsPage/HotNews';
 import AllNews from 'components/_pages/newsPage/AllNews';
 import { connect } from 'dva';
 import router from 'umi/router';
 import { catIds } from 'config';
+import styles from './style.less';
 
 export const NewsContext = React.createContext();
 
@@ -15,10 +15,7 @@ const News = props => {
 
   const pageToDetail = useCallback(id => {
     router.push({
-      pathname: '/news/detail',
-      query: {
-        id,
-      },
+      pathname: `/news/detail/${id}`,
     });
   }, []);
 

@@ -1,12 +1,12 @@
 import React from 'react';
-import styles from './style.less';
-import Arrow from 'components/Arrow';
-import { _t } from 'utils/lang';
 import { connect } from 'dva';
-import Html from 'components/Html';
-import ImgSrc from 'components/ImgSrc';
 import { isEmpty } from 'lodash';
 import router from 'umi/router';
+import { _t } from 'utils/lang';
+import Arrow from 'components/Arrow';
+import Html from 'components/Html';
+import styles from './style.less';
+import ImgSrc from 'components/ImgSrc';
 
 const NewsDetail = props => {
   const { detailData } = props;
