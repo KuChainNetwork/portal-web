@@ -58,8 +58,8 @@ export default extend(base, paginate, {
         payload: paginationSave,
       });
     },
-    *pullHot({ payload: { page, newsCatId } = {} }, { put, call }) {
-      const paginationSave = yield call(getNewsList, page, newsCatId);
+    *pullHot({ payload: { page, tagsId } = {} }, { put, call }) {
+      const paginationSave = yield call(getNewsList, page, null, tagsId);
       yield put({
         type: 'updateHotRecords',
         payload: paginationSave,

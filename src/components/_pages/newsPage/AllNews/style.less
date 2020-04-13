@@ -3,12 +3,28 @@
   &-pc {
     display: block;
     width: 743px;
+    .menuBox {
+      margin-bottom: 48px;
+    }
   }
   &-mobile {
     display: none;
   }
-  :global .ant-tabs-bar {
+  :global .ant-menu-horizontal {
     border-bottom: 0;
+    .ant-menu-item {
+      text-align: center;
+      width: 106px;
+      margin-right: 18px;
+      font-size: 16px;
+      color: #01081e;
+      &:hover {
+        color: @primary-color;
+      }
+    }
+    .ant-menu-item-selected {
+      color: @primary-color;
+    }
   }
 }
 .AllNewsHide {
@@ -23,7 +39,6 @@
     &-mobile {
       display: block;
       &-title {
-        font-family: PingFangSC-Medium;
         font-size: 20px;
         color: #01081e;
         letter-spacing: 0;

@@ -1,7 +1,7 @@
 // import _ from 'lodash';
 import { pull, requestFetch } from 'utils/request';
 
-export const getNewsList = async (page = 1, newsCatId) => {
+export const getNewsList = async (page = 1, newsCatId, tagsId) => {
   // const newsCatId = 6;
   const pageSize = 10;
   let pagination = null;
@@ -9,7 +9,7 @@ export const getNewsList = async (page = 1, newsCatId) => {
     const res = await requestFetch(
       `/wp-json/wp/v2/posts?${
         newsCatId ? `categories=${newsCatId}&` : ''
-      }page=${page}&per_page=${pageSize}`,
+      }page=${page}&per_page=${pageSize}${tagsId ? `&tags=${tagsId}` : ''}`,
     );
     const count = res.headers.get('X-WP-Total');
     // const totalPages = res.headers.get('X-WP-TotalPages');

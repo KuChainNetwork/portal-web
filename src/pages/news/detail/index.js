@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback } from 'react';
-import styles from './detail.less';
+import styles from './style.less';
 import { connect } from 'dva';
 import HotNews from 'components/_pages/newsPage/HotNews';
 import NewsDetail from 'components/_pages/newsPage/NewsDetail';
@@ -23,12 +23,12 @@ const Detail = props => {
   }, [getData]);
 
   useEffect(() => {
-    const newsCatId = catIds[currentLang]['HOT'];
+    const tagsId = catIds[currentLang]['HOT'];
     dispatch({
       type: 'news/pullHot',
       payload: {
         page: 1,
-        newsCatId,
+        tagsId,
       },
     });
   }, [currentLang, dispatch]);

@@ -5,6 +5,7 @@ import { Pagination } from 'antd';
 import NewsListCard from 'components/_pages/newsPage/NewsListCard';
 import { connect } from 'dva';
 import { NewsContext } from 'src/pages/news';
+// import Pagination from 'components/SSRPagination';
 
 const NewsList = props => {
   const { page, setPageCallback } = useContext(NewsContext);
@@ -14,7 +15,7 @@ const NewsList = props => {
     <div className={styles['NewsList']}>
       <div className={styles['NewsList-main']}>
         {records &&
-          records.length &&
+          !!records.length &&
           _.map(records, item => (
             <React.Fragment key={item.id}>
               <NewsListCard data={item} />

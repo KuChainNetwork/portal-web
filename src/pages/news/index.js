@@ -14,10 +14,6 @@ const News = props => {
   const [typeKey, setTypeKey] = useState('ALL');
 
   const pageToDetail = useCallback(id => {
-    // window.scrollTo({
-    //   top: 0,
-    //   behavior: 'smooth',
-    // });
     router.push({
       pathname: '/news/detail',
       query: {
@@ -51,12 +47,12 @@ const News = props => {
   }, [getNewsData]);
 
   useEffect(() => {
-    const newsCatId = catIds[currentLang]['HOT'];
+    const tagsId = catIds[currentLang]['HOT'];
     dispatch({
       type: 'news/pullHot',
       payload: {
         page: 1,
-        newsCatId,
+        tagsId,
       },
     });
   }, [currentLang, dispatch]);
