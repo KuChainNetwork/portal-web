@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import styles from './style.less';
 import { _t } from 'utils/lang';
 import { connect } from 'dva';
@@ -31,7 +32,7 @@ const HotNews = props => {
     <div className={styles['HotNews']}>
       <div className={styles['HotNews-title']}>{_t('news.hot')}</div>
       <div className={styles['HotNews-list']}>
-        {hotRecords.map(item => (
+        {_.map(hotRecords, item => (
           <div
             onClick={() => {
               hotItemClick(item);

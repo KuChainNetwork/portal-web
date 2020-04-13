@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import _ from 'lodash';
 import styles from './style.less';
 import { Tabs } from 'antd';
 import classname from 'classname';
@@ -51,7 +52,7 @@ export default props => {
     >
       <div className={styles['AllNews-pc']}>
         <Tabs defaultActiveKey="1" onChange={tabCallback}>
-          {paneData.map(item => (
+          {_.map(paneData, item => (
             <TabPane tab={item.tab} key={item.key}>
               {typeKey === item.key ? item.component : null}
             </TabPane>

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import _ from 'lodash';
 import classname from 'classname';
 import { Link } from 'components/Router';
@@ -8,10 +8,8 @@ import MobileMenu from './MobileMenu';
 import { _t } from 'utils/lang';
 import styles from './style.less';
 import logo from 'assets/logo.svg';
-import mMenuIcon from 'assets/header/icon_menu.svg';
 
 const Header = ({ pathname }) => {
-  const mobileMenuRef = useRef(null);
   const rightMenus = [
     {
       title: _t('head.mobile.home'),
@@ -72,15 +70,7 @@ const Header = ({ pathname }) => {
 
             <Responsive.Mobile>
               <div className={styles.langSelectMb}>
-                {/* <LangSelector /> */}
-                <div
-                  onClick={() => {
-                    mobileMenuRef.current._show();
-                  }}
-                >
-                  <img src={mMenuIcon} alt="" />
-                </div>
-                <MobileMenu rightMenus={rightMenus} pathname={pathname} ref={mobileMenuRef} />
+                <MobileMenu rightMenus={rightMenus} pathname={pathname} />
               </div>
             </Responsive.Mobile>
           </div>

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useCallback } from 'react';
 import styles from './style.less';
 import { NewsContext } from 'src/pages/news';
 import Html from 'components/Html';
@@ -9,7 +9,7 @@ const NewsListCard = props => {
   const { pageToDetail } = useContext(NewsContext);
   const { data, dispatch } = props;
 
-  const cardClick = () => {
+  const cardClick = useCallback(() => {
     dispatch({
       type: 'news/update',
       payload: {
@@ -17,7 +17,7 @@ const NewsListCard = props => {
       },
     });
     pageToDetail(data.id);
-  };
+  }, [data, dispatch, pageToDetail]);
 
   return (
     <div onClick={cardClick} className={styles['listCard']}>

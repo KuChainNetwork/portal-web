@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import styles from './style.less';
 import { _t } from 'utils/lang';
 
@@ -31,7 +32,7 @@ export default props => {
       <div className={styles['governance-title']}>{_t('why.gover.title')}</div>
       <div className={styles['governance-desc']}>{_t('why.gover.desc')}</div>
       <div className={styles['governance-main']}>
-        {governanceData.map(item => (
+        {_.map(governanceData, item => (
           <div className={styles['governanceItem']} key={item.icon}>
             <div className={styles['governanceItem-iconBox']}>
               <img src={require(`assets/why/${item.icon}.png`)} alt="" />

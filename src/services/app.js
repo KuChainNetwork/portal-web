@@ -5,7 +5,3 @@ export function getVersion() {
   const prefix = `${protocol}//${host}`;
   return pull(`${prefix}/version.json?_ts=${Date.now()}`);
 }
-
-export function getNews(){
-  console.log('xxgetNewsxx')
-}

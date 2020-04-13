@@ -6,15 +6,20 @@ import styles from './style.less';
 const Arrow = ({ className, disabled, left, ...otherProps }) => {
   return (
     <div
-      className={classname([
-        styles.arrow,
-        className,
-        styles[left ? 'ArrowLeft' : ''],
-        styles[disabled ? 'disabledArrow' : ''],
-      ])}
+      className={classname({
+        [styles.arrow]: true,
+        [className]: true,
+        [styles.ArrowLeft]: left,
+        [styles.disabledArrow]: disabled,
+      })}
       {...otherProps}
     >
-      <div className={classname([styles.line, styles[disabled ? 'disabledArrowLine' : '']])} />
+      <div
+        className={classname({
+          [styles.line]: true,
+          [styles.disabledArrowLine]: disabled,
+        })}
+      />
     </div>
   );
 };

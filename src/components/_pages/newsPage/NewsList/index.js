@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import _ from 'lodash';
 import styles from './style.less';
 import { Pagination } from 'antd';
 import NewsListCard from 'components/_pages/newsPage/NewsListCard';
@@ -12,12 +13,14 @@ const NewsList = props => {
   return (
     <div className={styles['NewsList']}>
       <div className={styles['NewsList-main']}>
-        {records.map(item => (
-          <React.Fragment key={item.id}>
-            <NewsListCard data={item} />
-            <div className={styles['line']}></div>
-          </React.Fragment>
-        ))}
+        {records &&
+          records.length &&
+          _.map(records, item => (
+            <React.Fragment key={item.id}>
+              <NewsListCard data={item} />
+              <div className={styles['line']}></div>
+            </React.Fragment>
+          ))}
       </div>
       <div className={styles['NewsList-pageBox']}>
         <Pagination

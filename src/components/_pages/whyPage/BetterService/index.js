@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import _ from 'lodash';
 import styles from './style.less';
 import Arrow from 'components/Arrow';
 import classname from 'classname';
@@ -59,7 +60,7 @@ export default props => {
             styles[isShowLeft ? 'bannerShowLeft' : 'bannerShowRight'],
           ])}
         >
-          {betterData.map((item, index) => (
+          {_.map(betterData, (item, index) => (
             <div className={styles['bannerItem']} key={index}>
               <div className={styles['bannerItem-top']}>
                 <img src={require(`assets/why/${item.icon}.svg`)} alt="" />
