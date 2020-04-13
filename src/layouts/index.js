@@ -1,4 +1,3 @@
-
 import React, { useEffect, useMemo } from 'react';
 import { connect } from 'dva';
 import { Helmet } from 'react-helmet';
@@ -10,7 +9,11 @@ import styles from './style.less';
 
 // TODO V0.2 footer pathname
 function BasicLayout(props) {
-  const { children, currentLang, location: { pathname } } = props;
+  const {
+    children,
+    currentLang,
+    location: { pathname },
+  } = props;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -19,7 +22,7 @@ function BasicLayout(props) {
   const seoMap = useMemo(() => {
     const seoInfo = {
       // common info
-      '_': {
+      _: {
         title: _t('seo.common.title'),
         description: _t('seo.common.des'),
         keywords: _t('seo.common.keywords'),
@@ -36,26 +39,22 @@ function BasicLayout(props) {
     <div className={styles.layout}>
       {seoMap && (
         <Helmet>
-          <title>{ seoMap.title }</title>
-          <meta name="description" content={ seoMap.description } />
-          <meta name="keywords" content={ seoMap.keywords } />
+          <title>{seoMap.title}</title>
+          <meta name="description" content={seoMap.description} />
+          <meta name="keywords" content={seoMap.keywords} />
         </Helmet>
       )}
       <Header pathname={pathname} />
-      <div className={styles.body}>
-        {children}
-      </div>
+      <div className={styles.body}>{children}</div>
 
-      {pathname === '/' && (
-        <Footer />
-      )}
+      <Footer />
       {/* // TODO V0.2 Policy */}
       {/* <Policy /> */}
     </div>
   );
 }
 
-export default connect((state) => {
+export default connect(state => {
   return {
     currentLang: state.app.currentLang,
   };

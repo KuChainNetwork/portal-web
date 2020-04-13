@@ -1,0 +1,45 @@
+.detail {
+  width: 743px;
+  box-sizing: border-box;
+  .return {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 48px;
+    cursor: pointer;
+    span {
+      margin-left: 16px;
+    }
+  }
+  .title {
+    font-size: 32px;
+    color: #01081e;
+    letter-spacing: 2.86px;
+    margin-bottom: 8px;
+  }
+  .dateType {
+    font-size: 14px;
+    color: rgba(1, 8, 30, 0.6);
+    line-height: 24px;
+    margin-bottom: 24px;
+  }
+  .imgBox {
+    width: 100%;
+    margin-bottom: 40px;
+    img {
+      width: 100%;
+    }
+  }
+  .content {
+    font-size: 16px;
+    color: #01081e;
+    letter-spacing: 0;
+    line-height: 24px;
+  }
+}
+@media (max-width: @kc-mb-width) {
+  .detail {
+    width: 100%;
+    padding: 24px;
+  }
+}

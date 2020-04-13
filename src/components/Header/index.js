@@ -4,20 +4,28 @@ import classname from 'classname';
 import { Link } from 'components/Router';
 import Responsive from 'components/Responsive';
 import LangSelector from './LangSelector';
+import MobileMenu from './MobileMenu';
 import { _t } from 'utils/lang';
 import styles from './style.less';
 import logo from 'assets/logo.svg';
 
-// TODO V0.2 sidebar
 const Header = ({ pathname }) => {
   const rightMenus = [
     {
+      title: _t('head.mobile.home'),
+      path: '/',
+      icon: 'icon_index',
+      mobile: true,
+    },
+    {
       title: _t('head.menu.whykuchain'),
       path: '/why-kuchain',
+      icon: 'icon_why',
     },
     {
       title: _t('head.menu.news'),
       path: '/news',
+      icon: 'icon_news',
     },
     // {
     //   title: _t('head.menu.community'),
@@ -25,7 +33,9 @@ const Header = ({ pathname }) => {
     // },
     {
       title: _t('head.menu.blog'),
-      path: '/blog',
+      path: 'https://blog.kuchain.io/',
+      pc: true,
+      href: true,
     },
   ];
 
@@ -33,7 +43,6 @@ const Header = ({ pathname }) => {
     <div className={styles.affix}>
       <div className={styles.head}>
         <div className={styles.limit}>
-
           <div className={styles.headLeft}>
             <Link to="/" className={styles.logo}>
               <img src={logo} alt="KuChain" />
@@ -42,13 +51,19 @@ const Header = ({ pathname }) => {
           <div className={styles.headRight}>
             <Responsive>
               <React.Fragment>
-                {_.map(rightMenus, ({ path, title }) => {
+                {_.map(rightMenus, ({ path, title, mobile, href }) => {
                   const cls = classname({
                     [styles.menu]: true,
                     [styles.active]: pathname.indexOf(path) === 0,
                   });
-                  return (
-                    <Link key={path} to={path} className={cls}>{ title }</Link>
+                  return mobile ? null : href ? (
+                    <a className={cls} href={path}  key={path} target="_blank" rel="noopener noreferrer">
+                      {title}
+                    </a>
+                  ) : (
+                    <Link key={path} to={path} className={cls}>
+                      {title}
+                    </Link>
                   );
                 })}
               </React.Fragment>
@@ -60,7 +75,7 @@ const Header = ({ pathname }) => {
 
             <Responsive.Mobile>
               <div className={styles.langSelectMb}>
-                <LangSelector />
+                <MobileMenu rightMenus={rightMenus} pathname={pathname} />
               </div>
             </Responsive.Mobile>
           </div>
