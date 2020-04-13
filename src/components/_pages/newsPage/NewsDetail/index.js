@@ -12,25 +12,25 @@ const NewsDetail = props => {
   const { detailData } = props;
 
   return !isEmpty(detailData) ? (
-    <div className={styles['detail']}>
+    <div className={styles.detail}>
       <div
         onClick={() => {
           router.goBack();
         }}
-        className={styles['detail-return']}
+        className={styles.return}
       >
         <Arrow left={true} />
         <span>{_t('news.return')}</span>
       </div>
-      <div className={styles['detail-title']}>{detailData.title.rendered}</div>
-      <div className={styles['detail-dateType']}>{new Date(detailData.date).toLocaleString()}</div>
+      <div className={styles.title}>{detailData.title ? detailData.title.rendered : ''}</div>
+      <div className={styles.dateType}>{new Date(detailData.date).toLocaleString()}</div>
       {detailData.featured_media && (
-        <div className={styles['detail-imgBox']}>
+        <div className={styles.imgBox}>
           <ImgSrc featured_media={detailData.featured_media} />
         </div>
       )}
-      <div className={styles['detail-content']}>
-        <Html>{detailData.content.rendered}</Html>
+      <div className={styles.content}>
+        <Html>{detailData.content ? detailData.content.rendered : ''}</Html>
       </div>
     </div>
   ) : null;

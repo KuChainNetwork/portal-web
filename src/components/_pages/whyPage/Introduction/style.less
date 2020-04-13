@@ -1,7 +1,7 @@
 .intro {
   display: flex;
   justify-content: space-between;
-  &-left {
+  .left {
     max-width: 650px;
     padding-top: 72px;
     .title {
@@ -21,24 +21,24 @@
       &:not(:first-child) {
         margin-top: 40px;
       }
-      &-top {
+      .top {
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        &-mark {
+        .mark {
           width: 11.3px;
           height: 11.3px;
           background-color: @primary-color;
           transform: rotate(45deg);
           margin-right: 8px;
         }
-        &-title {
+        .title {
           font-size: 20px;
           color: #01081e;
           line-height: 24px;
         }
       }
-      &-main {
+      .main {
         font-size: 16px;
         color: rgba(1, 8, 30, 0.6);
         line-height: 24px;
@@ -47,7 +47,7 @@
       }
     }
   }
-  &-right {
+  .right {
     img {
       height: 100%;
     }
@@ -57,14 +57,14 @@
   .intro {
     position: relative;
     padding-bottom: 200px;
-    &-left {
+    .left {
       position: relative;
       z-index: 20;
       .desc {
         margin: 24px 0;
       }
     }
-    &-right {
+    .right {
       position: absolute;
       bottom: 0;
       right: 0;

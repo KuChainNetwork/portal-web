@@ -1,4 +1,4 @@
-import React, { useContext, uesCallback } from 'react';
+import React, { useContext, useCallback } from 'react';
 import _ from 'lodash';
 import styles from './style.less';
 import { Menu } from 'antd';
@@ -33,9 +33,9 @@ export default props => {
     },
   ];
 
-  const tabCallback = e => {
+  const tabCallback = useCallback(e => {
     setKeyCallback(e.key);
-  };
+  }, [setKeyCallback]);
 
   return (
     <div
@@ -44,7 +44,7 @@ export default props => {
         [styles.AllNewsHide]: hide,
       })}
     >
-      <div className={styles['AllNews-pc']}>
+      <div className={styles.pc}>
         <div className={styles.menuBox}>
           <Menu onClick={tabCallback} selectedKeys={[typeKey]} mode="horizontal">
             {_.map(paneData, item => (
@@ -54,11 +54,9 @@ export default props => {
         </div>
         <NewsList />
       </div>
-      <div className={styles['AllNews-mobile']}>
-        <div className={styles['AllNews-mobile-title']}>{_t('news.latest')}</div>
-        <div className={styles['AllNews-mobile-main']}>
-          <NewsList />
-        </div>
+      <div className={styles.mobile}>
+        <div className={styles.title}>{_t('news.latest')}</div>
+        <NewsList />
       </div>
     </div>
   );

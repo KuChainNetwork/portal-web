@@ -24,10 +24,10 @@ const Architecture = props => {
   const options = {};
 
   return (
-    <div className={styles['arch']}>
-      <div className={styles['arch-title']}>{_t('why.arch.title')}</div>
-      <div className={styles['arch-desc']}>{_t('why.arch.desc')}</div>
-      <div className={styles['arch-imgBox']}>
+    <div className={styles.arch}>
+      <div className={styles.title}>{_t('why.arch.title')}</div>
+      <div className={styles.desc}>{_t('why.arch.desc')}</div>
+      <div className={styles.imgBox}>
         <Responsive>
           <img src={imgSrc} alt="" />
         </Responsive>

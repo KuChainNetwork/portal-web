@@ -1,16 +1,16 @@
 .governance {
-  &-title {
+  .title {
     font-size: 48px;
     color: #01081e;
   }
-  &-desc {
+  .desc {
     font-size: 20px;
     color: rgba(1, 8, 30, 0.6);
     line-height: 32px;
     margin: 32px 0 120px;
     max-width: 800px;
   }
-  &-main {
+  .main {
     width: 100%;
     box-sizing: border-box;
     display: flex;
@@ -29,22 +29,22 @@
       &:first-child {
         border-left: 1px solid rgba(0, 0, 0, 0.08);
       }
-      &-iconBox {
+      .iconBox {
         width: 56px;
-        flex-shrink:0;
+        flex-shrink: 0;
         img {
           width: 100%;
         }
       }
-      &-info {
+      .info {
         margin-top: 52px;
         text-align: center;
-        &-title {
+        .title {
           font-size: 20px;
           color: #01081e;
           margin-bottom: 16px;
         }
-        &-desc {
+        .desc {
           font-size: 14px;
           color: rgba(1, 8, 30, 0.6);
           line-height: 24px;
@@ -56,10 +56,10 @@
 }
 @media (max-width: @kc-mb-width) {
   .governance {
-    &-desc{
+    .desc {
       margin: 24px 0;
     }
-    &-main {
+    .main {
       flex-direction: column;
       .governanceItem {
         width: 100%;
@@ -74,15 +74,15 @@
         &:first-child {
           border-top: 1px solid rgba(0, 0, 0, 0.08);
         }
-        &-info {
+        .info {
           margin-top: 0;
           text-align: left;
           padding-left: 24px;
-          &-title {
+          .title {
             font-size: 16px;
             margin-bottom: 4px;
           }
-          &-desc {
+          .desc {
             font-size: 12px;
             max-width: 100%;
           }

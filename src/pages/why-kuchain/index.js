@@ -7,17 +7,17 @@ import BetterService from 'components/_pages/whyPage/BetterService';
 
 const WhyKuchain = () => {
   return (
-    <div className={styles['why']}>
-      <div className={styles['why-introduction']}>
+    <div className={styles.why}>
+      <div className={styles.introduction}>
         <Introduction />
       </div>
-      <div className={styles['why-architecture']}>
+      <div className={styles.architecture}>
         <Architecture />
       </div>
-      <div className={styles['why-governance']}>
+      <div className={styles.governance}>
         <Governance />
       </div>
-      <div className={styles['why-betterService']}>
+      <div className={styles.betterService}>
         <BetterService />
       </div>
     </div>

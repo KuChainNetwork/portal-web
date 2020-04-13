@@ -1,13 +1,13 @@
 .AllNews {
   display: block;
-  &-pc {
+  .pc {
     display: block;
     width: 743px;
     .menuBox {
       margin-bottom: 48px;
     }
   }
-  &-mobile {
+  .mobile {
     display: none;
   }
   :global .ant-menu-horizontal {
@@ -33,12 +33,12 @@
 
 @media (max-width: @kc-mb-width) {
   .AllNews {
-    &-pc {
+    .pc {
       display: none;
     }
-    &-mobile {
+    .mobile {
       display: block;
-      &-title {
+      .title {
         font-size: 20px;
         color: #01081e;
         letter-spacing: 0;

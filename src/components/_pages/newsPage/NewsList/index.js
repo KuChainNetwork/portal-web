@@ -12,18 +12,18 @@ const NewsList = props => {
   const { records, pagination } = props;
 
   return (
-    <div className={styles['NewsList']}>
-      <div className={styles['NewsList-main']}>
+    <div className={styles.NewsList}>
+      <div className={styles.main}>
         {records &&
           !!records.length &&
           _.map(records, item => (
             <React.Fragment key={item.id}>
               <NewsListCard data={item} />
-              <div className={styles['line']}></div>
+              <div className={styles.line}></div>
             </React.Fragment>
           ))}
       </div>
-      <div className={styles['NewsList-pageBox']}>
+      <div className={styles.pageBox}>
         <Pagination
           onChange={page => {
             setPageCallback(page);

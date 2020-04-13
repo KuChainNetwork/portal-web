@@ -34,11 +34,11 @@ const Detail = props => {
   }, [currentLang, dispatch]);
 
   return (
-    <div className={styles['detail']}>
-      <div className={styles['detail-left']}>
+    <div className={styles.detail}>
+      <div className={styles.detailLeft}>
         <NewsDetail />
       </div>
-      <div className={styles['detail-right']}>
+      <div className={styles.detailRight}>
         <HotNews pathname={location.pathname} />
       </div>
     </div>

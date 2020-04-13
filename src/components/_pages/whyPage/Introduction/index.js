@@ -20,21 +20,21 @@ export default props => {
     },
   ];
   return (
-    <div className={styles['intro']}>
-      <div className={styles['intro-left']}>
-        <div className={styles['title']}>{_t('why.intro.title')}</div>
-        <div className={styles['desc']}>{_t('why.intro.desc')}</div>
+    <div className={styles.intro}>
+      <div className={styles.left}>
+        <div className={styles.title}>{_t('why.intro.title')}</div>
+        <div className={styles.desc}>{_t('why.intro.desc')}</div>
         {_.map(introData, (item, index) => (
-          <div className={styles['introItem']} key={index}>
-            <div className={styles['introItem-top']}>
-              <div className={styles['introItem-top-mark']}></div>
-              <div className={styles['introItem-top-title']}>{item.title}</div>
+          <div className={styles.introItem} key={index}>
+            <div className={styles.top}>
+              <div className={styles.mark}></div>
+              <div className={styles.title}>{item.title}</div>
             </div>
-            <div className={styles['introItem-main']}>{item.desc}</div>
+            <div className={styles.main}>{item.desc}</div>
           </div>
         ))}
       </div>
-      <div className={styles['intro-right']}>
+      <div className={styles.right}>
         <img src={introImg} alt="" />
       </div>
     </div>

@@ -4,6 +4,7 @@ import { NewsContext } from 'src/pages/news';
 import Html from 'components/Html';
 import ImgSrc from 'components/ImgSrc';
 import { connect } from 'dva';
+import { showDatetime, timestamp } from 'helper';
 
 const NewsListCard = props => {
   const { pageToDetail } = useContext(NewsContext);
@@ -20,18 +21,16 @@ const NewsListCard = props => {
   }, [data, dispatch, pageToDetail]);
 
   return (
-    <div onClick={cardClick} className={styles['listCard']}>
-      <div className={styles['listCard-left']}>
+    <div onClick={cardClick} className={styles.listCard}>
+      <div className={styles.left}>
         <ImgSrc featured_media={data.featured_media} />
       </div>
-      <div className={styles['listCard-right']}>
-        <div className={styles['title']}>{data.title.rendered}</div>
-        <div className={styles['content']}>
-          <Html>{data.excerpt.rendered}</Html>
+      <div className={styles.right}>
+        <div className={styles.title}>{data.title ? data.title.rendered : ''}</div>
+        <div className={styles.content}>
+          <Html>{data.excerpt ? data.excerpt.rendered : ''}</Html>
         </div>
-        <div className={styles['date']}>
-          {data.date.replace(/^(\d{4})\-(\d{2})-(\d{2})(.*)/, '$1.$2.$3')}
-        </div>
+        <div className={styles.date}>{data.date ? showDatetime(timestamp(data.date)) : ''}</div>
       </div>
     </div>
   );

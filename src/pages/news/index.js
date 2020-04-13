@@ -19,14 +19,14 @@ const News = props => {
       query: {
         id,
       },
-    })
+    });
   }, []);
 
   const setKeyCallback = useCallback(val => {
     setTypeKey(val);
     setPage(1);
   }, []);
-  
+
   const setPageCallback = useCallback(val => {
     setPage(val);
   }, []);
@@ -67,11 +67,11 @@ const News = props => {
         setKeyCallback,
       }}
     >
-      <div className={styles['newsPage']}>
-        <div className={styles['newsPage-left']}>
+      <div className={styles.newsPage}>
+        <div className={styles.newsPageLeft}>
           <AllNews />
         </div>
-        <div className={styles['newsPage-right']}>
+        <div className={styles.newsPageRight}>
           <HotNews />
         </div>
       </div>
