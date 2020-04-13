@@ -5,6 +5,7 @@ import router from 'umi/router';
 import { _t } from 'utils/lang';
 import Arrow from 'components/Arrow';
 import Html from 'components/Html';
+import { showDatetime, timestamp } from 'helper';
 import styles from './style.less';
 import ImgSrc from 'components/ImgSrc';
 
@@ -23,7 +24,9 @@ const NewsDetail = props => {
         <span>{_t('news.return')}</span>
       </div>
       <div className={styles.title}>{detailData.title ? detailData.title.rendered : ''}</div>
-      <div className={styles.dateType}>{new Date(detailData.date).toLocaleString()}</div>
+      <div className={styles.dateType}>
+        {detailData.date ? showDatetime(timestamp(detailData.date)) : ''}
+      </div>
       {detailData.featured_media && (
         <div className={styles.imgBox}>
           <ImgSrc featured_media={detailData.featured_media} />
