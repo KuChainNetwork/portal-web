@@ -57,7 +57,7 @@ const JoinUs = () => {
       icon: join_discord,
       title: _t('join.discord'),
       des: _t('join.discord.des'),
-      link: 'https://discord.gg/2tWtHDm',
+      link: 'https://discord.gg/sp79pa',
       recommend: true,
     },
     // {
