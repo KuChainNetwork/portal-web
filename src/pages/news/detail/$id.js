@@ -6,17 +6,17 @@ import { catIds } from 'config';
 import styles from './style.less';
 
 const Detail = props => {
-  const { location, dispatch, currentLang } = props;
+  const { location, dispatch, currentLang, match } = props;
 
   const getData = useCallback(() => {
-    const id = location.pathname.replace('/news/detail/', '');
+    const id = match.params.id
     dispatch({
       type: 'news/detail',
       payload: {
         id,
       },
     });
-  }, [location, dispatch]);
+  }, [match, dispatch]);
 
   useEffect(() => {
     getData();

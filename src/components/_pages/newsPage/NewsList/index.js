@@ -7,7 +7,7 @@ import { NewsContext } from 'src/pages/news';
 import styles from './style.less';
 
 const NewsList = props => {
-  const { page, setPageCallback } = useContext(NewsContext);
+  const { page } = useContext(NewsContext);
   const { records, pagination } = props;
 
   return (
@@ -24,13 +24,10 @@ const NewsList = props => {
       </div>
       <div className={styles.pageBox}>
         <Pagination
-          onChange={page => {
-            setPageCallback(page);
-          }}
           current={page}
           defaultCurrent={1}
           total={pagination ? pagination.total : 0}
-          pathTpl="/news/detail/:page"
+          pathTpl="/news/:page"
         />
       </div>
     </div>

@@ -8,6 +8,16 @@ import { _t } from 'utils/lang';
 import styles from './style.less';
 import mMenuIcon from 'assets/header/icon_menu.svg';
 import selectIcon from 'assets/header/icon_select.svg';
+import langIcon from 'assets/header/icon_lang.svg';
+import icon_index from 'assets/header/icon_index.svg';
+import icon_why from 'assets/header/icon_why.svg';
+import icon_news from 'assets/header/icon_news.svg';
+
+const iconPatams = {
+  icon_index,
+  icon_why,
+  icon_news,
+};
 
 const MobileMenu = props => {
   const { rightMenus, pathname, langs, currentLang, dispatch } = props;
@@ -30,15 +40,18 @@ const MobileMenu = props => {
     setLangShow(false);
   }, []);
 
-  const _selectLang = useCallback(val => {
-    dispatch({
-      type: 'app/selectLang',
-      payload: {
-        lang: val,
-      },
-    });
-    _langclose();
-  }, [_langclose, dispatch]);
+  const _selectLang = useCallback(
+    val => {
+      dispatch({
+        type: 'app/selectLang',
+        payload: {
+          lang: val,
+        },
+      });
+      _langclose();
+    },
+    [_langclose, dispatch],
+  );
 
   return (
     <>
@@ -59,13 +72,13 @@ const MobileMenu = props => {
             });
             return pc ? null : (
               <Link onClick={_close} key={path} to={path} className={cls}>
-                <img src={require(`assets/header/${icon}.svg`)} alt="" />
+                <img src={iconPatams[icon]} alt="" />
                 <span>{title}</span>
               </Link>
             );
           })}
           <div onClick={_langShow} className={styles.menu}>
-            <img src={require(`assets/header/icon_lang.svg`)} alt="" />
+            <img src={langIcon} alt="" />
             <span>{langs.find(item => item.key === currentLang).label}</span>
           </div>
           <Drawer

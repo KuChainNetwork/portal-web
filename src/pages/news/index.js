@@ -9,7 +9,7 @@ import styles from './style.less';
 export const NewsContext = React.createContext();
 
 const News = props => {
-  const { dispatch, currentLang } = props;
+  const { dispatch, currentLang, match } = props;
   const [page, setPage] = useState(1);
   const [typeKey, setTypeKey] = useState('ALL');
 
@@ -24,12 +24,10 @@ const News = props => {
     setPage(1);
   }, []);
 
-  const setPageCallback = useCallback(val => {
-    setPage(val);
-  }, []);
-
   const getNewsData = useCallback(() => {
     const newsCatId = catIds[currentLang][typeKey];
+    const page = match.params.page;
+    setPage(page);
     dispatch({
       type: 'news/pull',
       payload: {
@@ -37,7 +35,7 @@ const News = props => {
         newsCatId,
       },
     });
-  }, [currentLang, typeKey, dispatch, page]);
+  }, [currentLang, typeKey, dispatch, match]);
 
   useEffect(() => {
     getNewsData();
@@ -59,7 +57,6 @@ const News = props => {
       value={{
         pageToDetail,
         page,
-        setPageCallback,
         typeKey,
         setKeyCallback,
       }}
