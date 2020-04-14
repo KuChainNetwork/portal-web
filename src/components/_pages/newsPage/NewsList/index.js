@@ -24,9 +24,7 @@ const NewsList = props => {
       </div>
       <div className={styles.pageBox}>
         <Pagination
-          current={page}
-          defaultCurrent={1}
-          total={pagination ? pagination.total : 0}
+          {...pagination}
           pathTpl="/news/:page"
         />
       </div>

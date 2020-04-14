@@ -1,13 +1,48 @@
-// import _ from 'lodash';
+import _ from 'lodash';
 import { pull, requestFetch } from 'utils/request';
 
-export const getNewsList = async (page = 1, newsCatId, tagsId) => {
-  // const newsCatId = 6;
+const getCategories = newsCatId => {
+  if (!newsCatId) {
+    return '';
+  }
+  if (_.isArray(newsCatId)) {
+    return newsCatId.reduce((pre, cur) => {
+      return pre + `categories[]=${cur}&`;
+    }, '');
+  } else {
+    return `categories=${newsCatId}&`;
+  }
+};
+
+export const getNewsList = async (page = 1, newsCatId) => {
   const pageSize = 10;
   let pagination = null;
   try {
     const res = await requestFetch(
-      `/wp-json/wp/v2/posts?${ newsCatId ? `categories=${newsCatId}&` : '' }page=${page}&per_page=${pageSize}${tagsId ? `&tags=${tagsId}` : ''}`,
+      `/wp-json/wp/v2/posts?${getCategories(newsCatId)}page=${page}&per_page=${pageSize}`,
+    );
+    const count = res.headers.get('X-WP-Total');
+    // const totalPages = res.headers.get('X-WP-TotalPages');
+    const items = await res.json();
+
+    pagination = {
+      items,
+      page,
+      totalNum: +count,
+      pageSize,
+    };
+  } catch (e) {
+    console.log('getNewsList error', e);
+  }
+  return pagination;
+};
+
+export const getNewsListByTag = async (page = 1, tagsId) => {
+  const pageSize = 10;
+  let pagination = null;
+  try {
+    const res = await requestFetch(
+      `/wp-json/wp/v2/posts?page=${page}&per_page=${pageSize}${tagsId ? `&tags=${tagsId}` : ''}`,
     );
     const count = res.headers.get('X-WP-Total');
     // const totalPages = res.headers.get('X-WP-TotalPages');
