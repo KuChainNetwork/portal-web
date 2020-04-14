@@ -6,12 +6,9 @@ const getCategories = newsCatId => {
     return '';
   }
   if (_.isArray(newsCatId)) {
-    return newsCatId.reduce((pre, cur) => {
-      return pre + `categories[]=${cur}&`;
-    }, '');
-  } else {
-    return `categories=${newsCatId}&`;
+    return _.reduce(newsCatId, (pre, cur) => `${pre}categories[]=${cur}&`, '');
   }
+  return `categories=${newsCatId}&`;
 };
 
 export const getNewsList = async (page = 1, newsCatId) => {
