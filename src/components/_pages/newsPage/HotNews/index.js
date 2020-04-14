@@ -37,7 +37,7 @@ const HotNews = props => {
             onClick={() => {
               hotItemClick(item);
             }}
-            key={item}
+            key={item.id}
             className={styles.listItem}
           >
             <div className={styles.left}>

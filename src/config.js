@@ -17,7 +17,7 @@ export const mailchimpSubscribe = {
 
 export const catIds = {
   en_US: {
-    ALL: '',
+    ALL: [11, 15, 14, 12],
     WEEK: 11,
     NOTICE: 15,
     BLOG: 14,
@@ -25,7 +25,7 @@ export const catIds = {
     HOT: 9,
   },
   zh_CN: {
-    ALL: '',
+    ALL: [16, 6, 13, 7],
     WEEK: 6,
     NOTICE: 16,
     BLOG: 13,

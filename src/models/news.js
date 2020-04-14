@@ -1,7 +1,7 @@
 import extend from 'dva-model-extend';
 import base from 'utils/common_models/base';
 import paginate from 'utils/common_models/paginate';
-import { getNewsList, getDetail } from 'services/news';
+import { getNewsList, getNewsListByTag, getDetail } from 'services/news';
 
 export default extend(base, paginate, {
   namespace: 'news',
@@ -59,7 +59,7 @@ export default extend(base, paginate, {
       });
     },
     *pullHot({ payload: { page, tagsId } = {} }, { put, call }) {
-      const paginationSave = yield call(getNewsList, page, null, tagsId);
+      const paginationSave = yield call(getNewsListByTag, page, tagsId);
       yield put({
         type: 'updateHotRecords',
         payload: paginationSave,
