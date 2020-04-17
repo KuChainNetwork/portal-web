@@ -10,8 +10,9 @@ export const NewsContext = React.createContext();
 
 const News = props => {
   const { dispatch, currentLang, match } = props;
+  const defaultTypeKey = match.params.type ? match.params.type.toUpperCase() : 'ALL';
   const [page, setPage] = useState(1);
-  const [typeKey, setTypeKey] = useState('ALL');
+  const [typeKey, setTypeKey] = useState(defaultTypeKey);
 
   const pageToDetail = useCallback(id => {
     router.push({
@@ -19,14 +20,17 @@ const News = props => {
     });
   }, []);
 
-  const setKeyCallback = useCallback(val => {
-    setTypeKey(val);
+  const setKeyCallback = useCallback(type => {
+    setTypeKey(type);
     setPage(1);
+    router.push({
+      pathname: `/news/${type.toLowerCase()}`,
+    });
   }, []);
 
   const getNewsData = useCallback(() => {
     const newsCatId = catIds[currentLang][typeKey];
-    const page = match.params.page;
+    const page = match.params.page ? Number(match.params.page) : 1;
     setPage(page);
     dispatch({
       type: 'news/pull',
