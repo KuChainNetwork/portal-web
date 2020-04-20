@@ -8,6 +8,7 @@
     letter-spacing: 1.43px;
     line-height: 24px;
     margin-bottom: 24px;
+    font-weight: 500;
   }
   .list {
     .listItem {
@@ -29,6 +30,10 @@
         color: #01081e;
         letter-spacing: 0;
         line-height: 24px;
+        transition: color 300ms;
+        &:hover {
+          color: @primary-color;
+        }
       }
     }
   }

@@ -26,11 +26,15 @@ const NewsListCard = props => {
         <ImgSrc featured_media={data.featured_media} />
       </div>
       <div className={styles.right}>
-        <div className={styles.title}>{data.title ? data.title.rendered : ''}</div>
-        <div className={styles.content}>
-          <Html>{data.excerpt ? data.excerpt.rendered : ''}</Html>
+        <div className={styles.rightTop}>
+          <div className={styles.title}>{data.title ? data.title.rendered : ''}</div>
+          <div className={styles.content}>
+            <Html>{data.excerpt ? data.excerpt.rendered : ''}</Html>
+          </div>
         </div>
-        <div className={styles.date}>{data.date ? showDatetime(timestamp(data.date)) : ''}</div>
+        <div className={styles.rightBottom}>
+          <div className={styles.date}>{data.date ? showDatetime(timestamp(data.date)) : ''}</div>
+        </div>
       </div>
     </div>
   );

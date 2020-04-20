@@ -26,7 +26,7 @@ const Architecture = props => {
   return (
     <div className={styles.arch}>
       <div className={styles.title}>{_t('why.arch.title')}</div>
-      <div className={styles.desc}>{_t('why.arch.desc')}</div>
+      {/* <div className={styles.desc}>{_t('why.arch.desc')}</div> */}
       <div className={styles.imgBox}>
         <Responsive>
           <img src={imgSrc} alt="" />

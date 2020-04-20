@@ -27,8 +27,7 @@ export default props => {
         {_.map(introData, (item, index) => (
           <div className={styles.introItem} key={index}>
             <div className={styles.top}>
-              <div className={styles.mark}></div>
-              <div className={styles.title}>{item.title}</div>
+              <div className={styles.markTitle}>{item.title}</div>
             </div>
             <div className={styles.main}>{item.desc}</div>
           </div>

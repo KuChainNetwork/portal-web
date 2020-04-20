@@ -42,8 +42,8 @@ export default props => {
               <img src={item.icon} alt="" />
             </div>
             <div className={styles.info}>
-              <div className={styles.title}>{item.title}</div>
-              <div className={styles.desc}>{item.desc}</div>
+              <div className={styles.title2}>{item.title}</div>
+              <div className={styles.desc2}>{item.desc}</div>
             </div>
           </div>
         ))}
