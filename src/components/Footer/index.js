@@ -26,7 +26,7 @@ export default () => {
           <a>Privacy Agreement</a>
         </div> */}
         <div>
-          CopyRight ©2017-{new Date().getFullYear()} KuChain.io
+          CopyRight ©2017-{new Date().getFullYear()} KuChain.network
           <br />
           All Rights Reserved
         </div>
@@ -76,7 +76,7 @@ export default () => {
               <div className={styles.sep} />
               <a>Privacy Agreement</a>
             </div> */}
-            <span>CopyRight ©2017-{new Date().getFullYear()} KuChain.io All Rights Reserved</span>
+            <span>CopyRight ©2017-{new Date().getFullYear()} KuChain.network All Rights Reserved</span>
           </div>
         </div>
       </div>

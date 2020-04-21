@@ -7,7 +7,7 @@ import { NewsContext } from 'src/pages/news';
 import styles from './style.less';
 
 const NewsList = props => {
-  const { page } = useContext(NewsContext);
+  const { typeKey } = useContext(NewsContext);
   const { records, pagination } = props;
 
   return (
@@ -23,10 +23,7 @@ const NewsList = props => {
           ))}
       </div>
       <div className={styles.pageBox}>
-        <Pagination
-          {...pagination}
-          pathTpl="/news/:page"
-        />
+        <Pagination {...pagination} pathTpl={`/news/${typeKey.toLowerCase()}/:page`} />
       </div>
     </div>
   );

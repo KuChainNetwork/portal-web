@@ -48,7 +48,7 @@ export default props => {
         <div className={styles.menuBox}>
           <Menu onClick={tabCallback} selectedKeys={[typeKey]} mode="horizontal">
             {_.map(paneData, item => (
-              <Menu.Item key={item.key}>{item.tab}</Menu.Item>
+              <Menu.Item className={styles.menuItem} key={item.key}>{item.tab}</Menu.Item>
             ))}
           </Menu>
         </div>
