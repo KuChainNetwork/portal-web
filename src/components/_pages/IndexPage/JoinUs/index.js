@@ -85,7 +85,7 @@ const JoinUs = () => {
       icon: join_twitter,
       title: _t('join.twitter'),
       des: _t('join.twitter.des'),
-      link: 'https://twitter.com/KuChainOfficia',
+      link: 'https://twitter.com/KuChainOfficial',
     },
   ];
 
