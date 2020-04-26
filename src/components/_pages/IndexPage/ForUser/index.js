@@ -11,16 +11,28 @@ import icon_KuChain from 'assets/possible/icon_KuChain.svg';
 import icon_Product from 'assets/possible/icon_Product.svg';
 import icon_Community from 'assets/possible/icon_Community.svg';
 import icon_Problem from 'assets/possible/icon_Problem.svg';
+import router from 'umi/router';
 
 const ForUser = () => {
   const isMobile = useIsMobile();
 
   const animateTextRef = useRef(null);
-  const handleAnimateScroll = useCallback((w) => {
-    if (animateTextRef.current &&
-      typeof animateTextRef.current.onAnimateScroll === 'function'
-    ) {
+  const handleAnimateScroll = useCallback(w => {
+    if (animateTextRef.current && typeof animateTextRef.current.onAnimateScroll === 'function') {
       animateTextRef.current.onAnimateScroll(w);
+    }
+  }, []);
+
+  const pageToWhy = useCallback((anchor, disabled) => {
+    if (!disabled) {
+      router.push({
+        pathname: '/why-kuchain',
+        query: !!anchor
+          ? {
+              anchor,
+            }
+          : {},
+      });
     }
   }, []);
 
@@ -28,18 +40,22 @@ const ForUser = () => {
     {
       icon: icon_KuChain,
       title: _t('user.kuchain'),
+      anchor: '',
     },
     {
       icon: icon_Product,
       title: _t('user.product'),
+      anchor: 'architecture',
     },
     {
       icon: icon_Community,
       title: _t('user.community'),
+      anchor: 'governance',
     },
     {
       icon: icon_Problem,
       title: _t('user.problem'),
+      disabled: true,
     },
   ];
 
@@ -59,11 +75,17 @@ const ForUser = () => {
           </AnimateRectOnScroll.Text>
         </div>
         <div className={styles.roles}>
-          {_.map(roles, ({ icon, title }, idx) => {
+          {_.map(roles, ({ icon, title, anchor, disabled }, idx) => {
             return (
-              <div key={idx} className={styles.role}>
+              <div
+                onClick={() => {
+                  pageToWhy(anchor, disabled);
+                }}
+                key={idx}
+                className={styles.role}
+              >
                 <img src={icon} alt={title} />
-                <p>{ title }</p>
+                <p>{title}</p>
                 {/* <div className={styles.arrow}>
                   <Arrow />
                 </div> */}

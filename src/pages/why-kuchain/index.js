@@ -1,23 +1,39 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './style.less';
 import Introduction from 'components/_pages/whyPage/Introduction';
 import Architecture from 'components/_pages/whyPage/Architecture';
 import Governance from 'components/_pages/whyPage/Governance';
 import BetterService from 'components/_pages/whyPage/BetterService';
 
-const WhyKuchain = () => {
+const WhyKuchain = props => {
+  const {
+    location: { query },
+  } = props;
+
+  useEffect(() => {
+    if (!!query.anchor) {
+      const el = document.getElementById(query.anchor);
+      if (!!el) {
+        el.scrollIntoView();
+        setTimeout(() => {
+          el.scrollIntoView();
+        }, 600);
+      }
+    }
+  }, [query.anchor]);
+
   return (
     <div className={styles.why}>
-      <div className={styles.introduction}>
+      <div id="introduction" className={styles.introduction}>
         <Introduction />
       </div>
-      <div className={styles.architecture}>
+      <div id="architecture" className={styles.architecture}>
         <Architecture />
       </div>
-      <div className={styles.governance}>
+      <div id="governance" className={styles.governance}>
         <Governance />
       </div>
-      <div className={styles.betterService}>
+      <div id="betterService" className={styles.betterService}>
         <BetterService />
       </div>
     </div>
