@@ -2,30 +2,20 @@ import React, { useState, useCallback, useEffect } from 'react';
 import HotNews from 'components/_pages/newsPage/HotNews';
 import AllNews from 'components/_pages/newsPage/AllNews';
 import { connect } from 'dva';
-import router from 'umi/router';
 import { catIds } from 'config';
 import styles from './style.less';
 
 export const NewsContext = React.createContext();
 
 const News = props => {
-  const { dispatch, currentLang, match } = props;
+  const { dispatch, currentLang, match, location } = props;
   const defaultTypeKey = match.params.type ? match.params.type.toUpperCase() : 'ALL';
   const [page, setPage] = useState(1);
   const [typeKey, setTypeKey] = useState(defaultTypeKey);
 
-  const pageToDetail = useCallback(id => {
-    router.push({
-      pathname: `/news/detail/${id}`,
-    });
-  }, []);
-
   const setKeyCallback = useCallback(type => {
     setTypeKey(type);
     setPage(1);
-    router.push({
-      pathname: `/news/${type.toLowerCase()}`,
-    });
   }, []);
 
   const getNewsData = useCallback(() => {
@@ -59,10 +49,10 @@ const News = props => {
   return (
     <NewsContext.Provider
       value={{
-        pageToDetail,
         page,
         typeKey,
         setKeyCallback,
+        location,
       }}
     >
       <div className={styles.newsPage}>
@@ -70,7 +60,7 @@ const News = props => {
           <AllNews />
         </div>
         <div className={styles.newsPageRight}>
-          <HotNews />
+          <HotNews location={location} />
         </div>
       </div>
     </NewsContext.Provider>

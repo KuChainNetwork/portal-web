@@ -36,10 +36,10 @@ const Detail = props => {
   return (
     <div className={styles.detail}>
       <div className={styles.detailLeft}>
-        <NewsDetail />
+        <NewsDetail location={location} />
       </div>
       <div className={styles.detailRight}>
-        <HotNews pathname={location.pathname} />
+        <HotNews location={location} />
       </div>
     </div>
   );

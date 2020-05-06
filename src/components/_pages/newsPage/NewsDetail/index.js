@@ -1,28 +1,26 @@
 import React from 'react';
 import { connect } from 'dva';
 import { isEmpty } from 'lodash';
-import router from 'umi/router';
 import { _t } from 'utils/lang';
 import Arrow from 'components/Arrow';
 import Html from 'components/Html';
+import { Link } from 'components/Router';
 import { showDatetime, timestamp } from 'helper';
 import styles from './style.less';
 import ImgSrc from 'components/ImgSrc';
 
 const NewsDetail = props => {
-  const { detailData } = props;
+  const { detailData, location } = props;
 
   return !isEmpty(detailData) ? (
     <div className={styles.detail}>
-      <div
-        onClick={() => {
-          router.goBack();
-        }}
-        className={styles.return}
-      >
-        <Arrow left={true} />
-        <span>{_t('news.return')}</span>
-      </div>
+      <Link to={`/news/${location.query.type || 'all'}`}>
+        <div className={styles.return}>
+          <Arrow left={true} />
+          <span>{_t('news.return')}</span>
+        </div>
+      </Link>
+
       <div className={styles.title}>{detailData.title ? detailData.title.rendered : ''}</div>
       <div className={styles.dateType}>
         {detailData.date ? showDatetime(timestamp(detailData.date)) : ''}
