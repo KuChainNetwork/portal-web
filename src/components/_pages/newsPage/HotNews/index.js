@@ -1,12 +1,13 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import _ from 'lodash';
-import router from 'umi/router';
 import { connect } from 'dva';
+import { Link } from 'components/Router';
 import { _t } from 'utils/lang';
 import styles from './style.less';
 
 const HotNews = props => {
-  const { hotRecords, dispatch, pathname } = props;
+  const { hotRecords, dispatch, location } = props;
+  const { pathname } = location;
 
   const hotItemClick = useCallback(
     data => {
@@ -16,35 +17,40 @@ const HotNews = props => {
           detailData: data,
         },
       });
-      const routerParams = {
-        pathname: `/news/detail/${data.id}`,
-      };
-      if (pathname && pathname.includes('detail')) {
-        router.replace(routerParams);
-      } else {
-        router.push(routerParams);
-      }
     },
-    [dispatch, pathname],
+    [dispatch],
   );
+
+  const isFromDetail = useMemo(() => pathname && pathname.includes('detail'), [pathname]);
+
+  const type = useMemo(() => {
+    let type = null;
+    if (isFromDetail) {
+      type = location.query.type;
+    } else {
+      type = pathname.replace(/\/news\/?/gi, '') || 'all';
+    }
+    return type;
+  }, [location, pathname, isFromDetail]);
 
   return (
     <div className={styles.HotNews}>
       <div className={styles.title}>{_t('news.hot')}</div>
       <div className={styles.list}>
         {_.map(hotRecords, item => (
-          <div
-            onClick={() => {
-              hotItemClick(item);
-            }}
-            key={item.id}
-            className={styles.listItem}
-          >
-            <div className={styles.left}>
-              <div className={styles.circle}></div>
+          <Link to={`/news/detail/${item.id}?type=${type}`} replace={isFromDetail} key={item.id}>
+            <div
+              onClick={() => {
+                hotItemClick(item);
+              }}
+              className={styles.listItem}
+            >
+              <div className={styles.left}>
+                <div className={styles.circle}></div>
+              </div>
+              <div className={styles.right}>{item.title.rendered}</div>
             </div>
-            <div className={styles.right}>{item.title.rendered}</div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
