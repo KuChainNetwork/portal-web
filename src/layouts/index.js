@@ -45,7 +45,15 @@ function BasicLayout(props) {
         </Helmet>
       )}
       <Header pathname={pathname} />
-      <div className={styles.body}>{children}</div>
+      <div className={styles.body} style={{
+        fontSize: 38,
+        alignItems: 'center',
+        justifyContent: 'center',
+        display: 'flex'
+      }}>
+        Coming Soon
+      </div>
+      {/*<div className={styles.body}>{children}</div>*/}
 
       <Footer />
       {/* // TODO V0.2 Policy */}

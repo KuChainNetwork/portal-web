@@ -51,7 +51,7 @@ const Header = ({ pathname }) => {
           <div className={styles.headRight}>
             <Responsive>
               <React.Fragment>
-                {_.map(rightMenus, ({ path, title, mobile, href }) => {
+                {_.map([] || rightMenus, ({ path, title, mobile, href }) => {
                   const cls = classname({
                     [styles.menu]: true,
                     [styles.active]: pathname.indexOf(path) === 0,
@@ -68,9 +68,9 @@ const Header = ({ pathname }) => {
                 })}
               </React.Fragment>
 
-              <div className={styles.langSelect}>
-                <LangSelector />
-              </div>
+              {/*<div className={styles.langSelect}>*/}
+              {/*  <LangSelector />*/}
+              {/*</div>*/}
             </Responsive>
 
             <Responsive.Mobile>
