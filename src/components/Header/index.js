@@ -11,30 +11,32 @@ import logo from 'assets/logo.svg';
 
 const Header = ({ pathname }) => {
   const rightMenus = [
-    {
-      title: _t('head.mobile.home'),
-      path: '/',
-      icon: 'icon_index',
-      mobile: true,
-    },
-    {
-      title: _t('head.menu.whykuchain'),
-      path: '/why-kuchain',
-      icon: 'icon_why',
-    },
-    {
-      title: _t('head.menu.news'),
-      path: '/news',
-      icon: 'icon_news',
-    },
     // {
-    //   title: _t('head.menu.community'),
-    //   path: '/community',
+    //   title: _t('head.mobile.home'),
+    //   path: '/',
+    //   icon: 'icon_index',
+    //   mobile: true,
+    // },
+    // {
+    //   title: _t('head.menu.whykuchain'),
+    //   path: '/why-kuchain',
+    //   icon: 'icon_why',
+    // },
+    // {
+    //   title: _t('head.menu.news'),
+    //   path: '/news',
+    //   icon: 'icon_news',
+    // },
+    // {
+    //   title: _t('head.menu.blog'),
+    //   path: 'https://blog.kuchain.io/',
+    //   pc: true,
+    //   href: true,
     // },
     {
-      title: _t('head.menu.blog'),
-      path: 'https://blog.kuchain.io/',
-      pc: true,
+      title: _t('head.menu.apply.funds'),
+      path: 'https://beta.kuchain.network/',
+      pc: false,
       href: true,
     },
   ];
@@ -51,13 +53,19 @@ const Header = ({ pathname }) => {
           <div className={styles.headRight}>
             <Responsive>
               <React.Fragment>
-                {_.map([] || rightMenus, ({ path, title, mobile, href }) => {
+                {_.map(rightMenus, ({ path, title, mobile, href }) => {
                   const cls = classname({
                     [styles.menu]: true,
                     [styles.active]: pathname.indexOf(path) === 0,
                   });
                   return mobile ? null : href ? (
-                    <a className={cls} href={path}  key={path} target="_blank" rel="noopener noreferrer">
+                    <a
+                      className={cls}
+                      href={path}
+                      key={path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       {title}
                     </a>
                   ) : (
@@ -68,9 +76,9 @@ const Header = ({ pathname }) => {
                 })}
               </React.Fragment>
 
-              {/*<div className={styles.langSelect}>*/}
-              {/*  <LangSelector />*/}
-              {/*</div>*/}
+              <div className={styles.langSelect}>
+                <LangSelector />
+              </div>
             </Responsive>
 
             <Responsive.Mobile>

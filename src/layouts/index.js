@@ -45,15 +45,7 @@ function BasicLayout(props) {
         </Helmet>
       )}
       <Header pathname={pathname} />
-      <div className={styles.body} style={{
-        fontSize: 38,
-        alignItems: 'center',
-        justifyContent: 'center',
-        display: 'flex'
-      }}>
-        Coming Soon
-      </div>
-      {/*<div className={styles.body}>{children}</div>*/}
+      <div className={styles.body}>{children}</div>
 
       <Footer />
       {/* // TODO V0.2 Policy */}
@@ -62,7 +54,7 @@ function BasicLayout(props) {
   );
 }
 
-export default connect(state => {
+export default connect((state) => {
   return {
     currentLang: state.app.currentLang,
   };

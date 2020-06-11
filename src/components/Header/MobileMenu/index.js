@@ -19,7 +19,7 @@ const iconPatams = {
   icon_news,
 };
 
-const MobileMenu = props => {
+const MobileMenu = (props) => {
   const { rightMenus, pathname, langs, currentLang, dispatch } = props;
   const [show, setShow] = useState(false);
   const [langShow, setLangShow] = useState(false);
@@ -41,7 +41,7 @@ const MobileMenu = props => {
   }, []);
 
   const _selectLang = useCallback(
-    val => {
+    (val) => {
       dispatch({
         type: 'app/selectLang',
         payload: {
@@ -64,13 +64,17 @@ const MobileMenu = props => {
         visible={show}
       >
         <div className={styles.menuContent}>
-          {_.map(rightMenus, item => {
-            const { path, title, pc, icon } = item;
+          {_.map(rightMenus, (item) => {
+            const { path, title, pc, icon, href } = item;
             const cls = classname({
               [styles.menu]: true,
               [styles.active]: pathname === path,
             });
-            return pc ? null : (
+            return pc ? null : href ? (
+              <a className={cls} href={path} key={path} target="_blank" rel="noopener noreferrer">
+                {title}
+              </a>
+            ) : (
               <Link onClick={_close} key={path} to={path} className={cls}>
                 <img src={iconPatams[icon]} alt="" />
                 <span>{title}</span>
@@ -79,7 +83,7 @@ const MobileMenu = props => {
           })}
           <div onClick={_langShow} className={styles.menu}>
             <img src={langIcon} alt="" />
-            <span>{langs.find(item => item.key === currentLang).label}</span>
+            <span>{langs.find((item) => item.key === currentLang).label}</span>
           </div>
           <Drawer
             className={styles.langDrawer}
@@ -90,7 +94,7 @@ const MobileMenu = props => {
             visible={langShow}
           >
             <div className={styles.slectLang}>
-              {_.map(langs, item => (
+              {_.map(langs, (item) => (
                 <div
                   onClick={() => {
                     _selectLang(item.key);
@@ -112,7 +116,7 @@ const MobileMenu = props => {
   );
 };
 
-export default connect(state => {
+export default connect((state) => {
   return {
     langs: state.app.langs,
     currentLang: state.app.currentLang,

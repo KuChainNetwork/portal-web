@@ -1,11 +1,14 @@
 {
-  "extends": "eslint-config-umi",
+  "plugins": ["prettier"],
+  "extends": ["eslint-config-umi", "prettier"],
   "globals": {
     "_DEV_": false,
     "_PUBLIC_PATH_": false,
     "_RELEASE_": false
   },
   "rules": {
-    "jsx-a11y/anchor-is-valid": "off"
+    "prettier/prettier": "error",
+    "jsx-a11y/anchor-is-valid": "off",
+    "react-hooks/exhaustive-deps": "off"
   }
 }
