@@ -77,9 +77,12 @@ export function setXVersion(value = '') {
 
 window.setXVersion = setXVersion;
 
-export function requestFetch(url, options = {
-  method: 'GET',
-}) {
+export function requestFetch(
+  url,
+  options = {
+    method: 'GET',
+  },
+) {
   options.mode = options.mode || 'cors';
   options.credentials = options.credentials || 'include';
   options.headers = {
@@ -99,10 +102,8 @@ export function requestFetch(url, options = {
 
   const requestHost = isDefaultHost(url) ? `${host}${url}` : url;
 
-  return fetch(requestHost, options)
-    .then(checkStatus);
-};
-
+  return fetch(requestHost, options).then(checkStatus);
+}
 
 /**
  * Requests a URL, returning a promise.
@@ -131,22 +132,25 @@ export default function request(url, options = {}) {
 
   const requestHost = isDefaultHost(url) ? `${host}${url}` : url;
 
-  return fetch(requestHost, options)
-    .then(checkStatus)
-    .then(parseJSON)
-    // .then(checkError)
-    .catch((e) => {
-      if (typeof e === 'object') {
-        e._req_host = requestHost;
+  return (
+    fetch(requestHost, options)
+      .then(checkStatus)
+      .then(parseJSON)
+      // .then(checkError)
+      .catch((e) => {
+        if (typeof e === 'object') {
+          e._req_host = requestHost;
 
-        if (e.code === '401' || // user need login
-          e.code >= '600' // system error code
-        ) {
-          e._no_sentry = true;
+          if (
+            e.code === '401' || // user need login
+            e.code >= '600' // system error code
+          ) {
+            e._no_sentry = true;
+          }
         }
-      }
-      throw e;
-    });
+        throw e;
+      })
+  );
 }
 
 /**

@@ -62,13 +62,14 @@ const SeparateNumberPool = {
   pool: Object.create(null),
   poolCount: 0,
   has(k) {
-    return !!(this.pool[k]);
+    return !!this.pool[k];
   },
   get(k) {
     return this.pool[k];
   },
   set(k, v) {
-    if (this.poolCount > 100000) { // Clear cache
+    if (this.poolCount > 100000) {
+      // Clear cache
       this.poolCount = 0;
       this.pool = Object.create(null);
     }
@@ -87,7 +88,7 @@ export const separateNumber = (n) => {
   if (SeparateNumberPool.has(num)) {
     return SeparateNumberPool.get(num);
   }
-  if (!(/^[0-9.]+$/).test(num)) {
+  if (!/^[0-9.]+$/.test(num)) {
     return n;
   }
 
@@ -121,7 +122,6 @@ export const separateNumber = (n) => {
   return r;
 };
 
-
 /**
  * Whether open in WeChat browser
  *
@@ -131,7 +131,7 @@ export const isOpenInWechat = (pUA) => {
   const ua = pUA || navigator.userAgent.toLowerCase();
   const match = ua.match(/MicroMessenger/i);
 
-  return match && (match[0] === 'micromessenger');
+  return match && match[0] === 'micromessenger';
 };
 
 /**
@@ -147,38 +147,55 @@ export const scrollToAnchor = (anchorName) => {
   }
 };
 
-
 /**
  * Events
  */
 export const Event = {};
 
-Event.addHandler = window.addEventListener ?
-  (target, type, handler) => {
-    target.addEventListener(type, handler, false);
-  } :
-  (target, type, handler) => {
-    target.attachEvent(`on${type}`, handler);
-  };
+Event.addHandler = window.addEventListener
+  ? (target, type, handler) => {
+      target.addEventListener(type, handler, false);
+    }
+  : (target, type, handler) => {
+      target.attachEvent(`on${type}`, handler);
+    };
 
-Event.removeHandler = window.removeEventListener ?
-  (target, type, handler) => {
-    target.removeEventListener(type, handler, false);
-  } :
-  (target, type, handler) => {
-    target.detachEvent(`on${type}`, handler);
-  };
+Event.removeHandler = window.removeEventListener
+  ? (target, type, handler) => {
+      target.removeEventListener(type, handler, false);
+    }
+  : (target, type, handler) => {
+      target.detachEvent(`on${type}`, handler);
+    };
 
 Event.triggerEvent = (target, type) => {
   if (document.createEvent) {
     const eventMp = {
-      HTMLEvents: ['abort', 'blur', 'change', 'error', 'focus', 'load', 'reset', 'resize',
-        'scroll', 'select', 'submit', 'unload'],
+      HTMLEvents: [
+        'abort',
+        'blur',
+        'change',
+        'error',
+        'focus',
+        'load',
+        'reset',
+        'resize',
+        'scroll',
+        'select',
+        'submit',
+        'unload',
+      ],
       UIEvents: ['DOMActivate', 'DOMFocusIn', 'DOMFocusOut', 'keydown', 'keypress', 'keyup'],
       MouseEvents: ['click', 'mousedown', 'mousemove', 'mouseout', 'mouseover', 'mouseup'],
-      MutationEvents: ['DOMAttrModified', 'DOMNodeInserted', 'DOMNodeRemoved',
-        'DOMCharacterDataModified', 'DOMNodeInsertedIntoDocument', 'DOMNodeRemovedFromDocument',
-        'DOMSubtreeModified'],
+      MutationEvents: [
+        'DOMAttrModified',
+        'DOMNodeInserted',
+        'DOMNodeRemoved',
+        'DOMCharacterDataModified',
+        'DOMNodeInsertedIntoDocument',
+        'DOMNodeRemovedFromDocument',
+        'DOMSubtreeModified',
+      ],
     };
     let eventKey = null;
     _.map(eventMp, (types, key) => {
@@ -199,7 +216,6 @@ Event.triggerEvent = (target, type) => {
     target.fireEvent(`on${type}`);
   }
 };
-
 
 /**
  *
@@ -273,7 +289,5 @@ export const getFirstBrowserLanguage = () => {
  * get Window rect height
  */
 export const getWindowRectHeight = () => {
-  return window.innerHeight
-    || document.documentElement.clientHeight
-    || document.body.clientHeight;
+  return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 };

@@ -8,7 +8,7 @@
 
 import { storagePrefix } from 'config';
 
-const genKey = subKey => `${storagePrefix}_${subKey}`;
+const genKey = (subKey) => `${storagePrefix}_${subKey}`;
 
 const storage = {};
 

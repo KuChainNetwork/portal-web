@@ -8,7 +8,7 @@ import styles from './style.less';
 import architeImgCN from 'assets/why/Architecture_zh_CN.png';
 import architeImgUS from 'assets/why/Architecture_en_US.png';
 
-const Architecture = props => {
+const Architecture = (props) => {
   const { currentLang } = props;
   const imgSrc = currentLang === 'zh_CN' ? architeImgCN : architeImgUS;
 
@@ -56,7 +56,7 @@ const Architecture = props => {
   );
 };
 
-export default connect(state => {
+export default connect((state) => {
   return {
     currentLang: state.app.currentLang,
   };

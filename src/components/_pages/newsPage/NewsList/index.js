@@ -6,7 +6,7 @@ import Pagination from 'components/SSRPagination';
 import { NewsContext } from 'src/pages/news';
 import styles from './style.less';
 
-const NewsList = props => {
+const NewsList = (props) => {
   const { typeKey } = useContext(NewsContext);
   const { records, pagination } = props;
 
@@ -15,7 +15,7 @@ const NewsList = props => {
       <div className={styles.main}>
         {records &&
           !!records.length &&
-          _.map(records, item => (
+          _.map(records, (item) => (
             <React.Fragment key={item.id}>
               <NewsListCard data={item} />
               <div className={styles.line}></div>
@@ -29,7 +29,7 @@ const NewsList = props => {
   );
 };
 
-export default connect(state => {
+export default connect((state) => {
   return {
     records: state.news.records,
     pagination: state.news.pagination,

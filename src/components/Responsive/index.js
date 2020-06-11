@@ -7,21 +7,11 @@ export const useIsMobile = () => {
 };
 
 const ResponsiveMB = (props) => {
-  return (
-    <MediaQuery
-      maxWidth={600}
-      {...props}
-    />
-  );
+  return <MediaQuery maxWidth={600} {...props} />;
 };
 
 const ResponsivePC = (props) => {
-  return (
-    <MediaQuery
-      minWidth={600}
-      {...props}
-    />
-  );
+  return <MediaQuery minWidth={600} {...props} />;
 };
 
 ResponsivePC.Mobile = ResponsiveMB;

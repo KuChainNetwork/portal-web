@@ -6,7 +6,7 @@
     "dev": "umi dev",
     "build": "umi build && node ./scripts/version.js",
     "test": "umi test",
-    "lint": "eslint --ext .js src mock tests",
+    "lint": "eslint --ext .js src",
     "precommit": "lint-staged"
   },
   "dependencies": {

@@ -5,11 +5,11 @@ import NewsDetail from 'components/_pages/newsPage/NewsDetail';
 import { catIds } from 'config';
 import styles from './style.less';
 
-const Detail = props => {
+const Detail = (props) => {
   const { location, dispatch, currentLang, match } = props;
 
   const getData = useCallback(() => {
-    const id = match.params.id
+    const id = match.params.id;
     dispatch({
       type: 'news/detail',
       payload: {
@@ -45,7 +45,7 @@ const Detail = props => {
   );
 };
 
-export default connect(state => {
+export default connect((state) => {
   return {
     currentLang: state.app.currentLang,
   };

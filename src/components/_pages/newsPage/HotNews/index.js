@@ -5,12 +5,12 @@ import { Link } from 'components/Router';
 import { _t } from 'utils/lang';
 import styles from './style.less';
 
-const HotNews = props => {
+const HotNews = (props) => {
   const { hotRecords, dispatch, location } = props;
   const { pathname } = location;
 
   const hotItemClick = useCallback(
-    data => {
+    (data) => {
       dispatch({
         type: 'news/update',
         payload: {
@@ -37,7 +37,7 @@ const HotNews = props => {
     <div className={styles.HotNews}>
       <div className={styles.title}>{_t('news.hot')}</div>
       <div className={styles.list}>
-        {_.map(hotRecords, item => (
+        {_.map(hotRecords, (item) => (
           <Link to={`/news/detail/${item.id}?type=${type}`} replace={isFromDetail} key={item.id}>
             <div
               onClick={() => {
@@ -56,7 +56,7 @@ const HotNews = props => {
     </div>
   );
 };
-export default connect(state => {
+export default connect((state) => {
   return {
     hotRecords: state.news.hotRecords,
   };

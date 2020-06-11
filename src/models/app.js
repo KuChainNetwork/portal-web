@@ -59,7 +59,7 @@ export default extend(base, {
         ...state,
         currentHash,
       };
-    }
+    },
   },
   effects: {
     *init(_, { put, take }) {
@@ -73,9 +73,7 @@ export default extend(base, {
       });
     },
     *checkVersion(_, { call }) {
-      const {
-        release,
-      } = yield call(getVersion);
+      const { release } = yield call(getVersion);
       if (release && release !== _RELEASE_) {
         console.log('Current Release:', _RELEASE_);
         console.log('New Release:', release);
@@ -100,7 +98,6 @@ export default extend(base, {
         },
       });
     },
-
   },
   subscriptions: {
     /**
@@ -120,7 +117,7 @@ export default extend(base, {
 
       const _wr = (type) => {
         const orig = history[type];
-        return function() {
+        return function () {
           const rv = orig.apply(this, arguments);
           const e = new Event(type);
           e.arguments = arguments;
@@ -131,12 +128,12 @@ export default extend(base, {
       history.pushState = _wr('pushState');
       history.replaceState = _wr('replaceState');
 
-      window.addEventListener('replaceState', function(e) {
+      window.addEventListener('replaceState', function (e) {
         console.log('THEY DID IT AGAIN! replaceState');
         // console.log(window.location.hash);
         dispatchHash();
       });
-      window.addEventListener('pushState', function(e) {
+      window.addEventListener('pushState', function (e) {
         console.log('THEY DID IT AGAIN! pushState');
         // console.log(window.location.hash);
         dispatchHash();

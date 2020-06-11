@@ -7,7 +7,7 @@ import { NewsContext } from 'src/pages/news';
 import { showDatetime, timestamp } from 'helper';
 import styles from './style.less';
 
-const NewsListCard = props => {
+const NewsListCard = (props) => {
   const { location } = useContext(NewsContext);
   const { data, dispatch } = props;
 
@@ -44,6 +44,6 @@ const NewsListCard = props => {
   );
 };
 
-export default connect(state => {
+export default connect((state) => {
   return {};
 })(NewsListCard);

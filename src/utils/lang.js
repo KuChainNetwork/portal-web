@@ -1,4 +1,3 @@
-
 import {
   formatMessage,
   // formatHTMLMessage,
@@ -18,12 +17,7 @@ export const _t = (key, values) => {
 };
 
 export const _tHTML = (key, values) => {
-  return (
-    <FormattedHTMLMessage
-      id={key}
-      values={values}
-    />
-  )
+  return <FormattedHTMLMessage id={key} values={values} />;
   // return formatHTMLMessage({ id: key }, values);
 };
 

@@ -14,11 +14,10 @@ const TitleNode = ({ title, link }) => {
   if (link && typeof link === 'string') {
     titleNode = (
       <a href={link} target="_blank" rel="noopener noreferrer">
-        <h5>{ title }</h5>
+        <h5>{title}</h5>
       </a>
     );
-  } else
-  if (link && _.isArray(link)) {
+  } else if (link && _.isArray(link)) {
     const menu = (
       <Menu>
         {_.map(link, ([title, href], idx) => {
@@ -34,18 +33,12 @@ const TitleNode = ({ title, link }) => {
     );
 
     titleNode = (
-      <Dropdown
-        overlay={menu}
-        trigger={['click']}
-        placement="topCenter"
-      >
-        <h5 style={{ cursor: 'pointer' }}>{ title }</h5>
+      <Dropdown overlay={menu} trigger={['click']} placement="topCenter">
+        <h5 style={{ cursor: 'pointer' }}>{title}</h5>
       </Dropdown>
     );
   } else {
-    titleNode = (
-      <h5>{ title }</h5>
-    );
+    titleNode = <h5>{title}</h5>;
   }
 
   return titleNode;
@@ -96,7 +89,6 @@ const JoinUs = () => {
 
         <div className={styles.contacts}>
           {_.map(contacts, ({ icon, title, des, link, recommend }, idx) => {
-
             return (
               <div key={idx} className={styles.contact}>
                 <div className={styles.icon}>
@@ -105,11 +97,9 @@ const JoinUs = () => {
                 <div className={styles.info}>
                   <div className={styles.title}>
                     <TitleNode title={title} link={link} />
-                    {recommend && (
-                      <div className={styles.recommend}>{_t('join.recommend')}</div>
-                    )}
+                    {recommend && <div className={styles.recommend}>{_t('join.recommend')}</div>}
                   </div>
-                  <div className={styles.des}>{ des }</div>
+                  <div className={styles.des}>{des}</div>
                 </div>
               </div>
             );

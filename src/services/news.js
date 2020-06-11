@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import { pull, requestFetch } from 'utils/request';
 
-const getCategories = newsCatId => {
+const getCategories = (newsCatId) => {
   if (!newsCatId) {
     return '';
   }
@@ -57,7 +57,7 @@ export const getNewsListByTag = async (page = 1, tagsId) => {
   return pagination;
 };
 
-export const getDetail = async id => {
+export const getDetail = async (id) => {
   const data = await pull(`/wp-json/wp/v2/posts/${id}`);
   return data;
 };

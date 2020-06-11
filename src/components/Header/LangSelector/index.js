@@ -8,7 +8,7 @@ import styles from './style.less';
   return {
     langs: state.app.langs,
     currentLang: state.app.currentLang,
-  }
+  };
 })
 class LangSelector extends React.Component {
   handleChange = ({ key }) => {
@@ -22,7 +22,7 @@ class LangSelector extends React.Component {
     });
   };
 
-  getPopupContainer	= () => {
+  getPopupContainer = () => {
     return document.getElementById('lang_selector');
   };
 
@@ -32,11 +32,7 @@ class LangSelector extends React.Component {
     const menu = (
       <Menu onClick={this.handleChange}>
         {_.map(langs, ({ key, label }) => {
-          return (
-            <Menu.Item key={key}>
-              {label}
-            </Menu.Item>
-          );
+          return <Menu.Item key={key}>{label}</Menu.Item>;
         })}
       </Menu>
     );

@@ -7,12 +7,7 @@ export default {
     pagination: false,
   },
   reducers: {
-    savePage(
-      state,
-      {
-        payload: { items, totalNum, currentPage, page = 1, pageSize },
-      },
-    ) {
+    savePage(state, { payload: { items, totalNum, currentPage, page = 1, pageSize } }) {
       const current = typeof currentPage === 'number' ? currentPage : page;
       const pagination = {
         total: totalNum, // total data size

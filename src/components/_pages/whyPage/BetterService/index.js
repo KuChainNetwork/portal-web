@@ -9,7 +9,7 @@ import betterImg2 from 'assets/why/better_2.svg';
 import betterImg3 from 'assets/why/better_3.svg';
 import betterImg4 from 'assets/why/better_4.svg';
 
-export default props => {
+export default (props) => {
   const [isShowLeft, setShowLeft] = useState(true);
 
   const betterData = [

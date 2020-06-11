@@ -28,12 +28,7 @@ const SubscribeInput = () => {
         onChange={handleChange}
       />
       <input type="hidden" name={hiddenName} tabIndex="-1" value="" />
-      <Button
-        size="large"
-        type="primary"
-        htmlType="submit"
-        name="subscribe"
-      >
+      <Button size="large" type="primary" htmlType="submit" name="subscribe">
         Subscribe
       </Button>
     </form>

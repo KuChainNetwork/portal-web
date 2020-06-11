@@ -15,7 +15,7 @@ const LatestNews = () => {
       <div className={styles.limit}>
         <h2>{_t('news.title')}</h2>
         <div className={styles.list}>
-          {_.map(isMobile ? [1] : [1,2,3], (item, idx) => {
+          {_.map(isMobile ? [1] : [1, 2, 3], (item, idx) => {
             return (
               <div key={idx} className={styles.item}>
                 <div className={styles.image}>

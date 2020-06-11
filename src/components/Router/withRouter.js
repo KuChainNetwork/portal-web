@@ -1,8 +1,7 @@
 // import React from 'react';
 import { withRouter } from 'react-router';
 
-const withRouterHOC = () => Components => {
-
+const withRouterHOC = () => (Components) => {
   return withRouter(Components);
 };
 

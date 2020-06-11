@@ -2,7 +2,6 @@ import _ from 'lodash';
 import { delay as delaySaga } from 'dva/saga';
 import { genCompare } from './modelHelper';
 
-
 /**
  * Polling model
  * @type {boolean}
@@ -13,12 +12,14 @@ const watched = {};
 
 export default {
   effects: {
-    *watchPolling({ type, payload: { effect, interval = 20 * 1000 } },
-      { take, put, race, call, fork, cancel, cancelled }) {
+    *watchPolling(
+      { type, payload: { effect, interval = 20 * 1000 } },
+      { take, put, race, call, fork, cancel, cancelled },
+    ) {
       let initOptions = { interval };
       let options = { ...initOptions };
       const namespace = type.split('/')[0];
-      const withNamespace = actionType => `${namespace}/${actionType}`;
+      const withNamespace = (actionType) => `${namespace}/${actionType}`;
 
       const START = `${effect}@polling`;
       const RESTART = `${effect}@polling:restart`;
@@ -43,7 +44,7 @@ export default {
       }
       watched[effectWithNameSpace] = true;
 
-      const runTick = function *runTick() {
+      const runTick = function* runTick() {
         try {
           while (polling) {
             let optInterval = options.interval;
@@ -68,18 +69,15 @@ export default {
           }
         }
       };
-      const listenCancelAction = function *listenCancelAction() {
+      const listenCancelAction = function* listenCancelAction() {
         while (polling) {
-          yield race([
-            take(CANCEL),
-            take(genCompare(withNamespace(CANCEL))),
-          ]);
+          yield race([take(CANCEL), take(genCompare(withNamespace(CANCEL)))]);
           if (tickTask) {
             yield cancel(tickTask);
           }
         }
       };
-      const listenUpdatePayload = function *listenUpdatePayload() {
+      const listenUpdatePayload = function* listenUpdatePayload() {
         while (polling) {
           const updateAction = yield take(genCompare(withNamespace(UPDATE)));
           if (typeof updateAction.payload !== 'undefined') {
@@ -88,7 +86,7 @@ export default {
           }
         }
       };
-      const listenUpdateConfig = function *listenUpdateConfig() {
+      const listenUpdateConfig = function* listenUpdateConfig() {
         while (polling) {
           const updateAction = yield take(genCompare(withNamespace(OPTIONS)));
           const configReducer = updateAction.payload;

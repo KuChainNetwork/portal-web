@@ -9,7 +9,7 @@ import { showDatetime, timestamp } from 'helper';
 import styles from './style.less';
 import ImgSrc from 'components/ImgSrc';
 
-const NewsDetail = props => {
+const NewsDetail = (props) => {
   const { detailData, location } = props;
 
   return !isEmpty(detailData) ? (
@@ -37,7 +37,7 @@ const NewsDetail = props => {
   ) : null;
 };
 
-export default connect(state => {
+export default connect((state) => {
   return {
     detailData: state.news.detailData,
   };

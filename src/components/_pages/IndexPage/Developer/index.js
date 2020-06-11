@@ -13,9 +13,7 @@ const Developer = () => {
           <div className={styles.title}>
             <h2>{_t('dev.title')}</h2>
           </div>
-          <div className={styles.des}>
-            {_tHTML('dev.des', { discord })}
-          </div>
+          <div className={styles.des}>{_tHTML('dev.des', { discord })}</div>
         </div>
         <img data-role="right-img" src={rightBg} alt={_t('dev.title')} />
       </div>

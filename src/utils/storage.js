@@ -2,7 +2,7 @@ import { storagePrefix } from 'config';
 
 const { localStorage } = window;
 
-const genKey = subKey => `${storagePrefix}_${subKey}`;
+const genKey = (subKey) => `${storagePrefix}_${subKey}`;
 
 export default {
   getItem: (key) => {
@@ -28,8 +28,9 @@ export default {
 
       notification.warn({
         message: 'Sorry, the browser’s storage space is full.',
-        description: 'To ensure the normal usage, please visit Tools > Clear ' +
-        'Recent History > Cookies and select All in Time Range to release the storage space.',
+        description:
+          'To ensure the normal usage, please visit Tools > Clear ' +
+          'Recent History > Cookies and select All in Time Range to release the storage space.',
       });
     }
   },

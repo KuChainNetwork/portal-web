@@ -21,7 +21,7 @@ export default class PrintAnimation extends React.Component {
       }
       this.setState({ showSloganText: _showSloganText });
     }, 200);
-  }
+  };
   componentDidMount() {
     this.sloganAnimation();
   }
@@ -33,8 +33,11 @@ export default class PrintAnimation extends React.Component {
   render() {
     const { showSloganText, showPrinter } = this.state;
 
-    return (<>{showSloganText.join('')}{
-      showPrinter ? <span className="char" >_</span> : null
-    }</>);
+    return (
+      <>
+        {showSloganText.join('')}
+        {showPrinter ? <span className="char">_</span> : null}
+      </>
+    );
   }
 }

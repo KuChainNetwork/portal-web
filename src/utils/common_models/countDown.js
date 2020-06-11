@@ -10,8 +10,10 @@ const countingPool = {};
 
 export default extend(base, {
   effects: {
-    *countDown({ type, payload: { countKey, initial = 60, step = 1, interval = 1000 } },
-      { call, put, select, race, take }) {
+    *countDown(
+      { type, payload: { countKey, initial = 60, step = 1, interval = 1000 } },
+      { call, put, select, race, take },
+    ) {
       const namespace = type.split('/')[0];
 
       yield put({ type: 'update', payload: { [countKey]: initial } });
@@ -29,7 +31,7 @@ export default extend(base, {
           return;
         }
 
-        const count = yield select(state => state[namespace][countKey]);
+        const count = yield select((state) => state[namespace][countKey]);
         if (!count) {
           delete countingPool[poolKey];
           return;

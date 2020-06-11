@@ -8,7 +8,7 @@ import NewsList from 'components/_pages/newsPage/NewsList';
 import { NewsContext } from 'src/pages/news';
 import styles from './style.less';
 
-export default props => {
+export default (props) => {
   const { setKeyCallback, typeKey } = useContext(NewsContext);
   const { hide } = props;
   const paneData = [
@@ -40,7 +40,7 @@ export default props => {
   ];
 
   const tabCallback = useCallback(
-    e => {
+    (e) => {
       setKeyCallback(e.key);
     },
     [setKeyCallback],
@@ -56,7 +56,7 @@ export default props => {
       <div className={styles.pc}>
         <div className={styles.menuBox}>
           <Menu onClick={tabCallback} selectedKeys={[typeKey]} mode="horizontal">
-            {_.map(paneData, item => (
+            {_.map(paneData, (item) => (
               <Menu.Item className={styles.menuItem} key={item.key}>
                 <Link to={item.path}>{item.tab}</Link>
               </Menu.Item>

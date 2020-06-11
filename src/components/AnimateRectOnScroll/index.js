@@ -4,7 +4,13 @@ import Text from './Text';
 import { Event, getWindowRectHeight } from 'helper';
 import styles from './style.less';
 
-const AnimateRectOnScroll = ({ disableChange, limitWidth = 400, offset = 100, style = {}, onScroll }) => {
+const AnimateRectOnScroll = ({
+  disableChange,
+  limitWidth = 400,
+  offset = 100,
+  style = {},
+  onScroll,
+}) => {
   const [changeWidth, setWidth] = useState(disableChange ? limitWidth : 0);
 
   const animateRef = useRef(null);
@@ -24,8 +30,7 @@ const AnimateRectOnScroll = ({ disableChange, limitWidth = 400, offset = 100, st
 
         if (per > 1) {
           width = limitWidth;
-        } else
-        if (per < 0) {
+        } else if (per < 0) {
           width = 0;
         } else {
           width = per * limitWidth;

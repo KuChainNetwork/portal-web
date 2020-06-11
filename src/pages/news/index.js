@@ -7,13 +7,13 @@ import styles from './style.less';
 
 export const NewsContext = React.createContext();
 
-const News = props => {
+const News = (props) => {
   const { dispatch, currentLang, match, location } = props;
   const defaultTypeKey = match.params.type ? match.params.type.toUpperCase() : 'ALL';
   const [page, setPage] = useState(1);
   const [typeKey, setTypeKey] = useState(defaultTypeKey);
 
-  const setKeyCallback = useCallback(type => {
+  const setKeyCallback = useCallback((type) => {
     setTypeKey(type);
     setPage(1);
   }, []);
@@ -67,7 +67,7 @@ const News = props => {
   );
 };
 
-export default connect(state => {
+export default connect((state) => {
   return {
     currentLang: state.app.currentLang,
   };

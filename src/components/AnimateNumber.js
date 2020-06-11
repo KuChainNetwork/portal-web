@@ -2,9 +2,8 @@ import React from 'react';
 import Animate from 'react-animated-number';
 
 export default class AnimateNumber extends React.Component {
-
   state = {
-    value: 0
+    value: 0,
   };
 
   componentDidMount() {
@@ -21,12 +20,6 @@ export default class AnimateNumber extends React.Component {
     const { duration, formatValue } = this.props;
     const { value } = this.state;
 
-    return (
-      <Animate
-        value={value}
-        formatValue={formatValue}
-        duration={duration}
-      />
-    );
+    return <Animate value={value} formatValue={formatValue} duration={duration} />;
   }
 }

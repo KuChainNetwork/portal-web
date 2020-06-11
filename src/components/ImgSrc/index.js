@@ -12,13 +12,11 @@ const ImgSrc = ({ featured_media, title }) => {
           setSrc(source_url);
         }
       }
-    }
+    };
     fetchImg();
   }, [featured_media]);
 
-  return (
-    <img src={src} alt={title ? (title.rendered || '') : ''} />
-  );
+  return <img src={src} alt={title ? title.rendered || '' : ''} />;
 };
 
 export default ImgSrc;

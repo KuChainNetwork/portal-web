@@ -4,7 +4,7 @@ import introImg from 'assets/why/Introruction.svg';
 import { _t } from 'utils/lang';
 import styles from './style.less';
 
-export default props => {
+export default (props) => {
   const introData = [
     {
       title: _t('why.intro.item1.title'),

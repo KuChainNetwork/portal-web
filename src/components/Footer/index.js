@@ -76,10 +76,12 @@ export default () => {
               <div className={styles.sep} />
               <a>Privacy Agreement</a>
             </div> */}
-            <span>CopyRight ©2017-{new Date().getFullYear()} KuChain.network All Rights Reserved</span>
+            <span>
+              CopyRight ©2017-{new Date().getFullYear()} KuChain.network All Rights Reserved
+            </span>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};

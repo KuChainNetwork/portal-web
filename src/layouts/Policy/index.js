@@ -16,7 +16,7 @@ const Policy = () => {
   }, []);
 
   const handleAccept = useCallback(() => {
-    storage.setItem(acceptKey, acceptRecord)
+    storage.setItem(acceptKey, acceptRecord);
     setVisible(false);
   }, []);
 
@@ -30,11 +30,7 @@ const Policy = () => {
           <div>{_tHTML('policy.cookie')}</div>
           <div>{_tHTML('policy.privacy')}</div>
         </div>
-        <Button
-          size="large"
-          type="primary"
-          onClick={handleAccept}
-        >
+        <Button size="large" type="primary" onClick={handleAccept}>
           {_t('policy.fine')}
         </Button>
       </div>

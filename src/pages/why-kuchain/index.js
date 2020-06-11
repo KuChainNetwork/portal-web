@@ -5,7 +5,7 @@ import Architecture from 'components/_pages/whyPage/Architecture';
 import Governance from 'components/_pages/whyPage/Governance';
 import BetterService from 'components/_pages/whyPage/BetterService';
 
-const WhyKuchain = props => {
+const WhyKuchain = (props) => {
   const {
     location: { query },
   } = props;

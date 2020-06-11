@@ -22,11 +22,13 @@ export default extend(base, filter, sort, {
       };
       let newState = null;
       if (listName) {
-        newState = { ...state,
+        newState = {
+          ...state,
           [listName]: {
             pagination,
             records: items,
-          } };
+          },
+        };
       } else {
         newState = {
           ...state,

@@ -7,7 +7,7 @@ import why_governance from 'assets/why/why_governance.png';
 import why_high from 'assets/why/why_high.png';
 import why_open from 'assets/why/why_open.png';
 
-export default props => {
+export default (props) => {
   const governanceData = [
     {
       icon: why_safe,
@@ -36,7 +36,7 @@ export default props => {
       <div className={styles.title}>{_t('why.gover.title')}</div>
       <div className={styles.desc}>{_t('why.gover.desc')}</div>
       <div className={styles.main}>
-        {_.map(governanceData, item => (
+        {_.map(governanceData, (item) => (
           <div className={styles.governanceItem} key={item.icon}>
             <div className={styles.iconBox}>
               <img src={item.icon} alt="" />

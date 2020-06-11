@@ -17,7 +17,7 @@ const ForUser = () => {
   const isMobile = useIsMobile();
 
   const animateTextRef = useRef(null);
-  const handleAnimateScroll = useCallback(w => {
+  const handleAnimateScroll = useCallback((w) => {
     if (animateTextRef.current && typeof animateTextRef.current.onAnimateScroll === 'function') {
       animateTextRef.current.onAnimateScroll(w);
     }

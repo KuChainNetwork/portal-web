@@ -19,7 +19,9 @@ class NewsPagination extends React.Component {
 
     if (type === 'page') {
       return (
-        <Link to={toLink} className={style.pageLink}>{ page }</Link>
+        <Link to={toLink} className={style.pageLink}>
+          {page}
+        </Link>
       );
     }
     return (
@@ -36,12 +38,7 @@ class NewsPagination extends React.Component {
       return null;
     }
 
-    return (
-      <Pagination
-        {...otherProps}
-        itemRender={this.itemRender}
-      />
-    );
+    return <Pagination {...otherProps} itemRender={this.itemRender} />;
   }
 }
 

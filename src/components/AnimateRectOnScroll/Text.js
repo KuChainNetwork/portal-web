@@ -6,15 +6,19 @@ const Text = ({ children }, ref) => {
   const [maskPer, setMaskPer] = useState(0);
   const titleRef = useRef(null);
 
-  useImperativeHandle(ref, () => ({
-    onAnimateScroll: (w) => {
-      if (titleRef.current) {
-        const { left, right } = titleRef.current.getBoundingClientRect();
-        const per = (w - left) / (right - left);
-        setMaskPer((per < 0 ? 0 : (per > 1 ? 1 : per)) * 100);
-      }
-    }
-  }), []);
+  useImperativeHandle(
+    ref,
+    () => ({
+      onAnimateScroll: (w) => {
+        if (titleRef.current) {
+          const { left, right } = titleRef.current.getBoundingClientRect();
+          const per = (w - left) / (right - left);
+          setMaskPer((per < 0 ? 0 : per > 1 ? 1 : per) * 100);
+        }
+      },
+    }),
+    [],
+  );
 
   return (
     <div

@@ -11,12 +11,7 @@ export default extend(base, paginate, {
     hotRecords: [],
   },
   reducers: {
-    updateHotRecords(
-      state,
-      {
-        payload: { items },
-      },
-    ) {
+    updateHotRecords(state, { payload: { items } }) {
       return {
         ...state,
         hotRecords: items || [],
@@ -26,7 +21,7 @@ export default extend(base, paginate, {
   effects: {
     *pull({ payload: { page, newsCatId } = {} }, { put, call, select }) {
       let oldPagination;
-      const pagination = yield select(state => state.news.pagination);
+      const pagination = yield select((state) => state.news.pagination);
       if (pagination) {
         oldPagination = pagination;
       }
@@ -65,12 +60,7 @@ export default extend(base, paginate, {
         payload: paginationSave,
       });
     },
-    *detail(
-      {
-        payload: { id },
-      },
-      { put, call },
-    ) {
+    *detail({ payload: { id } }, { put, call }) {
       const detailData = yield call(getDetail, id);
       yield put({
         type: 'update',
