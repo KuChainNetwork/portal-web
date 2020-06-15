@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import style from './style.less';
 import { Button, Dropdown, Input, Menu, message, Modal } from 'antd';
 import _ from 'lodash';
@@ -6,6 +6,7 @@ import { _t } from 'utils/lang';
 import join_discord from 'assets/join/contact-discord.svg';
 import join_gitHub from 'assets/join/contact-github.svg';
 import { connect } from 'react-redux';
+import { showDateTimeByZone } from '../../helper';
 
 const TitleNode = ({ title, link }) => {
   let titleNode = null;
@@ -42,8 +43,10 @@ const TitleNode = ({ title, link }) => {
   return titleNode;
 };
 
-const ApplyFunds = function ({ dispatch }) {
+const ApplyFunds = function ({ dispatch, loading }) {
   const [modalVisible, setModalVisible] = useState(false);
+  const [address, setAddress] = useState('');
+  const [txhash, setTxhash] = useState('');
 
   const contacts = [
     {
@@ -61,21 +64,49 @@ const ApplyFunds = function ({ dispatch }) {
     },
   ];
 
-  const clickApply = () => {
-    dispatch({
+  const clickApply = async () => {
+    if (!address || !address.trim()) {
+      message.error(_t('apply.funds.input.placeholder'));
+      return;
+    }
+    const result = await dispatch({
       type: 'applyFunds/postApply',
-      payload: { address: '123123' },
+      payload: { receiver: address.trim() },
     });
-    setModalVisible(true);
-    message.error(_t('apply.funds.submit.error.tips1', { timeStr: '00:23:12' }));
+    if (result.success) {
+      setTxhash(result.data);
+      setModalVisible(true);
+    } else {
+      if (result.code === 200002) {
+        const seconds = 24 * 60 * 60 * 1000 - (Date.now() - result.data);
+        message.error(
+          _t('apply.funds.submit.error.tips1', {
+            timeStr: showDateTimeByZone(seconds, 'HH:mm:ss', 0),
+          }),
+        );
+      } else {
+        result.msg && message.error(result.msg);
+      }
+    }
   };
 
   return (
     <div className={style.applyFundsBox}>
       <div className={style.inner}>
         <h2>{_t('apply.funds.title')}</h2>
-        <Input className={style.input} placeholder={_t('apply.funds.input.placeholder')} />
-        <Button className={style.button} type="primary" onClick={clickApply}>
+        <Input
+          className={style.input}
+          placeholder={_t('apply.funds.input.placeholder')}
+          value={address}
+          onChange={(e) => setAddress(e.target.value)}
+          onPressEnter={clickApply}
+        />
+        <Button
+          className={style.button}
+          type="primary"
+          onClick={clickApply}
+          loading={loading.effects['applyFunds/postApply']}
+        >
           {_t('apply.funds.button')}
         </Button>
         <div className={style.contacts}>
@@ -109,13 +140,15 @@ const ApplyFunds = function ({ dispatch }) {
         }
         className={style.applyFundsModal}
       >
-        <p>Test ETH sent to：</p>
-        <p>0xe8fe4fab64e22821156d4a35b39c42aafa6cb5c3</p>
-        <p>Test ETH sent to：</p>
-        <p>0xe8fe4fab64e22821156d4a35b39c42aafa6cb5c3</p>
+        <p>Test KTS sent to：</p>
+        <p>{address}</p>
+        <p>Transaction hash：</p>
+        <p>{txhash}</p>
       </Modal>
     </div>
   );
 };
 
-export default connect()(ApplyFunds);
+export default connect(({ loading }) => {
+  return { loading };
+})(ApplyFunds);

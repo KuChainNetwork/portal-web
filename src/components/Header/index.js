@@ -46,9 +46,9 @@ const Header = ({ pathname }) => {
       <div className={styles.head}>
         <div className={styles.limit}>
           <div className={styles.headLeft}>
-            <Link to="/" className={styles.logo}>
-              <img src={logo} alt="KuChain" />
-            </Link>
+            {/*<Link to="/" className={styles.logo}>*/}
+            {/*  <img src={logo} alt="KuChain" />*/}
+            {/*</Link>*/}
           </div>
           <div className={styles.headRight}>
             <Responsive>

@@ -8,11 +8,8 @@ export default extend(base, paginate, {
   state: {},
 
   effects: {
-    *postApply({ payload: { page, tagsId } = {} }, { put, call }) {
-      const paginationSave = yield call(applyForTestFunds, {
-        account: 'validator2',
-      });
-      console.log(paginationSave);
+    *postApply({ payload }, { call }) {
+      return yield call(applyForTestFunds, payload);
     },
   },
 });

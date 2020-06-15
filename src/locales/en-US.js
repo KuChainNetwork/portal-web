@@ -38,8 +38,8 @@ export default {
   'policy.privacy': 'By using this site you are agreeing to our <a>Privacy Policy</a>.',
   'news.title': 'KuChain News',
   'news.more': 'View More',
-  'coming.title': 'Stay tuned …<br/>We are coming soon',
-  'coming.title.mb': 'Stay tuned …<br/>We are coming soon',
+  'coming.title1': 'Stay tuned …',
+  'coming.title2': 'We are coming soon',
   'coming.back': 'Back to Home',
   'news.all': 'All',
   'news.week': 'Weekly',
@@ -91,4 +91,11 @@ export default {
   'why.better.item4.title': 'Insurance',
   'why.better.item4.desc':
     'Dex and mortgage lending services provide the foundation for insurance applications.',
+  'head.menu.apply.funds': '申请测试资金',
+  'apply.funds.title': 'KuChain Betanet Faucet',
+  'apply.funds.input.placeholder': 'Compile the code and generate your address',
+  'apply.funds.button': 'Get Betanet Token',
+  'apply.funds.modal.title': '提交成功',
+  'apply.funds.modal.enter.button': '确定',
+  'apply.funds.submit.error.tips1': '该地址当日已申领测试代币，您可在 {timeStr} 后进行新一轮申领',
 };

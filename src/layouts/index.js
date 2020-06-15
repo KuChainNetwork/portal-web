@@ -47,7 +47,7 @@ function BasicLayout(props) {
       <Header pathname={pathname} />
       <div className={styles.body}>{children}</div>
 
-      <Footer />
+      {/*<Footer />*/}
       {/* // TODO V0.2 Policy */}
       {/* <Policy /> */}
     </div>
