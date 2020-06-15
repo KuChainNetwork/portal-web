@@ -91,11 +91,12 @@ export default {
   'why.better.item4.title': 'Insurance',
   'why.better.item4.desc':
     'Dex and mortgage lending services provide the foundation for insurance applications.',
-  'head.menu.apply.funds': '申请测试资金',
+  'head.menu.apply.funds': 'Claim test tokens',
   'apply.funds.title': 'KuChain Betanet Faucet',
   'apply.funds.input.placeholder': 'Compile the code and generate your address',
   'apply.funds.button': 'Get Betanet Token',
-  'apply.funds.modal.title': '提交成功',
-  'apply.funds.modal.enter.button': '确定',
-  'apply.funds.submit.error.tips1': '该地址当日已申领测试代币，您可在 {timeStr} 后进行新一轮申领',
+  'apply.funds.modal.title': 'Application submited',
+  'apply.funds.modal.enter.button': 'Confirm',
+  'apply.funds.submit.error.tips1':
+    'Done with daily quota of the address, new claim will open in {timeStr}',
 };
