@@ -3,7 +3,7 @@ const { NODE_ENV } = process.env;
 const _DEV_ = NODE_ENV !== 'production';
 
 // publicPath, for cdn link
-const publicPath = _DEV_ ? '/' : `/${version}/`;
+const publicPath = _DEV_ || process.env.ENV !== 'prod' ? '/' : `/${version}/`;
 
 // ref: https://umijs.org/config/
 export default {
