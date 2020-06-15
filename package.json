@@ -3,8 +3,9 @@
   "version": "0.1.9",
   "private": true,
   "scripts": {
-    "dev": "umi dev",
-    "build": "umi build && node ./scripts/version.js",
+    "dev": "cross-env ENV=dev umi dev",
+    "build:sit": "cross-env ENV=sit umi build && node ./scripts/version.js",
+    "build:prod": "cross-env ENV=prod umi build && node ./scripts/version.js",
     "test": "umi test",
     "lint": "eslint --ext .js src",
     "precommit": "lint-staged"
@@ -35,6 +36,7 @@
   "devDependencies": {
     "@umijs/plugin-prerender": "^1.5.8",
     "babel-eslint": "^9.0.0",
+    "cross-env": "^7.0.2",
     "eslint": "^5.4.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-config-umi": "^1.4.0",

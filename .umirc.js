@@ -60,6 +60,7 @@ export default {
     _DEV_,
     _PUBLIC_PATH_: publicPath,
     _RELEASE_: `${name}_${version}`,
+    _ENV_: process.env.ENV
   },
   chainWebpack(config) {
     config.module

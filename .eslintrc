@@ -4,7 +4,8 @@
   "globals": {
     "_DEV_": false,
     "_PUBLIC_PATH_": false,
-    "_RELEASE_": false
+    "_RELEASE_": false,
+    "_ENV_": false
   },
   "rules": {
     "prettier/prettier": "error",

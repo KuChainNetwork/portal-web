@@ -105,7 +105,6 @@ export default extend(base, {
      * @param {*} param0
      */
     watchScroll({ dispatch }) {
-      console.log('bindbind hash');
       const { history } = window;
 
       const dispatchHash = () => {
