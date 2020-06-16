@@ -76,9 +76,9 @@ const Header = ({ pathname }) => {
                 })}
               </React.Fragment>
 
-              <div className={styles.langSelect}>
-                <LangSelector />
-              </div>
+              {/*<div className={styles.langSelect}>*/}
+              {/*  <LangSelector />*/}
+              {/*</div>*/}
             </Responsive>
 
             <Responsive.Mobile>

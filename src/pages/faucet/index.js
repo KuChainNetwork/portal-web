@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import style from './style.less';
 import { Button, Dropdown, Input, Menu, message, Modal } from 'antd';
 import _ from 'lodash';
@@ -70,7 +70,7 @@ const ApplyFunds = function ({ dispatch, loading }) {
       return;
     }
     const result = await dispatch({
-      type: 'applyFunds/postApply',
+      type: 'faucet/postApply',
       payload: { receiver: address.trim() },
     });
     if (result.success) {
@@ -90,6 +90,10 @@ const ApplyFunds = function ({ dispatch, loading }) {
     }
   };
 
+  useEffect(() => {
+    dispatch({ type: 'app/selectLang', payload: { lang: 'en_US' } });
+  }, []);
+
   return (
     <div className={style.applyFundsBox}>
       <div className={style.inner}>
@@ -105,7 +109,7 @@ const ApplyFunds = function ({ dispatch, loading }) {
           className={style.button}
           type="primary"
           onClick={clickApply}
-          loading={loading.effects['applyFunds/postApply']}
+          loading={loading.effects['faucet/postApply']}
         >
           {_t('apply.funds.button')}
         </Button>
