@@ -5,9 +5,9 @@ let KUCHAIN_JS_API_SERVER;
 if (_ENV_ === 'dev') {
   KUCHAIN_JS_API_SERVER = 'http://localhost:3100';
 } else if (_ENV_ === 'sit') {
-  KUCHAIN_JS_API_SERVER = 'http://121.89.216.155:3100';
+  KUCHAIN_JS_API_SERVER = 'http://121.89.211.107:3100';
 } else if (_ENV_ === 'prod') {
-  KUCHAIN_JS_API_SERVER = 'http://localhost:3100';
+  KUCHAIN_JS_API_SERVER = 'http://121.89.211.107:3100';
 }
 
 export const v2ApiHosts = {
