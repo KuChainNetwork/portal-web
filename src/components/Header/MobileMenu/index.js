@@ -81,10 +81,10 @@ const MobileMenu = (props) => {
               </Link>
             );
           })}
-          {/*<div onClick={_langShow} className={styles.menu}>*/}
-          {/*  <img src={langIcon} alt="" />*/}
-          {/*  <span>{langs.find((item) => item.key === currentLang).label}</span>*/}
-          {/*</div>*/}
+          <div onClick={_langShow} className={styles.menu}>
+            <img src={langIcon} alt="" />
+            <span>{langs.find((item) => item.key === currentLang).label}</span>
+          </div>
           <Drawer
             className={styles.langDrawer}
             width="100%"
