@@ -7,7 +7,7 @@ const ImgSrc = ({ featured_media, title }) => {
   useEffect(() => {
     const fetchImg = async () => {
       if (featured_media) {
-        const { source_url } = await pull(`/wp-json/wp/v2/media/${featured_media}`);
+        const { source_url } = await pull(`/news/api/wp-json/wp/v2/media/${featured_media}`);
         if (source_url) {
           setSrc(source_url);
         }

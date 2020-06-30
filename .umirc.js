@@ -73,4 +73,15 @@ export default {
         };
       });
   },
+  proxy: {
+    '/portal-web/api': {
+      target: 'http://kuchain001:3100',
+      changeOrigin: true,
+    },
+    '/news/api': {
+      target: 'https://blog.kuchain.io',
+      pathRewrite: { '^/news/api': '' },
+      changeOrigin: true,
+    },
+  },
 }

@@ -16,7 +16,7 @@ export const getNewsList = async (page = 1, newsCatId) => {
   let pagination = null;
   try {
     const res = await requestFetch(
-      `/wp-json/wp/v2/posts?${getCategories(newsCatId)}page=${page}&per_page=${pageSize}`,
+      `/news/api/wp-json/wp/v2/posts?${getCategories(newsCatId)}page=${page}&per_page=${pageSize}`,
     );
     const count = res.headers.get('X-WP-Total');
     // const totalPages = res.headers.get('X-WP-TotalPages');
@@ -39,7 +39,9 @@ export const getNewsListByTag = async (page = 1, tagsId) => {
   let pagination = null;
   try {
     const res = await requestFetch(
-      `/wp-json/wp/v2/posts?page=${page}&per_page=${pageSize}${tagsId ? `&tags=${tagsId}` : ''}`,
+      `/news/api/wp-json/wp/v2/posts?page=${page}&per_page=${pageSize}${
+        tagsId ? `&tags=${tagsId}` : ''
+      }`,
     );
     const count = res.headers.get('X-WP-Total');
     // const totalPages = res.headers.get('X-WP-TotalPages');
@@ -58,6 +60,6 @@ export const getNewsListByTag = async (page = 1, tagsId) => {
 };
 
 export const getDetail = async (id) => {
-  const data = await pull(`/wp-json/wp/v2/posts/${id}`);
+  const data = await pull(`/news/api/wp-json/wp/v2/posts/${id}`);
   return data;
 };

@@ -4,14 +4,10 @@
 import qs from 'qs';
 import fetch from 'isomorphic-fetch';
 import storage from './storage';
-import * as config from 'config';
 import { formlize } from 'helper';
 import memStorage from './memStorage';
 
 let xVersion = null; // debug x-version
-
-const { v2ApiHosts } = config;
-const host = v2ApiHosts.WORDPRESS;
 
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
@@ -42,20 +38,6 @@ function parseJSON(response) {
 
 //   return json;
 // }
-
-function isDefaultHost(url) {
-  return url.indexOf('/') === 0 && url.indexOf('//') !== 0;
-}
-
-function isAPI(url) {
-  let isV2Api = false;
-  for (const key in v2ApiHosts) {
-    if (url.indexOf(v2ApiHosts[key]) > -1) {
-      isV2Api = true;
-    }
-  }
-  return isDefaultHost(url) || isV2Api;
-}
 
 function getCsrf(url) {
   const csrf = memStorage.getItem('csrf');
@@ -100,9 +82,7 @@ export function requestFetch(
     }
   }
 
-  const requestHost = isDefaultHost(url) ? `${host}${url}` : url;
-
-  return fetch(requestHost, options).then(checkStatus);
+  return fetch(url, options).then(checkStatus);
 }
 
 /**
@@ -130,16 +110,14 @@ export default function request(url, options = {}) {
     }
   }
 
-  const requestHost = isDefaultHost(url) ? `${host}${url}` : url;
-
   return (
-    fetch(requestHost, options)
+    fetch(url, options)
       .then(checkStatus)
       .then(parseJSON)
       // .then(checkError)
       .catch((e) => {
         if (typeof e === 'object') {
-          e._req_host = requestHost;
+          e._req_host = url;
 
           if (
             e.code === '401' || // user need login
@@ -161,11 +139,9 @@ export default function request(url, options = {}) {
  * @return {object} An object containing either "data" or "err"
  */
 export function pull(url, query = {}) {
-  if (isAPI(url)) {
-    query.c = getCsrf(url) || undefined;
-    query.lang = query.lang || storage.getItem('lang');
-    query._t = Date.now(); // Prevent caching mechanism
-  }
+  query.c = getCsrf(url) || undefined;
+  query.lang = query.lang || storage.getItem('lang');
+  query._t = Date.now(); // Prevent caching mechanism
   let queryStr = qs.stringify(query) || '';
   if (queryStr) {
     if (url.indexOf('?') === -1) {
@@ -190,21 +166,19 @@ export function pull(url, query = {}) {
  */
 export function post(url, data = {}, disabledLang = false, isJson = false) {
   let queryStr = '';
-  if (isAPI(url)) {
-    const query = {};
+  const query = {};
 
-    query.c = getCsrf(url) || undefined;
+  query.c = getCsrf(url) || undefined;
 
-    if (!disabledLang) {
-      query.lang = storage.getItem('lang');
-    }
+  if (!disabledLang) {
+    query.lang = storage.getItem('lang');
+  }
 
-    queryStr = qs.stringify(query);
-    if (url.indexOf('?') === -1) {
-      queryStr = `?${queryStr}`;
-    } else {
-      queryStr = `&${queryStr}`;
-    }
+  queryStr = qs.stringify(query);
+  if (url.indexOf('?') === -1) {
+    queryStr = `?${queryStr}`;
+  } else {
+    queryStr = `&${queryStr}`;
   }
   const options = {
     method: 'POST',
@@ -227,10 +201,8 @@ export function post(url, data = {}, disabledLang = false, isJson = false) {
  * @return {object} An object containing either "data" or "err"
  */
 export function del(url, query = {}) {
-  if (isAPI(url)) {
-    query.c = getCsrf(url) || undefined;
-    query.lang = query.lang || storage.getItem('lang');
-  }
+  query.c = getCsrf(url) || undefined;
+  query.lang = query.lang || storage.getItem('lang');
   let queryStr = qs.stringify(query) || '';
   if (queryStr) {
     if (url.indexOf('?') === -1) {
