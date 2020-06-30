@@ -90,10 +90,6 @@ const ApplyFunds = function ({ dispatch, loading }) {
     }
   };
 
-  useEffect(() => {
-    dispatch({ type: 'app/selectLang', payload: { lang: 'en_US' } });
-  }, []);
-
   return (
     <div className={style.applyFundsBox}>
       <div className={style.inner}>
