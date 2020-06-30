@@ -33,12 +33,12 @@ const Header = ({ pathname }) => {
     //   pc: true,
     //   href: true,
     // },
-    // {
-    //   title: _t('head.menu.apply.funds'),
-    //   path: 'https://beta.kuchain.network/',
-    //   pc: false,
-    //   href: true,
-    // },
+    {
+      title: _t('head.menu.apply.funds'),
+      path: 'https://beta.kuchain.network/',
+      pc: false,
+      href: true,
+    },
   ];
 
   return (
