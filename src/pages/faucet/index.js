@@ -85,7 +85,7 @@ const ApplyFunds = function ({ dispatch, loading }) {
           }),
         );
       } else {
-        result.msg && message.error(result.msg);
+        message.error(_t('apply.funds.submit.error.tips2'));
       }
     }
   };

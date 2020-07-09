@@ -99,4 +99,5 @@ export default {
   'apply.funds.modal.enter.button': 'Confirm',
   'apply.funds.submit.error.tips1':
     'Done with daily quota of the address, new claim will open in {timeStr}',
+  'apply.funds.submit.error.tips2': 'Receive failed',
 };

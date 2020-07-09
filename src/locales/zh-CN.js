@@ -87,4 +87,5 @@ export default {
   'apply.funds.modal.title': '提交成功',
   'apply.funds.modal.enter.button': '确定',
   'apply.funds.submit.error.tips1': '该地址当日已申领测试代币，您可在 {timeStr} 后进行新一轮申领',
+  'apply.funds.submit.error.tips2': '领取失败',
 };
