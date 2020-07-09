@@ -7,7 +7,6 @@ import LangSelector from './LangSelector';
 import MobileMenu from './MobileMenu';
 import { _t } from 'utils/lang';
 import styles from './style.less';
-import logo from 'assets/logo.svg';
 
 const Header = ({ pathname }) => {
   const rightMenus = [
@@ -35,9 +34,8 @@ const Header = ({ pathname }) => {
     // },
     {
       title: _t('head.menu.apply.funds'),
-      path: 'https://beta.kuchain.network/',
+      path: '/faucet',
       pc: false,
-      href: true,
     },
   ];
 
