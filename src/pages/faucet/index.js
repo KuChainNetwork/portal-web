@@ -53,7 +53,7 @@ const ApplyFunds = function ({ dispatch, loading }) {
       icon: join_discord,
       title: _t('join.discord'),
       des: _t('join.discord.des'),
-      link: 'https://discord.gg/sp79pa',
+      link: 'https://discord.com/invite/2tWtHDm',
       recommend: true,
     },
     {
