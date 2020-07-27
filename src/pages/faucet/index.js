@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import style from './style.less';
 import { Button, Dropdown, Input, Menu, message, Modal } from 'antd';
 import _ from 'lodash';
