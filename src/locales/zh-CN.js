@@ -1,5 +1,5 @@
 export default {
-  'seo.common.title': 'KuChain|信任流转操作系统',
+  'seo.common.title': 'KuChain',
   'seo.common.des': 'KuChain为去中心化应用提供高效低成本的信任价值交换与连接服务。',
   'seo.common.keywords': 'KuChain,区块链,信任流转,KuChain社区',
   'head.menu.whykuchain': '为什么是KuChain',
@@ -82,7 +82,7 @@ export default {
   'why.better.item4.desc': '高流动性的借贷市场提供更好的稳定币解决方案',
   'head.menu.apply.funds': '申请测试资金',
   'apply.funds.title': '领取测试网代币',
-  'apply.funds.input.placeholder': '请输入您的KuChain钱包地址',
+  'apply.funds.input.placeholder': '请输入您的钱包地址',
   'apply.funds.button': '申请领取',
   'apply.funds.modal.title': '提交成功',
   'apply.funds.modal.enter.button': '确定',

@@ -75,7 +75,7 @@ export default {
   },
   proxy: {
     '/portal-web/api': {
-      target: 'http://kuchain001:3100',
+      target: 'http://localhost:3100',
       changeOrigin: true,
     },
     '/news/api': {
