@@ -32,11 +32,11 @@ const Header = ({ pathname }) => {
     //   pc: true,
     //   href: true,
     // },
-    {
-      title: _t('head.menu.apply.funds'),
-      path: '/faucet',
-      pc: false,
-    },
+    // {
+    //   title: _t('head.menu.apply.funds'),
+    //   path: '/faucet',
+    //   pc: false,
+    // },
   ];
 
   return (
