@@ -36,7 +36,7 @@ export default {
   'policy.privacy': 'By using this site you are agreeing to our <a>Privacy Policy</a>.',
   'news.title': '最新消息',
   'news.more': 'View More',
-  'coming.title1': '即将上线 ...',
+  'coming.title1': '敬请期待...',
   'coming.title2': '请您耐心等待',
   'coming.back': '返回首页',
   'news.all': '全部',

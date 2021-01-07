@@ -38,7 +38,7 @@ export default {
   'policy.privacy': 'By using this site you are agreeing to our <a>Privacy Policy</a>.',
   'news.title': 'KuChain News',
   'news.more': 'View More',
-  'coming.title1': 'Stay tuned …',
+  'coming.title1': 'Coming soon …',
   'coming.title2': 'We are coming soon',
   'coming.back': 'Back to Home',
   'news.all': 'All',

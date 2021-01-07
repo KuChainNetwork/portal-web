@@ -17,7 +17,7 @@ const Coming = () => {
               onStart={() => setShowTitle2(false)}
             />
             <br />
-            {showTitle2 && <PrintAnimation data={_t('coming.title2')} />}
+            {/* {showTitle2 && <PrintAnimation data={_t('coming.title2')} />} */}
           </h2>
           <img src={tag} alt="KuChain" />
         </div>
