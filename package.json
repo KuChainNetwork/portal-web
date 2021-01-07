@@ -1,6 +1,6 @@
 {
   "name": "portal-web",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "private": true,
   "scripts": {
     "dev": "cross-env ENV=dev umi dev",
